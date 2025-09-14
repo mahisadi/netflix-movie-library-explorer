@@ -1,0 +1,20 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Google Drive Connector",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/netflix-movie-library-connector/main.py",
+      "console": "integratedTerminal",
+      "args": ["google_drive", "--recreate-index"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/netflix-movie-library-connector"
+        }
+    }
+  ]
+}
