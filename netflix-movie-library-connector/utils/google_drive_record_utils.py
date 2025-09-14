@@ -81,7 +81,7 @@ def cleanse_record(
             "title": movie_title,
             "content": content,
             "source": source,
-            "content_type": "movies",
+            "content_type": CONTENT_TYPES.get("MOVIES", "movie"),
             "doc_type": DOCUMENT_TYPE.get("JSON_FILE", "json_file"),
             "file_name": file_name,
             "folder_path": folder_path,

@@ -42,3 +42,17 @@ Once the connector run keep the strctured data into s3 folders named after sourc
 This is crucial and avoids DRY principle to process the data. In future, if we move away from one cloud platform to another, we don't need to lots of effort.
 
 
+# Setup with future purpose
+In future may may add more connectors we can use this code base to containerize the new connector also. Added parameters to support future development. Included source and contentType fields in the schema. In same source if we have differnet content like Movies, WebServies etc
+
+
+# Schema Defination
+
+We need few fields as Sortable, Searchable (with some rankings / weights ), Filterable. Design schema considering this as one of the requirement was to provide apis for tech employees
+
+- **Searchable Fields**: title, stars, director, writer, movie_plot, awards, content
+- **Faceted Fields**: genre, subgenre, language, production_house, source
+- **Sortable Fields**: year, imdb_rating, popu, modified_time, file_id
+- **Filterable Fields**: All TAG and NUMERIC fields support filtering
+
+

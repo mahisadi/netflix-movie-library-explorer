@@ -68,6 +68,7 @@ class RedisSearchService:
                 "language", "TAG",
                 "production_house", "TAG",
                 "source", "TAG",
+                "content_type", "TAG",
                 
                 # SORTABLE AND FILTERABLE FIELDS (NUMERIC with SORTABLE)
                 "year", "NUMERIC", "SORTABLE",
@@ -132,6 +133,7 @@ class RedisSearchService:
                 "movie_plot": data.get("movie_plot", ""),
                 "awards": " ".join(data.get("awards", [])),  # Convert array to space-separated string
                 "content": data.get("content", ""),
+                "content_type": data.get("content_type", "movie"),
                 "file_id": data.get("id", ""),
                 # Filterable fields
                 "genre": data.get("genre", "unknown"),
@@ -139,6 +141,7 @@ class RedisSearchService:
                 "language": data.get("language", "unknown"),
                 "production_house": data.get("production_house", "unknown"),
                 "source": data.get("source", "google_drive"),
+
                 
                 # Numeric fields
                 "year": data.get("year", 0),
