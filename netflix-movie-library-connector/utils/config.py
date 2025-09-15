@@ -24,7 +24,7 @@ REDIS_PASSWORD = os.environ.get("REDIS_PASSWORD")
 REDIS_DB = int(os.environ.get("REDIS_DB", "0"))
 
 # RedisSearch Configuration (uses same Redis instance)
-REDISEARCH_INDEX_NAME = os.environ.get("REDISEARCH_INDEX_NAME", "movies_index")
+REDISEARCH_INDEX_NAME = os.environ.get("REDISEARCH_INDEX_NAME", "movie_library")
 REDISEARCH_PREFIX = os.environ.get("REDISEARCH_PREFIX", "movie:")
 
 # Logging Configuration

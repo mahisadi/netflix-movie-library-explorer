@@ -68,13 +68,23 @@ class GoogleDriveConnector:
             # Process files and prepare for indexing
             processed_records = []
             
-            for file_data in files:
+            # Filter out folders and get only JSON files
+            json_files = [f for f in files if f.get('mimeType') != 'application/vnd.google-apps.folder']
+            files_to_process = json_files  # Process all JSON files
+            
+            logger.info(f"Found {len(json_files)} JSON files, processing all {len(files_to_process)} files...")
+            
+            for file_data in files_to_process:
                 try:
                     mime_type = file_data.get('mimeType', '')
                     
-                    # Only process JSON files
-                    if mime_type != "application/json":
-                        logger.warning(f"Skipping non-JSON file: {file_data.get('name', 'Unknown')}")
+                    # Only process JSON files (check both MIME type and file extension)
+                    file_name = file_data.get('name', '')
+                    is_json_file = (mime_type == "application/json" or 
+                                  file_name.lower().endswith('.json'))
+                    
+                    if not is_json_file:
+                        logger.warning(f"Skipping non-JSON file: {file_name} (MIME: {mime_type})")
                         continue
                     
                     # Parse file content

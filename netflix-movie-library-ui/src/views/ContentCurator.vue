@@ -458,7 +458,7 @@ export default {
     const currentEditingMovie = ref(null)
     const currentPage = ref(1)
     const pageSize = ref(12)
-    const sortField = ref('updatedAt')
+    const sortField = ref('year')
     const sortDirection = ref('desc')
     
     // Form data
@@ -916,9 +916,10 @@ export default {
 
 .curator-controls {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .search-section {
@@ -960,34 +961,32 @@ export default {
 
 .filter-section {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   align-items: center;
   flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  background: #1a1a1a;
-  padding: 1rem 0;
-  z-index: 100;
-  border-bottom: 1px solid #333;
-  margin-bottom: 1rem;
 }
 
 .filter-select {
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   background: #2a2a2a;
   border: 1px solid #444;
   border-radius: 8px;
   color: white;
   font-size: 1rem;
-  min-width: 180px;
-  max-height: 200px;
-  overflow-y: auto;
+  min-width: 140px;
+  max-width: 180px;
   cursor: pointer;
   transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
 }
 
 .filter-select:hover {
-  border-color: #666;
+  border-color: #e50914;
   background: #333;
 }
 
@@ -997,24 +996,6 @@ export default {
   box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
 }
 
-/* Custom scrollbar for filter selects */
-.filter-select::-webkit-scrollbar {
-  width: 8px;
-}
-
-.filter-select::-webkit-scrollbar-track {
-  background: #1a1a1a;
-  border-radius: 4px;
-}
-
-.filter-select::-webkit-scrollbar-thumb {
-  background: #444;
-  border-radius: 4px;
-}
-
-.filter-select::-webkit-scrollbar-thumb:hover {
-  background: #666;
-}
 
 .movies-grid-container {
   margin-bottom: 2rem;

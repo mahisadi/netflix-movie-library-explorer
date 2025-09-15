@@ -273,7 +273,9 @@ class GoogleDriveService:
             
             # If include_nested is True, also get files from subfolders
             if include_nested and folder_id:
-                nested_files = self._get_nested_files_with_types(folder_id, file_types, since, page_size)
+                # Only get JSON files from nested folders
+                json_file_types = ['application/json'] if file_types is None else file_types
+                nested_files = self._get_nested_files_with_types(folder_id, json_file_types, since, page_size)
                 drive_files.extend(nested_files)
             
             # Extract metadata from folder paths for each file

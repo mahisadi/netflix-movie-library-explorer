@@ -18,6 +18,23 @@ sys.path.append('netflix-movie-library-connector')
 from services.redis_search_service import RedisSearchService
 from utils.google_drive_record_utils import cleanse_record
 
+genre_subgenre_map = {
+    'Action': ['Adventure', 'Dystopian', 'Martial Arts', 'Mystery', 'Post-Apocalyptic', 'Superhero', 'Thriller', 'War'],
+    'Adventure': ['Fantasy'],
+    'Biographical': ['Comedy', 'Drama', 'Historical Drama', 'Psychological'],
+    'Comedy': ['Action', 'Christmas', 'Coming-of-Age', 'Crime', 'Dark Comedy', 'Family', 'Fantasy', 'Political Satire', 'Romantic', 'Romantic Comedy'],
+    'Crime': ['Action', 'Biographical', 'Gangster', 'Neo-Noir'],
+    'Drama': ['Anthology', 'Biographical', 'Coming-of-Age', 'Crime', 'Historical', 'Legal', 'Musical', 'Neorealism', 'Political Thriller', 'Psychological', 'Romantic Comedy', 'Sci-Fi', 'Social', 'Social Thriller', 'Supernatural'],
+    'Fantasy': ['Adventure', 'Comedy', 'Dark Fantasy', 'High Fantasy', 'Romantic Comedy'],
+    'Horror': ['Psychological', 'SciFi', 'Slasher', 'Supernatural', 'Zombie'],
+    'Musical': ['Biographical', 'Comedy', 'Romantic'],
+    'Romance': ['Comedy', 'Coming-of-Age', 'Fantasy Comedy'],
+    'Sci-Fi': ['Dystopian'],
+    'SciFi': ['Action', 'Comedy', 'Cyberpunk', 'Dystopian', 'Space Opera', 'Thriller'],
+    'Thriller': ['Adventure', 'Crime Drama', 'Dark Comedy', 'Mystery', 'Neo-Western', 'Noir', 'Political', 'Psychological', 'Social', 'Supernatural'],
+    'Western': ['Mystery', 'Revenge', 'Spaghetti Western']
+}
+
 def normalize_title(title: str) -> str:
     """Create deduplication key from title."""
     return title.lower().replace(' ', '').replace(':', '').replace('-', '').replace('.', '')

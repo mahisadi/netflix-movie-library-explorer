@@ -12,6 +12,7 @@ def get_nested_files_with_types(service, folder_id: str, file_types: List[str] =
                                since: Optional[str] = None, page_size: int = 100, 
                                max_depth: int = 10, current_depth: int = 0, 
                                current_path: str = "") -> List[Dict[str, Any]]:
+    logger.debug(f"get_nested_files_with_types called with file_types: {file_types}")
     """
     Recursively get files from Google Drive folder with specified types.
     
@@ -75,6 +76,9 @@ def get_nested_files_with_types(service, folder_id: str, file_types: List[str] =
                         item['extracted_subgenre'] = extract_subgenre_from_path(current_path)
                         item['extracted_year'] = extract_year_from_path(current_path)
                         files.append(item)
+                        logger.debug(f"Added file: {file_name} (MIME: {mime_type})")
+                    else:
+                        logger.debug(f"Skipped file: {file_name} (MIME: {mime_type}) - not in file_types: {file_types}")
             
             page_token = results.get('nextPageToken')
             if not page_token:

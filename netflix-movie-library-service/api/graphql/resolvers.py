@@ -230,18 +230,47 @@ class Query:
             else:
                 full_query = query
             
-            # Build sort criteria
+            # Build sort criteria - only sort if explicitly requested and not relevance
             sort_by = None
             if search.sort_field and search.sort_field != "relevance":
                 sort_direction_str = "ASC" if search.sort_direction == "asc" else "DESC"
-                sort_by = f"@{search.sort_field}:{sort_direction_str}"
+                sort_by = f"{search.sort_field} {sort_direction_str}"
+            # For search results, default to relevance scoring (no sorting)
             
             # Perform search
             page = search.page or 1
             page_size = min(search.page_size or 20, search.max_page_size or 1000)
             
             logger.info(f"Advanced search with query: {full_query}")
-            results = redis_service.search(full_query, limit=page_size, offset=(page - 1) * page_size, sort_by=sort_by)
+            
+            # Try Redis sorting first, fallback to application sorting if it fails
+            try:
+                results = redis_service.search(full_query, limit=page_size, offset=(page - 1) * page_size, sort_by=sort_by)
+            except Exception as sort_error:
+                logger.warning(f"Redis sorting failed: {sort_error}, falling back to application sorting")
+                # Fetch more results for application-level sorting
+                all_results = redis_service.search(full_query, limit=1000, offset=0, sort_by=None)
+                
+                # Apply sorting in application layer
+                if sort_by and search.sort_field != "relevance":
+                    sort_field = search.sort_field
+                    reverse = search.sort_direction == "desc"
+                    
+                    if sort_field == "year":
+                        all_results.sort(key=lambda x: int(x.get('year', 0)), reverse=reverse)
+                    elif sort_field == "imdb_rating":
+                        all_results.sort(key=lambda x: float(x.get('imdb_rating', 0)), reverse=reverse)
+                    elif sort_field == "modified_timestamp":
+                        all_results.sort(key=lambda x: int(x.get('modified_timestamp', 0)), reverse=reverse)
+                    elif sort_field == "created_timestamp":
+                        all_results.sort(key=lambda x: int(x.get('created_timestamp', 0)), reverse=reverse)
+                    elif sort_field == "updated_timestamp":
+                        all_results.sort(key=lambda x: int(x.get('updated_timestamp', 0)), reverse=reverse)
+                
+                # Apply pagination
+                start_idx = (page - 1) * page_size
+                end_idx = start_idx + page_size
+                results = all_results[start_idx:end_idx]
             
             # Convert results to Movie objects
             movies = []
