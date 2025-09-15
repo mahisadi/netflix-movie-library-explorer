@@ -1,0 +1,5815 @@
+[
+  {
+    "title": "Oldboy",
+    "imdb_rating": 8.4,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2003",
+    "genre": "Action",
+    "sub-genre": "Mystery",
+    "stars": [
+      "Choi Min-sik",
+      "Yoo Ji-tae",
+      "Kang Hye-jeong"
+    ],
+    "director": "Park Chan-wook",
+    "writer": "Garon Tsuchiya, Nobuaki Minegishi, Park Chan-wook",
+    "popu": 91,
+    "production_house": "Show East",
+    "movie": "Oldboy",
+    "movie_plot": "After being held captive for 15 years, Oh Dae-su is released and given a five-day deadline to find his captor.",
+    "awards": [
+      "Won Grand Prix at the Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "The Godfather",
+    "imdb_rating": 9.2,
+    "language": "English",
+    "country": "USA",
+    "year": "1972",
+    "genre": "Crime",
+    "sub-genre": "Gangster",
+    "stars": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan"
+    ],
+    "director": "Francis Ford Coppola",
+    "writer": "Mario Puzo, Francis Ford Coppola",
+    "popu": 100,
+    "production_house": "Paramount Pictures",
+    "movie": "The Godfather",
+    "movie_plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "awards": [
+      "Won 3 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Parasite",
+    "imdb_rating": 8.6,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2019",
+    "genre": "Thriller",
+    "sub-genre": "Dark Comedy",
+    "stars": [
+      "Song Kang-ho",
+      "Lee Sun-kyun",
+      "Cho Yeo-jeong"
+    ],
+    "director": "Bong Joon Ho",
+    "writer": "Bong Joon Ho, Han Jin-won",
+    "popu": 99,
+    "production_house": "Barunson E&A",
+    "movie": "Parasite",
+    "movie_plot": "A poor family's plan to con a wealthy family by posing as highly qualified individuals goes horribly wrong.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Pulp Fiction",
+    "imdb_rating": 8.9,
+    "language": "English",
+    "country": "USA",
+    "year": "1994",
+    "genre": "Crime",
+    "sub-genre": "Neo-Noir",
+    "stars": [
+      "John Travolta",
+      "Samuel L. Jackson",
+      "Uma Thurman"
+    ],
+    "director": "Quentin Tarantino",
+    "writer": "Quentin Tarantino, Roger Avary",
+    "popu": 98,
+    "production_house": "Miramax Films",
+    "movie": "Pulp Fiction",
+    "movie_plot": "The lives of two mob hitmen, a gangster's wife, a boxer, and two diner bandits intertwine in four tales of violence and redemption.",
+    "awards": [
+      "Won the Palme d'Or at the Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "The Dark Knight",
+    "imdb_rating": 9.0,
+    "language": "English",
+    "country": "USA",
+    "year": "2008",
+    "genre": "Action",
+    "sub-genre": "Superhero",
+    "stars": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart"
+    ],
+    "director": "Christopher Nolan",
+    "writer": "Jonathan Nolan, Christopher Nolan",
+    "popu": 97,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "The Dark Knight",
+    "movie_plot": "Batman must face a new threat, the anarchistic Joker, who threatens to plunge Gotham City into chaos.",
+    "awards": [
+      "Won 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "Inception",
+    "imdb_rating": 8.8,
+    "language": "English",
+    "country": "USA",
+    "year": "2010",
+    "genre": "SciFi",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt",
+      "Elliot Page"
+    ],
+    "director": "Christopher Nolan",
+    "writer": "Christopher Nolan",
+    "popu": 96,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "Inception",
+    "movie_plot": "A thief who steals corporate secrets through dream-sharing is given the inverse task of planting an idea into the mind of a CEO.",
+    "awards": [
+      "Won 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "Spirited Away",
+    "imdb_rating": 8.6,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "2001",
+    "genre": "Fantasy",
+    "sub-genre": "Adventure",
+    "stars": [
+      "Rumi Hiiragi",
+      "Miyu Irino",
+      "Mari Natsuki"
+    ],
+    "director": "Hayao Miyazaki",
+    "writer": "Hayao Miyazaki",
+    "popu": 95,
+    "production_house": "Studio Ghibli",
+    "movie": "Spirited Away",
+    "movie_plot": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits.",
+    "awards": [
+      "Won the Academy Award for Best Animated Feature"
+    ]
+  },
+  {
+    "title": "Seven Samurai",
+    "imdb_rating": 8.6,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1954",
+    "genre": "Action",
+    "sub-genre": "Adventure",
+    "stars": [
+      "Toshiro Mifune",
+      "Takashi Shimura",
+      "Daisuke Kato"
+    ],
+    "director": "Akira Kurosawa",
+    "writer": "Akira Kurosawa, Shinobu Hashimoto, Hideo Oguni",
+    "popu": 94,
+    "production_house": "Toho Company",
+    "movie": "Seven Samurai",
+    "movie_plot": "A poor village under attack by bandits hires seven unemployed samurai to help them defend themselves.",
+    "awards": [
+      "Won Silver Lion at Venice Film Festival"
+    ]
+  },
+  {
+    "title": "The Matrix",
+    "imdb_rating": 8.7,
+    "language": "English",
+    "country": "USA",
+    "year": "1999",
+    "genre": "SciFi",
+    "sub-genre": "Action",
+    "stars": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "Carrie-Anne Moss"
+    ],
+    "director": "The Wachowskis",
+    "writer": "The Wachowskis",
+    "popu": 93,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "The Matrix",
+    "movie_plot": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "awards": [
+      "Won 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "imdb_rating": 8.8,
+    "language": "English",
+    "country": "New Zealand",
+    "year": "2001",
+    "genre": "Fantasy",
+    "sub-genre": "High Fantasy",
+    "stars": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Orlando Bloom"
+    ],
+    "director": "Peter Jackson",
+    "writer": "J.R.R. Tolkien, Fran Walsh, Philippa Boyens",
+    "popu": 92,
+    "production_house": "New Line Cinema",
+    "movie": "The Lord of the Rings: The Fellowship of the Ring",
+    "movie_plot": "A young hobbit, Frodo Baggins, inherits a powerful ring and embarks on a quest to destroy it.",
+    "awards": [
+      "Won 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "imdb_rating": 8.6,
+    "language": "English",
+    "country": "USA",
+    "year": "1991",
+    "genre": "Thriller",
+    "sub-genre": "Psychological Horror",
+    "stars": [
+      "Jodie Foster",
+      "Anthony Hopkins",
+      "Scott Glenn"
+    ],
+    "director": "Jonathan Demme",
+    "writer": "Ted Tally",
+    "popu": 23,
+    "production_house": "Orion Pictures",
+    "movie": "The Silence of the Lambs",
+    "movie_plot": "A young FBI trainee seeks the help of an incarcerated cannibalistic serial killer, Dr. Hannibal Lecter, to help her catch another serial killer known as 'Buffalo Bill.'",
+    "awards": [
+      "Won 5 Academy Awards, including Best Picture, Best Director, and Best Actor/Actress"
+    ]
+  },
+  {
+    "title": "The Good, the Bad and the Ugly",
+    "imdb_rating": 8.8,
+    "language": "Italian",
+    "country": "Italy, Spain, Germany, USA",
+    "year": "1966",
+    "genre": "Western",
+    "sub-genre": "Epic",
+    "stars": [
+      "Clint Eastwood",
+      "Eli Wallach",
+      "Lee Van Cleef"
+    ],
+    "director": "Sergio Leone",
+    "writer": "Age & Scarpelli, Luciano Vincenzoni, Sergio Leone",
+    "popu": 28,
+    "production_house": "Produzioni Europee Associate",
+    "movie": "The Good, the Bad and the Ugly",
+    "movie_plot": "During the American Civil War, three men--a lone gunslinger, a hitman, and a bandit--form an uneasy alliance to find a hidden cache of Confederate gold.",
+    "awards": [
+      "Inducted into the National Film Registry"
+    ]
+  },
+  {
+    "title": "The Grand Budapest Hotel",
+    "imdb_rating": 8.1,
+    "language": "English, French, German",
+    "country": "UK, Germany, USA",
+    "year": "2014",
+    "genre": "Comedy",
+    "sub-genre": "Crime",
+    "stars": [
+      "Ralph Fiennes",
+      "Tony Revolori",
+      "Adrien Brody"
+    ],
+    "director": "Wes Anderson",
+    "writer": "Wes Anderson",
+    "popu": 48,
+    "production_house": "Indian Paintbrush",
+    "movie": "The Grand Budapest Hotel",
+    "movie_plot": "The story of Gustave H., a legendary concierge at a famous European hotel between the first and second World Wars, and his friendship with a young lobby boy. The plot centers on the theft and recovery of a priceless painting.",
+    "awards": [
+      "Won 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Lives of Others",
+    "imdb_rating": 8.4,
+    "language": "German",
+    "country": "Germany",
+    "year": "2006",
+    "genre": "Drama",
+    "sub-genre": "Political Thriller",
+    "stars": [
+      "Ulrich M\u00fche",
+      "Martina Gedeck",
+      "Sebastian Koch"
+    ],
+    "director": "Florian Henckel von Donnersmarck",
+    "writer": "Florian Henckel von Donnersmarck",
+    "popu": 2,
+    "production_house": "Wiedemann & Berg Filmproduktion",
+    "movie": "The Lives of Others",
+    "movie_plot": "In 1980s East Berlin, a Stasi agent, tasked with spying on a writer and his lover, finds himself increasingly involved in their lives, leading to a profound change of heart.",
+    "awards": [
+      "Won Oscar for Best Foreign Language Film"
+    ]
+  },
+  {
+    "title": "Seven",
+    "imdb_rating": 8.6,
+    "language": "English",
+    "country": "USA",
+    "year": "1995",
+    "genre": "Thriller",
+    "sub-genre": "Mystery",
+    "stars": [
+      "Brad Pitt",
+      "Morgan Freeman",
+      "Kevin Spacey"
+    ],
+    "director": "David Fincher",
+    "writer": "Andrew Kevin Walker",
+    "popu": 86,
+    "production_house": "New Line Cinema",
+    "movie": "Seven",
+    "movie_plot": "Two detectives hunt a serial killer who is murdering his victims based on the seven deadly sins.",
+    "awards": [
+      "Nominated for 1 Academy Award"
+    ]
+  },
+  {
+    "title": "A Separation",
+    "imdb_rating": 8.3,
+    "language": "Persian",
+    "country": "Iran",
+    "year": "2011",
+    "genre": "Drama",
+    "sub-genre": "Legal",
+    "stars": [
+      "Peyman Moaadi",
+      "Leila Hatami",
+      "Sareh Bayat"
+    ],
+    "director": "Asghar Farhadi",
+    "writer": "Asghar Farhadi",
+    "popu": 85,
+    "production_house": "Filmiran",
+    "movie": "A Separation",
+    "movie_plot": "A married couple is in conflict over whether to leave Iran or stay, which leads to a court case and a new, tense relationship with an in-home caregiver.",
+    "awards": [
+      "Won the Academy Award for Best International Feature Film"
+    ]
+  },
+  {
+    "title": "Am\u00e9lie",
+    "imdb_rating": 8.3,
+    "language": "French",
+    "country": "France",
+    "year": "2001",
+    "genre": "Romance",
+    "sub-genre": "Comedy",
+    "stars": [
+      "Audrey Tautou",
+      "Mathieu Kassovitz",
+      "Jamel Debbouze"
+    ],
+    "director": "Jean-Pierre Jeunet",
+    "writer": "Guillaume Laurant, Jean-Pierre Jeunet",
+    "popu": 11,
+    "production_house": "Tapioca Films",
+    "movie": "Am\u00e9lie",
+    "movie_plot": "A shy waitress in Paris, with an overactive imagination, discreetly orchestrates the lives of those around her to bring joy and wonder into their mundane existence.",
+    "awards": [
+      "Nominated for 5 Academy Awards"
+    ]
+  },
+  {
+    "title": "Pan's Labyrinth",
+    "imdb_rating": 8.2,
+    "language": "Spanish",
+    "country": "Mexico, Spain",
+    "year": "2006",
+    "genre": "Fantasy",
+    "sub-genre": "Dark Fantasy",
+    "stars": [
+      "Ivana Baquero",
+      "Doug Jones",
+      "Sergi L\u00f3pez"
+    ],
+    "director": "Guillermo del Toro",
+    "writer": "Guillermo del Toro",
+    "popu": 41,
+    "production_house": "Estudios Picasso",
+    "movie": "Pan's Labyrinth",
+    "movie_plot": "In post-Civil War Spain, a young girl, escaping the cruel reality of her life with her stepfather, a ruthless Falangist officer, is drawn into an eerie and fantastical world inhabited by magical creatures.",
+    "awards": [
+      "Won 3 Academy Awards"
+    ]
+  },
+  {
+    "title": "Alien",
+    "imdb_rating": 8.5,
+    "language": "English",
+    "country": "UK",
+    "year": "1979",
+    "genre": "Horror",
+    "sub-genre": "SciFi",
+    "stars": [
+      "Sigourney Weaver",
+      "Tom Skerritt",
+      "John Hurt"
+    ],
+    "director": "Ridley Scott",
+    "writer": "Dan O'Bannon",
+    "popu": 81,
+    "production_house": "20th Century Fox",
+    "movie": "Alien",
+    "movie_plot": "The crew of a commercial space tug is awakened from cryo-sleep to investigate a distress signal from a desolate planet, only to discover a terrifying alien lifeform.",
+    "awards": [
+      "Won 1 Academy Award"
+    ]
+  },
+  {
+    "title": "2001: A Space Odyssey",
+    "imdb_rating": 8.3,
+    "language": "English",
+    "country": "USA",
+    "year": "1968",
+    "genre": "SciFi",
+    "sub-genre": "Space Opera",
+    "stars": [
+      "Keir Dullea",
+      "Gary Lockwood",
+      "William Sylvester"
+    ],
+    "director": "Stanley Kubrick",
+    "writer": "Stanley Kubrick, Arthur C. Clarke",
+    "popu": 80,
+    "production_house": "Metro-Goldwyn-Mayer",
+    "movie": "2001: A Space Odyssey",
+    "movie_plot": "Humanity finds a mysterious artifact buried on the Moon, which leads them to a journey to Jupiter with the sentient supercomputer HAL 9000.",
+    "awards": [
+      "Won 1 Academy Award"
+    ]
+  },
+  {
+    "title": "Get Out",
+    "imdb_rating": 7.7,
+    "language": "English",
+    "country": "USA",
+    "year": "2017",
+    "genre": "Horror",
+    "sub-genre": "Psychological",
+    "stars": [
+      "Daniel Kaluuya",
+      "Allison Williams",
+      "Catherine Keener"
+    ],
+    "director": "Jordan Peele",
+    "writer": "Jordan Peele",
+    "popu": 79,
+    "production_house": "Blumhouse Productions",
+    "movie": "Get Out",
+    "movie_plot": "A young black man uncovers a disturbing secret when he meets the family of his white girlfriend.",
+    "awards": [
+      "Won the Academy Award for Best Original Screenplay"
+    ]
+  },
+  {
+    "title": "Mad Max: Fury Road",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "Australia",
+    "year": "2015",
+    "genre": "Action",
+    "sub-genre": "Post-Apocalyptic",
+    "stars": [
+      "Tom Hardy",
+      "Charlize Theron",
+      "Nicholas Hoult"
+    ],
+    "director": "George Miller",
+    "writer": "George Miller, Brendan McCarthy, Nico Lathouris",
+    "popu": 78,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "Mad Max: Fury Road",
+    "movie_plot": "In a post-apocalyptic wasteland, a drifter named Max teams up with a mysterious woman to escape from a tyrannical ruler.",
+    "awards": [
+      "Won 6 Academy Awards"
+    ]
+  },
+  {
+    "title": "No Country for Old Men",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "2007",
+    "genre": "Thriller",
+    "sub-genre": "Neo-Western",
+    "stars": [
+      "Javier Bardem",
+      "Josh Brolin",
+      "Tommy Lee Jones"
+    ],
+    "director": "Joel Coen, Ethan Coen",
+    "writer": "Joel Coen, Ethan Coen",
+    "popu": 77,
+    "production_house": "Miramax Films",
+    "movie": "No Country for Old Men",
+    "movie_plot": "A hunter stumbles across a drug deal gone wrong, takes the money, and is hunted by a psychopathic killer.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "The Thing",
+    "imdb_rating": 8.2,
+    "language": "English",
+    "country": "USA",
+    "year": "1982",
+    "genre": "Horror",
+    "sub-genre": "SciFi",
+    "stars": [
+      "Kurt Russell",
+      "Wilford Brimley"
+    ],
+    "director": "John Carpenter",
+    "writer": "Bill Lancaster",
+    "popu": 76,
+    "production_house": "Universal Pictures",
+    "movie": "The Thing",
+    "movie_plot": "A research team in Antarctica is terrorized by an alien shape-shifter that assimilates and imitates its victims.",
+    "awards": [
+      "Nominated for Best Horror Film at the Saturn Awards"
+    ]
+  },
+  {
+    "title": "A Clockwork Orange",
+    "imdb_rating": 8.3,
+    "language": "English",
+    "country": "UK",
+    "year": "1971",
+    "genre": "SciFi",
+    "sub-genre": "Dystopian",
+    "stars": [
+      "Malcolm McDowell",
+      "Patrick Magee",
+      "Adrienne Corri"
+    ],
+    "director": "Stanley Kubrick",
+    "writer": "Stanley Kubrick, Anthony Burgess",
+    "popu": 75,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "A Clockwork Orange",
+    "movie_plot": "In a futuristic Britain, a gang leader is imprisoned and volunteers for an experimental rehabilitation program.",
+    "awards": [
+      "Nominated for 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "Train to Busan",
+    "imdb_rating": 7.6,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2016",
+    "genre": "Horror",
+    "sub-genre": "Zombie",
+    "stars": [
+      "Gong Yoo",
+      "Jung Yu-mi",
+      "Ma Dong-seok"
+    ],
+    "director": "Yeon Sang-ho",
+    "writer": "Park Joo-suk",
+    "popu": 74,
+    "production_house": "Next Entertainment World",
+    "movie": "Train to Busan",
+    "movie_plot": "A father and his daughter are trapped on a train during a zombie apocalypse in South Korea.",
+    "awards": [
+      "Won Best Director at the Fantasia International Film Festival"
+    ]
+  },
+  {
+    "title": "Blade Runner",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "1982",
+    "genre": "SciFi",
+    "sub-genre": "Cyberpunk",
+    "stars": [
+      "Harrison Ford",
+      "Rutger Hauer",
+      "Sean Young"
+    ],
+    "director": "Ridley Scott",
+    "writer": "Hampton Fancher, David Webb Peoples",
+    "popu": 73,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "Blade Runner",
+    "movie_plot": "A cop hunts down four genetically engineered beings who have returned to earth to find their creator.",
+    "awards": [
+      "Nominated for 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Cabinet of Dr. Caligari",
+    "imdb_rating": 8.1,
+    "language": "German",
+    "country": "Germany",
+    "year": "1920",
+    "genre": "Horror",
+    "sub-genre": "Psychological",
+    "stars": [
+      "Werner Krauss",
+      "Conrad Veidt",
+      "Lil Dagover"
+    ],
+    "director": "Robert Wiene",
+    "writer": "Hans Janowitz, Carl Mayer",
+    "popu": 72,
+    "production_house": "Decla-Bioscop AG",
+    "movie": "The Cabinet of Dr. Caligari",
+    "movie_plot": "A hypnotist uses a sleepwalker to commit murders and terrorize a German mountain town.",
+    "awards": [
+      "Critically acclaimed classic, no major awards"
+    ]
+  },
+  {
+    "title": "Mad Max",
+    "imdb_rating": 6.9,
+    "language": "English",
+    "country": "Australia",
+    "year": "1979",
+    "genre": "Action",
+    "sub-genre": "Dystopian",
+    "stars": [
+      "Mel Gibson",
+      "Joanne Samuel",
+      "Hugh Keays-Byrne"
+    ],
+    "director": "George Miller",
+    "writer": "James McCausland, George Miller",
+    "popu": 71,
+    "production_house": "Kennedy Miller Productions",
+    "movie": "Mad Max",
+    "movie_plot": "In a post-apocalyptic future, a police officer sets out to avenge the death of his family.",
+    "awards": [
+      "Won AACTA Award for Best Film"
+    ]
+  },
+  {
+    "title": "Dracula",
+    "imdb_rating": 7.5,
+    "language": "English",
+    "country": "USA",
+    "year": "1931",
+    "genre": "Horror",
+    "sub-genre": "Supernatural",
+    "stars": [
+      "Bela Lugosi",
+      "Helen Chandler",
+      "David Manners"
+    ],
+    "director": "Tod Browning",
+    "writer": "Garrett Fort",
+    "popu": 70,
+    "production_house": "Universal Pictures",
+    "movie": "Dracula",
+    "movie_plot": "The ancient vampire Count Dracula travels to London to find new victims to prey on.",
+    "awards": [
+      "Critically acclaimed classic, no major awards"
+    ]
+  },
+  {
+    "title": "The Exorcist",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "1973",
+    "genre": "Horror",
+    "sub-genre": "Supernatural",
+    "stars": [
+      "Ellen Burstyn",
+      "Max von Sydow",
+      "Linda Blair"
+    ],
+    "director": "William Friedkin",
+    "writer": "William Peter Blatty",
+    "popu": 7,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "The Exorcist",
+    "movie_plot": "A mother seeks the help of two priests to save her young daughter from a demonic possession that has taken hold of her.",
+    "awards": [
+      "Won 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Sixth Sense",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "1999",
+    "genre": "Thriller",
+    "sub-genre": "Supernatural",
+    "stars": [
+      "Bruce Willis",
+      "Haley Joel Osment",
+      "Toni Collette"
+    ],
+    "director": "M. Night Shyamalan",
+    "writer": "M. Night Shyamalan",
+    "popu": 68,
+    "production_house": "Hollywood Pictures",
+    "movie": "The Sixth Sense",
+    "movie_plot": "A child psychologist tries to help a young boy who can communicate with spirits.",
+    "awards": [
+      "Nominated for 6 Academy Awards"
+    ]
+  },
+  {
+    "title": "Get Carter",
+    "imdb_rating": 7.4,
+    "language": "English",
+    "country": "UK",
+    "year": "1971",
+    "genre": "Crime",
+    "sub-genre": "Gangster",
+    "stars": [
+      "Michael Caine",
+      "Ian Hendry",
+      "Britt Ekland"
+    ],
+    "director": "Mike Hodges",
+    "writer": "Mike Hodges",
+    "popu": 67,
+    "production_house": "Metro-Goldwyn-Mayer",
+    "movie": "Get Carter",
+    "movie_plot": "A London gangster returns to his hometown of Newcastle to investigate his brother's suspicious death.",
+    "awards": [
+      "Considered a cult classic"
+    ]
+  },
+  {
+    "title": "City of God",
+    "imdb_rating": 8.6,
+    "language": "Portuguese",
+    "country": "Brazil",
+    "year": "2002",
+    "genre": "Crime",
+    "sub-genre": "Urban Drama",
+    "stars": [
+      "Alexandre Rodrigues",
+      "Leandro Firmino",
+      "Phellipe Haagensen"
+    ],
+    "director": "Fernando Meirelles, K\u00e1tia Lund",
+    "writer": "Br\u00e1ulio Mantovani",
+    "popu": 3,
+    "production_house": "O2 Filmes",
+    "movie": "City of God",
+    "movie_plot": "In the Cidade de Deus favela of Rio de Janeiro, two young men follow different paths: one becomes a photographer and documents the escalating violence, while the other becomes a notorious drug dealer.",
+    "awards": [
+      "Nominated for 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "Inglourious Basterds",
+    "imdb_rating": 8.3,
+    "language": "English, German, French, Italian",
+    "country": "USA, Germany",
+    "year": "2009",
+    "genre": "War",
+    "sub-genre": "Revenge",
+    "stars": [
+      "Brad Pitt",
+      "Christoph Waltz",
+      "Eli Roth"
+    ],
+    "director": "Quentin Tarantino",
+    "writer": "Quentin Tarantino",
+    "popu": 31,
+    "production_house": "The Weinstein Company",
+    "movie": "Inglourious Basterds",
+    "movie_plot": "In Nazi-occupied France, a group of Jewish-American soldiers known as 'The Basterds' are tasked with instilling fear in the Third Reich. Their paths cross with a young Jewish woman running a cinema, who has a plan of her own for revenge.",
+    "awards": [
+      "Won Oscar for Best Supporting Actor"
+    ]
+  },
+  {
+    "title": "Whiplash",
+    "imdb_rating": 8.5,
+    "language": "English",
+    "country": "USA",
+    "year": "2014",
+    "genre": "Drama",
+    "sub-genre": "Musical",
+    "stars": [
+      "Miles Teller",
+      "J.K. Simmons",
+      "Paul Reiser"
+    ],
+    "director": "Damien Chazelle",
+    "writer": "Damien Chazelle",
+    "popu": 64,
+    "production_house": "Bold Films",
+    "movie": "Whiplash",
+    "movie_plot": "A young jazz drummer enrolls at a prestigious music academy, where he is pushed to his limits by an abusive instructor.",
+    "awards": [
+      "Won 3 Academy Awards"
+    ]
+  },
+  {
+    "title": "La La Land",
+    "imdb_rating": 8.0,
+    "language": "English",
+    "country": "USA",
+    "year": "2016",
+    "genre": "Musical",
+    "sub-genre": "Romantic",
+    "stars": [
+      "Ryan Gosling",
+      "Emma Stone"
+    ],
+    "director": "Damien Chazelle",
+    "writer": "Damien Chazelle",
+    "popu": 63,
+    "production_house": "Summit Entertainment",
+    "movie": "La La Land",
+    "movie_plot": "A jazz pianist and an aspiring actress fall in love while navigating their careers in Los Angeles.",
+    "awards": [
+      "Won 6 Academy Awards"
+    ]
+  },
+  {
+    "title": "Django Unchained",
+    "imdb_rating": 8.4,
+    "language": "English",
+    "country": "USA",
+    "year": "2012",
+    "genre": "Western",
+    "sub-genre": "Revenge",
+    "stars": [
+      "Jamie Foxx",
+      "Christoph Waltz",
+      "Leonardo DiCaprio"
+    ],
+    "director": "Quentin Tarantino",
+    "writer": "Quentin Tarantino",
+    "popu": 62,
+    "production_house": "The Weinstein Company",
+    "movie": "Django Unchained",
+    "movie_plot": "A freed slave travels across the United States with a German bounty hunter to rescue his wife from a cruel plantation owner.",
+    "awards": [
+      "Won 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "Kill Bill: Vol. 1",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "2003",
+    "genre": "Action",
+    "sub-genre": "Martial Arts",
+    "stars": [
+      "Uma Thurman",
+      "Lucy Liu",
+      "Daryl Hannah"
+    ],
+    "director": "Quentin Tarantino",
+    "writer": "Quentin Tarantino",
+    "popu": 61,
+    "production_house": "Miramax Films",
+    "movie": "Kill Bill: Vol. 1",
+    "movie_plot": "A former assassin, waking up from a four-year coma, seeks revenge on her former teammates who tried to kill her.",
+    "awards": [
+      "Nominated for 1 Golden Globe"
+    ]
+  },
+  {
+    "title": "The Hateful Eight",
+    "imdb_rating": 7.8,
+    "language": "English",
+    "country": "USA",
+    "year": "2015",
+    "genre": "Western",
+    "sub-genre": "Mystery",
+    "stars": [
+      "Samuel L. Jackson",
+      "Kurt Russell",
+      "Jennifer Jason Leigh"
+    ],
+    "director": "Quentin Tarantino",
+    "writer": "Quentin Tarantino",
+    "popu": 60,
+    "production_house": "The Weinstein Company",
+    "movie": "The Hateful Eight",
+    "movie_plot": "In post-Civil War Wyoming, a bounty hunter and his fugitive get caught in a blizzard and must seek shelter at a stagecoach stop with a group of shady strangers.",
+    "awards": [
+      "Won the Academy Award for Best Original Score"
+    ]
+  },
+  {
+    "title": "Mad Max 2: The Road Warrior",
+    "imdb_rating": 7.6,
+    "language": "English",
+    "country": "Australia",
+    "year": "1981",
+    "genre": "Action",
+    "sub-genre": "Post-Apocalyptic",
+    "stars": [
+      "Mel Gibson",
+      "Bruce Spence"
+    ],
+    "director": "George Miller",
+    "writer": "Terry Hayes, George Miller",
+    "popu": 59,
+    "production_house": "Kennedy Miller Productions",
+    "movie": "Mad Max 2: The Road Warrior",
+    "movie_plot": "In a post-apocalyptic future, a drifter protects a small, oil-rich community from a gang of bandits.",
+    "awards": [
+      "Nominated for Best Sci-Fi Film at the Saturn Awards"
+    ]
+  },
+  {
+    "title": "The Shining",
+    "imdb_rating": 8.4,
+    "language": "English",
+    "country": "UK",
+    "year": "1980",
+    "genre": "Horror",
+    "sub-genre": "Psychological",
+    "stars": [
+      "Jack Nicholson",
+      "Shelley Duvall",
+      "Danny Lloyd"
+    ],
+    "director": "Stanley Kubrick",
+    "writer": "Stanley Kubrick, Diane Johnson",
+    "popu": 58,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "The Shining",
+    "movie_plot": "A family spends a winter in an isolated hotel, where a sinister presence influences the father's descent into madness.",
+    "awards": [
+      "Nominated for Worst Director at the Golden Raspberry Awards"
+    ]
+  },
+  {
+    "title": "Dr. Strangelove",
+    "imdb_rating": 8.4,
+    "language": "English",
+    "country": "USA, UK",
+    "year": "1964",
+    "genre": "Comedy",
+    "sub-genre": "Satire",
+    "stars": [
+      "Peter Sellers",
+      "George C. Scott",
+      "Sterling Hayden"
+    ],
+    "director": "Stanley Kubrick",
+    "writer": "Stanley Kubrick, Terry Southern, Peter George",
+    "popu": 51,
+    "production_house": "Hawk Films",
+    "movie": "Dr. Strangelove",
+    "movie_plot": "A deranged U.S. Air Force general orders a pre-emptive nuclear strike on the Soviet Union. The President, his advisors, and a former Nazi scientist must try to stop the impending Armageddon.",
+    "awards": [
+      "Nominated for 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Lord of the Rings: The Two Towers",
+    "imdb_rating": 8.7,
+    "language": "English",
+    "country": "New Zealand",
+    "year": "2002",
+    "genre": "Fantasy",
+    "sub-genre": "High Fantasy",
+    "stars": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Viggo Mortensen"
+    ],
+    "director": "Peter Jackson",
+    "writer": "J.R.R. Tolkien, Fran Walsh, Philippa Boyens",
+    "popu": 52,
+    "production_house": "New Line Cinema",
+    "movie": "The Lord of the Rings: The Two Towers",
+    "movie_plot": "While Frodo and Sam continue their journey to Mordor, the remaining members of the fellowship join forces with new allies to fight against the forces of Saruman and Sauron.",
+    "awards": [
+      "Won 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Lord of the Rings: The Return of the King",
+    "imdb_rating": 8.9,
+    "language": "English",
+    "country": "New Zealand",
+    "year": "2003",
+    "genre": "Fantasy",
+    "sub-genre": "High Fantasy",
+    "stars": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Viggo Mortensen"
+    ],
+    "director": "Peter Jackson",
+    "writer": "J.R.R. Tolkien, Fran Walsh, Philippa Boyens",
+    "popu": 51,
+    "production_house": "New Line Cinema",
+    "movie": "The Lord of the Rings: The Return of the King",
+    "movie_plot": "The final battle for Middle-earth begins, as Frodo and Sam race against time to destroy the One Ring.",
+    "awards": [
+      "Won 11 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "imdb_rating": 9.3,
+    "language": "English",
+    "country": "USA",
+    "year": "1994",
+    "genre": "Drama",
+    "sub-genre": "Prison",
+    "stars": [
+      "Tim Robbins",
+      "Morgan Freeman",
+      "Bob Gunton"
+    ],
+    "director": "Frank Darabont",
+    "writer": "Frank Darabont",
+    "popu": 45,
+    "production_house": "Castle Rock Entertainment",
+    "movie": "The Shawshank Redemption",
+    "movie_plot": "A successful banker is wrongly convicted of murdering his wife and her lover. He is sent to a brutal prison, where he maintains his hope and earns the respect of his fellow inmates, including a man named 'Red.'",
+    "awards": [
+      "Nominated for 7 Academy Awards"
+    ]
+  },
+  {
+    "title": "Forrest Gump",
+    "imdb_rating": 8.8,
+    "language": "English",
+    "country": "USA",
+    "year": "1994",
+    "genre": "Drama",
+    "sub-genre": "Biographical",
+    "stars": [
+      "Tom Hanks",
+      "Robin Wright",
+      "Gary Sinise"
+    ],
+    "director": "Robert Zemeckis",
+    "writer": "Eric Roth",
+    "popu": 48,
+    "production_house": "Paramount Pictures",
+    "movie": "Forrest Gump",
+    "movie_plot": "A man with a low IQ recounts his life story, which includes key moments from American history.",
+    "awards": [
+      "Won 6 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "The Green Mile",
+    "imdb_rating": 8.6,
+    "language": "English",
+    "country": "USA",
+    "year": "1999",
+    "genre": "Drama",
+    "sub-genre": "Supernatural",
+    "stars": [
+      "Tom Hanks",
+      "Michael Clarke Duncan"
+    ],
+    "director": "Frank Darabont",
+    "writer": "Stephen King, Frank Darabont",
+    "popu": 47,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "The Green Mile",
+    "movie_plot": "A death row prison guard discovers that a black inmate with a supernatural gift has been falsely convicted of a crime he did not commit.",
+    "awards": [
+      "Nominated for 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "Schindler's List",
+    "imdb_rating": 9.0,
+    "language": "English",
+    "country": "USA",
+    "year": "1993",
+    "genre": "Drama",
+    "sub-genre": "Historical",
+    "stars": [
+      "Liam Neeson",
+      "Ben Kingsley",
+      "Ralph Fiennes"
+    ],
+    "director": "Steven Spielberg",
+    "writer": "Steven Zaillian",
+    "popu": 46,
+    "production_house": "Universal Pictures",
+    "movie": "Schindler's List",
+    "movie_plot": "The true story of a German industrialist who saved over a thousand Jewish refugees from the Holocaust.",
+    "awards": [
+      "Won 7 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "The Pianist",
+    "imdb_rating": 8.5,
+    "language": "English",
+    "country": "Poland",
+    "year": "2002",
+    "genre": "Drama",
+    "sub-genre": "Biographical",
+    "stars": [
+      "Adrien Brody",
+      "Thomas Kretschmann",
+      "Frank Finlay"
+    ],
+    "director": "Roman Polanski",
+    "writer": "Ronald Harwood",
+    "popu": 45,
+    "production_house": "StudioCanal",
+    "movie": "The Pianist",
+    "movie_plot": "A Polish Jewish musician struggles to survive in the Warsaw Ghetto during World War II.",
+    "awards": [
+      "Won 3 Academy Awards"
+    ]
+  },
+  {
+    "title": "Fight Club",
+    "imdb_rating": 8.8,
+    "language": "English",
+    "country": "USA",
+    "year": "1999",
+    "genre": "Thriller",
+    "sub-genre": "Psychological",
+    "stars": [
+      "Brad Pitt",
+      "Edward Norton",
+      "Helena Bonham Carter"
+    ],
+    "director": "David Fincher",
+    "writer": "Jim Uhls",
+    "popu": 44,
+    "production_house": "20th Century Fox",
+    "movie": "Fight Club",
+    "movie_plot": "An insomniac office worker and a soap maker form an underground fight club that evolves into something much, much more.",
+    "awards": [
+      "Nominated for 1 Academy Award"
+    ]
+  },
+  {
+    "title": "The Departed",
+    "imdb_rating": 8.5,
+    "language": "English",
+    "country": "USA",
+    "year": "2006",
+    "genre": "Crime",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Leonardo DiCaprio",
+      "Matt Damon",
+      "Jack Nicholson"
+    ],
+    "director": "Martin Scorsese",
+    "writer": "William Monahan",
+    "popu": 32,
+    "production_house": "Plan B Entertainment",
+    "movie": "The Departed",
+    "movie_plot": "In Boston, a state trooper goes undercover to infiltrate a powerful Irish gang, while a mole from the gang rises through the ranks of the police force. Both sides race to discover the other's identity.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Goodfellas",
+    "imdb_rating": 8.7,
+    "language": "English",
+    "country": "USA",
+    "year": "1990",
+    "genre": "Crime",
+    "sub-genre": "Biographical",
+    "stars": [
+      "Robert De Niro",
+      "Ray Liotta",
+      "Joe Pesci"
+    ],
+    "director": "Martin Scorsese",
+    "writer": "Nicholas Pileggi, Martin Scorsese",
+    "popu": 42,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "Goodfellas",
+    "movie_plot": "The rise and fall of mobster Henry Hill as he and his friends navigate the world of organized crime.",
+    "awards": [
+      "Won 1 Academy Award"
+    ]
+  },
+  {
+    "title": "Saving Private Ryan",
+    "imdb_rating": 8.6,
+    "language": "English",
+    "country": "USA",
+    "year": "1998",
+    "genre": "Action",
+    "sub-genre": "War",
+    "stars": [
+      "Tom Hanks",
+      "Matt Damon",
+      "Tom Sizemore"
+    ],
+    "director": "Steven Spielberg",
+    "writer": "Robert Rodat",
+    "popu": 41,
+    "production_house": "DreamWorks",
+    "movie": "Saving Private Ryan",
+    "movie_plot": "A group of U.S. soldiers is sent behind enemy lines to retrieve a paratrooper whose three brothers have already been killed in action.",
+    "awards": [
+      "Won 5 Academy Awards"
+    ]
+  },
+  {
+    "title": "L\u00e9on: The Professional",
+    "imdb_rating": 8.5,
+    "language": "English",
+    "country": "France",
+    "year": "1994",
+    "genre": "Crime",
+    "sub-genre": "Action",
+    "stars": [
+      "Jean Reno",
+      "Gary Oldman",
+      "Natalie Portman"
+    ],
+    "director": "Luc Besson",
+    "writer": "Luc Besson",
+    "popu": 40,
+    "production_house": "Gaumont",
+    "movie": "L\u00e9on: The Professional",
+    "movie_plot": "A young girl is taken in by a professional hitman after her family is murdered, and she becomes his proteg\u00e9.",
+    "awards": [
+      "Nominated for 7 C\u00e9sars"
+    ]
+  },
+  {
+    "title": "Jaws",
+    "imdb_rating": 8.0,
+    "language": "English",
+    "country": "USA",
+    "year": "1975",
+    "genre": "Thriller",
+    "sub-genre": "Adventure",
+    "stars": [
+      "Roy Scheider",
+      "Robert Shaw",
+      "Richard Dreyfuss"
+    ],
+    "director": "Steven Spielberg",
+    "writer": "Peter Benchley, Carl Gottlieb",
+    "popu": 39,
+    "production_house": "Universal Pictures",
+    "movie": "Jaws",
+    "movie_plot": "A police chief, a marine biologist, and a grizzled shark hunter team up to kill a man-eating great white shark that is terrorizing a coastal town.",
+    "awards": [
+      "Won 3 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Texas Chain Saw Massacre",
+    "imdb_rating": 7.4,
+    "language": "English",
+    "country": "USA",
+    "year": "1974",
+    "genre": "Horror",
+    "sub-genre": "Slasher",
+    "stars": [
+      "Marilyn Burns",
+      "Allen Danziger",
+      "Paul A. Partain"
+    ],
+    "director": "Tobe Hooper",
+    "writer": "Kim Henkel, Tobe Hooper",
+    "popu": 37,
+    "production_house": "Vortex",
+    "movie": "The Texas Chain Saw Massacre",
+    "movie_plot": "Five friends on a road trip fall victim to a family of cannibals in rural Texas.",
+    "awards": [
+      "Considered a cult classic"
+    ]
+  },
+  {
+    "title": "The Terminator",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "UK",
+    "year": "1984",
+    "genre": "SciFi",
+    "sub-genre": "Action",
+    "stars": [
+      "Arnold Schwarzenegger",
+      "Linda Hamilton",
+      "Michael Biehn"
+    ],
+    "director": "James Cameron",
+    "writer": "James Cameron, Gale Anne Hurd",
+    "popu": 35,
+    "production_house": "Hemdale Film Corporation",
+    "movie": "The Terminator",
+    "movie_plot": "A cyborg assassin is sent back in time from the year 2029 to kill a woman whose unborn son will one day save humanity from a robotic apocalypse.",
+    "awards": [
+      "Considered a classic, no major awards"
+    ]
+  },
+  {
+    "title": "Back to the Future",
+    "imdb_rating": 8.5,
+    "language": "English",
+    "country": "USA",
+    "year": "1985",
+    "genre": "SciFi",
+    "sub-genre": "Comedy",
+    "stars": [
+      "Michael J. Fox",
+      "Christopher Lloyd",
+      "Lea Thompson"
+    ],
+    "director": "Robert Zemeckis",
+    "writer": "Robert Zemeckis, Bob Gale",
+    "popu": 29,
+    "production_house": "Amblin Entertainment",
+    "movie": "Back to the Future",
+    "movie_plot": "A high school student is accidentally sent 30 years into the past in a time-traveling DeLorean.",
+    "awards": [
+      "Won 1 Academy Award"
+    ]
+  },
+  {
+    "title": "The Dark Knight Rises",
+    "imdb_rating": 8.4,
+    "language": "English",
+    "country": "USA",
+    "year": "2012",
+    "genre": "Action",
+    "sub-genre": "Superhero",
+    "stars": [
+      "Christian Bale",
+      "Tom Hardy",
+      "Anne Hathaway"
+    ],
+    "director": "Christopher Nolan",
+    "writer": "Jonathan Nolan, Christopher Nolan",
+    "popu": 28,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "The Dark Knight Rises",
+    "movie_plot": "Batman must return to save Gotham City from a brutal new terrorist leader, Bane.",
+    "awards": [
+      "Nominated for 1 BAFTA"
+    ]
+  },
+  {
+    "title": "All the President's Men",
+    "imdb_rating": 8.0,
+    "language": "English",
+    "country": "USA",
+    "year": "1976",
+    "genre": "Thriller",
+    "sub-genre": "Political",
+    "stars": [
+      "Dustin Hoffman",
+      "Robert Redford",
+      "Jason Robards"
+    ],
+    "director": "Alan J. Pakula",
+    "writer": "William Goldman",
+    "popu": 1,
+    "production_house": "Wildwood Enterprises",
+    "movie": "All the President's Men",
+    "movie_plot": "Two Washington Post reporters, Bob Woodward and Carl Bernstein, investigate the 1972 Watergate scandal that eventually led to President Richard Nixon's resignation.",
+    "awards": [
+      "Won 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Princess Bride",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "1987",
+    "genre": "Fantasy",
+    "sub-genre": "Romantic Comedy",
+    "stars": [
+      "Cary Elwes",
+      "Robin Wright",
+      "Mandy Patinkin"
+    ],
+    "director": "Rob Reiner",
+    "writer": "William Goldman",
+    "popu": 4,
+    "production_house": "Act III Communications",
+    "movie": "The Princess Bride",
+    "movie_plot": "A charming and fantastical fairytale, told in a story within a story, follows a farmhand named Westley who must rescue his true love, Princess Buttercup, from a villainous prince.",
+    "awards": [
+      "Nominated for Oscar for Best Original Song"
+    ]
+  },
+  {
+    "title": "When Harry Met Sally...",
+    "imdb_rating": 7.7,
+    "language": "English",
+    "country": "USA",
+    "year": "1989",
+    "genre": "Romance",
+    "sub-genre": "Comedy",
+    "stars": [
+      "Billy Crystal",
+      "Meg Ryan",
+      "Carrie Fisher"
+    ],
+    "director": "Rob Reiner",
+    "writer": "Nora Ephron",
+    "popu": 5,
+    "production_house": "Castle Rock Entertainment",
+    "movie": "When Harry Met Sally...",
+    "movie_plot": "Harry and Sally, friends who first meet on a cross-country drive, grapple with the question of whether a man and a woman can be strictly platonic friends.",
+    "awards": [
+      "Nominated for Oscar for Best Original Screenplay"
+    ]
+  },
+  {
+    "title": "Singin' in the Rain",
+    "imdb_rating": 8.3,
+    "language": "English",
+    "country": "USA",
+    "year": "1952",
+    "genre": "Musical",
+    "sub-genre": "Comedy",
+    "stars": [
+      "Gene Kelly",
+      "Donald O'Connor",
+      "Debbie Reynolds"
+    ],
+    "director": "Stanley Donen, Gene Kelly",
+    "writer": "Betty Comden, Adolph Green",
+    "popu": 6,
+    "production_house": "Metro-Goldwyn-Mayer",
+    "movie": "Singin' in the Rain",
+    "movie_plot": "A silent film star falls for a chorus girl, but his career is threatened by the advent of 'talkies.' The film playfully spoofs the tumultuous transition of Hollywood from silent to sound films.",
+    "awards": [
+      "Nominated for 2 Academy Awards",
+      "Inducted into the National Film Registry"
+    ]
+  },
+  {
+    "title": "Y tu mam\u00e1 tambi\u00e9n",
+    "imdb_rating": 7.6,
+    "language": "Spanish",
+    "country": "Mexico",
+    "year": "2001",
+    "genre": "Drama",
+    "sub-genre": "Coming-of-Age",
+    "stars": [
+      "Maribel Verd\u00fa",
+      "Gael Garc\u00eda Bernal",
+      "Diego Luna"
+    ],
+    "director": "Alfonso Cuar\u00f3n",
+    "writer": "Alfonso Cuar\u00f3n, Carlos Cuar\u00f3n",
+    "popu": 8,
+    "production_house": "Fondo de Fomento a la Calidad Cinematogr\u00e1fica",
+    "movie": "Y tu mam\u00e1 tambi\u00e9n",
+    "movie_plot": "Two teenage friends embark on a road trip across Mexico with an older, attractive woman, leading to a journey of self-discovery and the complexities of friendship and sexuality.",
+    "awards": [
+      "Nominated for Oscar for Best Original Screenplay"
+    ]
+  },
+  {
+    "title": "Amores Perros",
+    "imdb_rating": 8.1,
+    "language": "Spanish",
+    "country": "Mexico",
+    "year": "2000",
+    "genre": "Drama",
+    "sub-genre": "Anthology",
+    "stars": [
+      "Emilio Echevarr\u00eda",
+      "Gael Garc\u00eda Bernal",
+      "Goya Toledo"
+    ],
+    "director": "Alejandro Gonz\u00e1lez I\u00f1\u00e1rritu",
+    "writer": "Guillermo Arriaga",
+    "popu": 9,
+    "production_house": "Altavista Films",
+    "movie": "Amores Perros",
+    "movie_plot": "Three intertwined stories, each connected by a car crash, explore the harsh realities of life in Mexico City and the relationships between humans and their dogs.",
+    "awards": [
+      "Nominated for Oscar for Best Foreign Language Film"
+    ]
+  },
+  {
+    "title": "The Big Lebowski",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "1998",
+    "genre": "Comedy",
+    "sub-genre": "Crime",
+    "stars": [
+      "Jeff Bridges",
+      "John Goodman",
+      "Julianne Moore"
+    ],
+    "director": "Joel Coen, Ethan Coen",
+    "writer": "Joel Coen, Ethan Coen",
+    "popu": 10,
+    "production_house": "Working Title Films",
+    "movie": "The Big Lebowski",
+    "movie_plot": "A Los Angeles slacker known as 'The Dude' is mistaken for a millionaire with the same name. He seeks restitution for his ruined rug, leading him and his bowling buddies into a bizarre kidnapping plot.",
+    "awards": [
+      "No major awards, but a cult classic"
+    ]
+  },
+  {
+    "title": "La Terra Trema",
+    "imdb_rating": 7.9,
+    "language": "Sicilian",
+    "country": "Italy",
+    "year": "1948",
+    "genre": "Drama",
+    "sub-genre": "Neorealism",
+    "stars": [
+      "Antonio Pietrangeli",
+      "Giuseppe Arcidiacono",
+      "Giovanni Greco"
+    ],
+    "director": "Luchino Visconti",
+    "writer": "Luchino Visconti",
+    "popu": 12,
+    "production_house": "Universit\u00e0 di Palermo",
+    "movie": "La Terra Trema",
+    "movie_plot": "In a small Sicilian fishing village, a young man, enraged by the exploitation of local wholesalers, decides to mortgage his family home to start his own business. The film follows his struggle and the eventual downfall of his family.",
+    "awards": [
+      "Venice Film Festival International Award"
+    ]
+  },
+  {
+    "title": "Ghostbusters",
+    "imdb_rating": 7.8,
+    "language": "English",
+    "country": "USA",
+    "year": "1984",
+    "genre": "Comedy",
+    "sub-genre": "Fantasy",
+    "stars": [
+      "Bill Murray",
+      "Dan Aykroyd",
+      "Sigourney Weaver"
+    ],
+    "director": "Ivan Reitman",
+    "writer": "Dan Aykroyd, Harold Ramis",
+    "popu": 13,
+    "production_house": "Columbia Pictures",
+    "movie": "Ghostbusters",
+    "movie_plot": "Three parapsychologists, kicked out of their university, start a ghost-catching business in New York City. They soon discover a portal to another dimension, unleashing ghosts upon the city.",
+    "awards": [
+      "Nominated for 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "Working Girl",
+    "imdb_rating": 6.8,
+    "language": "English",
+    "country": "USA",
+    "year": "1988",
+    "genre": "Comedy",
+    "sub-genre": "Romantic",
+    "stars": [
+      "Melanie Griffith",
+      "Harrison Ford",
+      "Sigourney Weaver"
+    ],
+    "director": "Mike Nichols",
+    "writer": "Kevin Wade",
+    "popu": 14,
+    "production_house": "20th Century Fox",
+    "movie": "Working Girl",
+    "movie_plot": "An ambitious but timid secretary from Staten Island takes her conniving boss's job after the boss is sidelined by a broken leg. She must navigate a high-stakes business deal to prove her worth.",
+    "awards": [
+      "Won Oscar for Best Original Song"
+    ]
+  },
+  {
+    "title": "The Manchurian Candidate",
+    "imdb_rating": 7.9,
+    "language": "English",
+    "country": "USA",
+    "year": "1962",
+    "genre": "Thriller",
+    "sub-genre": "Political",
+    "stars": [
+      "Frank Sinatra",
+      "Laurence Harvey",
+      "Angela Lansbury"
+    ],
+    "director": "John Frankenheimer",
+    "writer": "George Axelrod",
+    "popu": 15,
+    "production_house": "MC Productions",
+    "movie": "The Manchurian Candidate",
+    "movie_plot": "A U.S. Army veteran is brainwashed by communists during the Korean War and is unwittingly turned into a political assassin. A former comrade struggles to uncover the plot before it's too late.",
+    "awards": [
+      "Nominated for 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "Die Hard",
+    "imdb_rating": 8.2,
+    "language": "English",
+    "country": "USA",
+    "year": "1988",
+    "genre": "Action",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Bruce Willis",
+      "Alan Rickman",
+      "Bonnie Bedelia"
+    ],
+    "director": "John McTiernan",
+    "writer": "Jeb Stuart, Steven E. de Souza",
+    "popu": 16,
+    "production_house": "20th Century Fox",
+    "movie": "Die Hard",
+    "movie_plot": "New York City cop John McClane travels to Los Angeles to spend Christmas with his estranged wife. Their holiday is interrupted when terrorists seize control of the building where his wife works.",
+    "awards": [
+      "Nominated for 4 Academy Awards"
+    ]
+  },
+  {
+    "title": "Splash",
+    "imdb_rating": 6.2,
+    "language": "English",
+    "country": "USA",
+    "year": "1984",
+    "genre": "Romance",
+    "sub-genre": "Fantasy Comedy",
+    "stars": [
+      "Tom Hanks",
+      "Daryl Hannah",
+      "John Candy"
+    ],
+    "director": "Ron Howard",
+    "writer": "Lowell Ganz, Babaloo Mandel",
+    "popu": 17,
+    "production_house": "Touchstone Films",
+    "movie": "Splash",
+    "movie_plot": "A man falls in love with a beautiful mermaid who has been searching for him since he was a child. She comes to New York City and must learn to live on land before her identity is revealed.",
+    "awards": [
+      "Nominated for Oscar for Best Original Screenplay"
+    ]
+  },
+  {
+    "title": "The Secret in Their Eyes",
+    "imdb_rating": 8.2,
+    "language": "Spanish",
+    "country": "Argentina",
+    "year": "2009",
+    "genre": "Thriller",
+    "sub-genre": "Crime Drama",
+    "stars": [
+      "Ricardo Dar\u00edn",
+      "Soledad Villamil",
+      "Guillermo Francella"
+    ],
+    "director": "Juan Jos\u00e9 Campanella",
+    "writer": "Eduardo Sacheri, Juan Jos\u00e9 Campanella",
+    "popu": 18,
+    "production_house": "Haddock Films",
+    "movie": "The Secret in Their Eyes",
+    "movie_plot": "A retired legal counselor writes a novel about an unresolved rape and murder case from his past, prompting him to revisit the details and his long-lost love interest, a judge who worked on the case.",
+    "awards": [
+      "Won Oscar for Best Foreign Language Film"
+    ]
+  },
+  {
+    "title": "Big",
+    "imdb_rating": 7.3,
+    "language": "English",
+    "country": "USA",
+    "year": "1988",
+    "genre": "Fantasy",
+    "sub-genre": "Comedy",
+    "stars": [
+      "Tom Hanks",
+      "Elizabeth Perkins",
+      "Robert Loggia"
+    ],
+    "director": "Penny Marshall",
+    "writer": "Gary Ross, Anne Spielberg",
+    "popu": 19,
+    "production_house": "Gracie Films",
+    "movie": "Big",
+    "movie_plot": "A 12-year-old boy wishes to be 'big' at a carnival machine and wakes up as an adult. He must navigate the complexities of grown-up life, including a job at a toy company and a romance with a co-worker.",
+    "awards": [
+      "Nominated for 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Last Emperor",
+    "imdb_rating": 7.7,
+    "language": "English",
+    "country": "UK, Italy, China",
+    "year": "1987",
+    "genre": "Biographical",
+    "sub-genre": "Historical Drama",
+    "stars": [
+      "John Lone",
+      "Joan Chen",
+      "Peter O'Toole"
+    ],
+    "director": "Bernardo Bertolucci",
+    "writer": "Mark Peploe, Bernardo Bertolucci",
+    "popu": 20,
+    "production_house": "Columbia Pictures",
+    "movie": "The Last Emperor",
+    "movie_plot": "The film chronicles the life of Pu Yi, the last emperor of China, from his birth and ascension to the throne to his imprisonment and eventual release during the Communist regime.",
+    "awards": [
+      "Won 9 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Elf",
+    "imdb_rating": 7.1,
+    "language": "English",
+    "country": "USA",
+    "year": "2003",
+    "genre": "Comedy",
+    "sub-genre": "Christmas",
+    "stars": [
+      "Will Ferrell",
+      "James Caan",
+      "Zooey Deschanel"
+    ],
+    "director": "Jon Favreau",
+    "writer": "David Berenbaum",
+    "popu": 21,
+    "production_house": "New Line Cinema",
+    "movie": "Elf",
+    "movie_plot": "A human, raised as an elf at the North Pole, travels to New York City to find his biological father and spread Christmas cheer in a world that has lost its holiday spirit.",
+    "awards": [
+      "No major awards, but a modern Christmas classic"
+    ]
+  },
+  {
+    "title": "Do the Right Thing",
+    "imdb_rating": 7.9,
+    "language": "English",
+    "country": "USA",
+    "year": "1989",
+    "genre": "Drama",
+    "sub-genre": "Social",
+    "stars": [
+      "Spike Lee",
+      "Danny Aiello",
+      "Ossie Davis"
+    ],
+    "director": "Spike Lee",
+    "writer": "Spike Lee",
+    "popu": 22,
+    "production_house": "40 Acres and a Mule Filmworks",
+    "movie": "Do the Right Thing",
+    "movie_plot": "On the hottest day of the summer, racial tensions in a Brooklyn neighborhood, particularly between the black residents and the Italian-American owners of a pizzeria, escalate to a tragic conclusion.",
+    "awards": [
+      "Nominated for 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "Good Will Hunting",
+    "imdb_rating": 8.3,
+    "language": "English",
+    "country": "USA",
+    "year": "1997",
+    "genre": "Drama",
+    "sub-genre": "Psychological",
+    "stars": [
+      "Matt Damon",
+      "Robin Williams",
+      "Ben Affleck"
+    ],
+    "director": "Gus Van Sant",
+    "writer": "Matt Damon, Ben Affleck",
+    "popu": 24,
+    "production_house": "Miramax Films",
+    "movie": "Good Will Hunting",
+    "movie_plot": "A young man with a genius-level intellect, working as a janitor at MIT, is forced to re-evaluate his life and confront his inner demons with the help of a psychologist.",
+    "awards": [
+      "Won 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Goonies",
+    "imdb_rating": 7.8,
+    "language": "English",
+    "country": "USA",
+    "year": "1985",
+    "genre": "Adventure",
+    "sub-genre": "Fantasy",
+    "stars": [
+      "Sean Astin",
+      "Josh Brolin",
+      "Jeff Cohen"
+    ],
+    "director": "Richard Donner",
+    "writer": "Chris Columbus",
+    "popu": 25,
+    "production_house": "Amblin Entertainment",
+    "movie": "The Goonies",
+    "movie_plot": "A group of young misfits, facing the loss of their homes, discover an old map that leads to the treasure of a legendary pirate. They embark on a perilous adventure to save their neighborhood.",
+    "awards": [
+      "No major awards, but a cult classic"
+    ]
+  },
+  {
+    "title": "There Will Be Blood",
+    "imdb_rating": 8.2,
+    "language": "English",
+    "country": "USA",
+    "year": "2007",
+    "genre": "Drama",
+    "sub-genre": "Historical",
+    "stars": [
+      "Daniel Day-Lewis",
+      "Paul Dano",
+      "Ciar\u00e1n Hinds"
+    ],
+    "director": "Paul Thomas Anderson",
+    "writer": "Paul Thomas Anderson",
+    "popu": 26,
+    "production_house": "Paramount Vantage",
+    "movie": "There Will Be Blood",
+    "movie_plot": "A turn-of-the-century oil prospector ruthlessly builds an empire, sacrificing his family, morals, and sanity along the way. His ambition is met with conflict from a local preacher.",
+    "awards": [
+      "Won 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "Z",
+    "imdb_rating": 8.3,
+    "language": "French",
+    "country": "Algeria, France",
+    "year": "1969",
+    "genre": "Thriller",
+    "sub-genre": "Political",
+    "stars": [
+      "Yves Montand",
+      "Irene Papas",
+      "Jean-Louis Trintignant"
+    ],
+    "director": "Costa-Gavras",
+    "writer": "Jorge Sempr\u00fan, Costa-Gavras",
+    "popu": 27,
+    "production_house": "Reggane Films",
+    "movie": "Z",
+    "movie_plot": "A prosecutor and a journalist investigate the death of a prominent pacifist politician, who was killed in a hit-and-run accident, and uncover a vast government conspiracy to cover up the assassination.",
+    "awards": [
+      "Won 2 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Elephant Man",
+    "imdb_rating": 8.2,
+    "language": "English",
+    "country": "USA",
+    "year": "1980",
+    "genre": "Biographical",
+    "sub-genre": "Drama",
+    "stars": [
+      "Anthony Hopkins",
+      "John Hurt",
+      "Anne Bancroft"
+    ],
+    "director": "David Lynch",
+    "writer": "Christopher De Vore, Eric Bergren, David Lynch",
+    "popu": 29,
+    "production_house": "Brooksfilms",
+    "movie": "The Elephant Man",
+    "movie_plot": "A Victorian surgeon discovers a severely deformed man, John Merrick, in a freak show. He takes him to a hospital, where he finds that underneath the physical deformities lies a gentle and intelligent soul.",
+    "awards": [
+      "Nominated for 8 Academy Awards"
+    ]
+  },
+  {
+    "title": "A Christmas Story",
+    "imdb_rating": 7.9,
+    "language": "English",
+    "country": "USA",
+    "year": "1983",
+    "genre": "Comedy",
+    "sub-genre": "Family",
+    "stars": [
+      "Peter Billingsley",
+      "Melinda Dillon",
+      "Darren McGavin"
+    ],
+    "director": "Bob Clark",
+    "writer": "Jean Shepherd, Leigh Brown, Bob Clark",
+    "popu": 30,
+    "production_house": "Metro-Goldwyn-Mayer",
+    "movie": "A Christmas Story",
+    "movie_plot": "In the 1940s, a young boy named Ralphie attempts to convince his parents, his teacher, and Santa Claus that a Red Ryder B.B. gun is the perfect Christmas gift.",
+    "awards": [
+      "No major awards, but a holiday classic"
+    ]
+  },
+  {
+    "title": "The Third Man",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "UK",
+    "year": "1949",
+    "genre": "Thriller",
+    "sub-genre": "Noir",
+    "stars": [
+      "Joseph Cotten",
+      "Alida Valli",
+      "Orson Welles"
+    ],
+    "director": "Carol Reed",
+    "writer": "Graham Greene",
+    "popu": 33,
+    "production_house": "London Film Productions",
+    "movie": "The Third Man",
+    "movie_plot": "A naive American pulp novelist travels to post-war Vienna to meet his old friend, but is shocked to learn that his friend was killed in a traffic accident. His investigation into the death uncovers a dark conspiracy.",
+    "awards": [
+      "Won Oscar for Best Cinematography"
+    ]
+  },
+  {
+    "title": "The Wolf of Wall Street",
+    "imdb_rating": 8.2,
+    "language": "English",
+    "country": "USA",
+    "year": "2013",
+    "genre": "Biographical",
+    "sub-genre": "Comedy",
+    "stars": [
+      "Leonardo DiCaprio",
+      "Jonah Hill",
+      "Margot Robbie"
+    ],
+    "director": "Martin Scorsese",
+    "writer": "Terence Winter",
+    "popu": 34,
+    "production_house": "Paramount Pictures",
+    "movie": "The Wolf of Wall Street",
+    "movie_plot": "Based on a true story, a young stockbroker rises to fame and fortune by defrauding wealthy investors. He leads a life of excess and depravity, attracting the attention of the FBI.",
+    "awards": [
+      "Nominated for 5 Academy Awards"
+    ]
+  },
+  {
+    "title": "Children of Men",
+    "imdb_rating": 7.9,
+    "language": "English",
+    "country": "UK, USA",
+    "year": "2006",
+    "genre": "Sci-Fi",
+    "sub-genre": "Dystopian",
+    "stars": [
+      "Clive Owen",
+      "Julianne Moore",
+      "Michael Caine"
+    ],
+    "director": "Alfonso Cuar\u00f3n",
+    "writer": "Alfonso Cuar\u00f3n, Timothy J. Sexton, David Arata",
+    "popu": 35,
+    "production_house": "Universal Pictures",
+    "movie": "Children of Men",
+    "movie_plot": "In a future where the human race has become infertile, a former activist must transport a pregnant woman to a sanctuary at sea, where scientists are working to find a cure for infertility.",
+    "awards": [
+      "Nominated for 3 Academy Awards"
+    ]
+  },
+  {
+    "title": "Say Anything...",
+    "imdb_rating": 7.8,
+    "language": "English",
+    "country": "USA",
+    "year": "1989",
+    "genre": "Romance",
+    "sub-genre": "Coming-of-Age",
+    "stars": [
+      "John Cusack",
+      "Ione Skye",
+      "John Mahoney"
+    ],
+    "director": "Cameron Crowe",
+    "writer": "Cameron Crowe",
+    "popu": 36,
+    "production_house": "Gracie Films",
+    "movie": "Say Anything...",
+    "movie_plot": "An underachieving slacker, with no clear plans for his future, falls in love with a brilliant, popular girl who has a scholarship to a prestigious university. He struggles to prove his worth and win her heart.",
+    "awards": [
+      "No major awards, but a cult classic"
+    ]
+  },
+  {
+    "title": "The General",
+    "imdb_rating": 8.1,
+    "language": "Silent Film",
+    "country": "USA",
+    "year": "1926",
+    "genre": "Comedy",
+    "sub-genre": "Action",
+    "stars": [
+      "Buster Keaton",
+      "Marion Mack",
+      "Glen Cavender"
+    ],
+    "director": "Buster Keaton, Clyde Bruckman",
+    "writer": "Buster Keaton, Clyde Bruckman",
+    "popu": 37,
+    "production_house": "Buster Keaton Productions",
+    "movie": "The General",
+    "movie_plot": "During the American Civil War, a train engineer, who is denied enlistment, must single-handedly pursue Union spies who have stolen his train and kidnapped his love interest.",
+    "awards": [
+      "Inducted into the National Film Registry"
+    ]
+  },
+  {
+    "title": "The Truman Show",
+    "imdb_rating": 8.2,
+    "language": "English",
+    "country": "USA",
+    "year": "1998",
+    "genre": "Drama",
+    "sub-genre": "Sci-Fi",
+    "stars": [
+      "Jim Carrey",
+      "Laura Linney",
+      "Ed Harris"
+    ],
+    "director": "Peter Weir",
+    "writer": "Andrew Niccol",
+    "popu": 38,
+    "production_house": "Paramount Pictures",
+    "movie": "The Truman Show",
+    "movie_plot": "A cheerful man lives his entire life on a television show, unaware that his reality is a meticulously constructed set and that everyone he knows is an actor.",
+    "awards": [
+      "Nominated for 3 Academy Awards"
+    ]
+  },
+  {
+    "title": "Rushmore",
+    "imdb_rating": 7.7,
+    "language": "English",
+    "country": "USA",
+    "year": "1998",
+    "genre": "Comedy",
+    "sub-genre": "Coming-of-Age",
+    "stars": [
+      "Jason Schwartzman",
+      "Bill Murray",
+      "Olivia Williams"
+    ],
+    "director": "Wes Anderson",
+    "writer": "Wes Anderson, Owen Wilson",
+    "popu": 39,
+    "production_house": "American Empirical Pictures",
+    "movie": "Rushmore",
+    "movie_plot": "A eccentric and ambitious high school student, who is more interested in his extracurricular activities than his grades, falls for a much older teacher and finds a rival in a disillusioned millionaire.",
+    "awards": [
+      "No major awards, but a cult classic"
+    ]
+  },
+  {
+    "title": "Being John Malkovich",
+    "imdb_rating": 7.8,
+    "language": "English",
+    "country": "USA",
+    "year": "1999",
+    "genre": "Fantasy",
+    "sub-genre": "Comedy",
+    "stars": [
+      "John Cusack",
+      "Cameron Diaz",
+      "Catherine Keener"
+    ],
+    "director": "Spike Jonze",
+    "writer": "Charlie Kaufman",
+    "popu": 40,
+    "production_house": "Gramercy Pictures",
+    "movie": "Being John Malkovich",
+    "movie_plot": "A puppeteer discovers a small, hidden portal in his office that leads directly into the mind of the famous actor John Malkovich. He begins to sell tickets to the experience, leading to chaos and a love triangle.",
+    "awards": [
+      "Nominated for 3 Academy Awards"
+    ]
+  },
+  {
+    "title": "The Silence",
+    "imdb_rating": 7.9,
+    "language": "Persian",
+    "country": "Iran, France, Germany",
+    "year": "1998",
+    "genre": "Drama",
+    "sub-genre": "Psychological",
+    "stars": [
+      "Tahereh Zohrei",
+      "Mahnaz Zohrei"
+    ],
+    "director": "Mohsen Makhmalbaf",
+    "writer": "Mohsen Makhmalbaf",
+    "popu": 42,
+    "production_house": "Makhmalbaf Film House",
+    "movie": "The Silence",
+    "movie_plot": "A young blind boy, who tunes musical instruments for a living, lives with his mother. When the family faces the threat of eviction, he must use his exceptional sense of hearing to earn money, but his love of music often distracts him.",
+    "awards": [
+      "No major awards, but critically acclaimed"
+    ]
+  },
+  {
+    "title": "Die Welle (The Wave)",
+    "imdb_rating": 7.6,
+    "language": "German",
+    "country": "Germany",
+    "year": "2008",
+    "genre": "Thriller",
+    "sub-genre": "Social",
+    "stars": [
+      "J\u00fcrgen Vogel",
+      "Frederick Lau",
+      "Max Riemelt"
+    ],
+    "director": "Dennis Gansel",
+    "writer": "Dennis Gansel, Peter Thorwarth",
+    "popu": 43,
+    "production_house": "Rat Pack Filmproduktion",
+    "movie": "Die Welle (The Wave)",
+    "movie_plot": "A high school teacher, as part of a class project on autocracy, conducts an experiment to demonstrate how easily people can be manipulated. His experiment spirals out of control, as students begin to adopt the fascist-like movement.",
+    "awards": [
+      "German Film Award for Best Film"
+    ]
+  },
+  {
+    "title": "A Beautiful Mind",
+    "imdb_rating": 8.2,
+    "language": "English",
+    "country": "USA",
+    "year": "2001",
+    "genre": "Biographical",
+    "sub-genre": "Psychological",
+    "stars": [
+      "Russell Crowe",
+      "Ed Harris",
+      "Jennifer Connelly"
+    ],
+    "director": "Ron Howard",
+    "writer": "Akiva Goldsman",
+    "popu": 44,
+    "production_house": "Universal Pictures",
+    "movie": "A Beautiful Mind",
+    "movie_plot": "A brilliant but eccentric mathematician, John Nash, accepts a top-secret assignment with the government. His life, filled with secrets and paranoia, is thrown into chaos as he struggles with his inner demons.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "The Sound of Music",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "1965",
+    "genre": "Musical",
+    "sub-genre": "Biographical",
+    "stars": [
+      "Julie Andrews",
+      "Christopher Plummer",
+      "Eleanor Parker"
+    ],
+    "director": "Robert Wise",
+    "writer": "Ernest Lehman",
+    "popu": 46,
+    "production_house": "20th Century Fox",
+    "movie": "The Sound of Music",
+    "movie_plot": "A young postulant is sent to a family of seven unruly children to serve as their governess. Her love of music and zest for life transform the strict household and capture the heart of their stern, widowed father.",
+    "awards": [
+      "Won 5 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Il bidone (The Swindlers)",
+    "imdb_rating": 7.4,
+    "language": "Italian",
+    "country": "Italy, France",
+    "year": "1955",
+    "genre": "Drama",
+    "sub-genre": "Neorealism",
+    "stars": [
+      "Broderick Crawford",
+      "Giulietta Masina",
+      "Richard Basehart"
+    ],
+    "director": "Federico Fellini",
+    "writer": "Federico Fellini, Ennio Flaiano, Tullio Pinelli",
+    "popu": 47,
+    "production_house": "Titanus",
+    "movie": "Il bidone (The Swindlers)",
+    "movie_plot": "A group of con artists, disguised as priests and officials, swindle poor villagers. One of them, a man named Augusto, feels a deep sense of remorse and seeks to reconnect with his family, but finds it difficult to change his ways.",
+    "awards": [
+      "No major awards, but a transitional film for Fellini"
+    ]
+  },
+  {
+    "title": "The Apartment",
+    "imdb_rating": 8.3,
+    "language": "English",
+    "country": "USA",
+    "year": "1960",
+    "genre": "Comedy",
+    "sub-genre": "Romantic",
+    "stars": [
+      "Jack Lemmon",
+      "Shirley MacLaine",
+      "Fred MacMurray"
+    ],
+    "director": "Billy Wilder",
+    "writer": "Billy Wilder, I. A. L. Diamond",
+    "popu": 49,
+    "production_house": "Mirisch Company",
+    "movie": "The Apartment",
+    "movie_plot": "An insurance clerk tries to climb the corporate ladder by allowing his senior executives to use his apartment for their extramarital affairs. He is forced to confront his choices when he falls for a woman who is involved with his boss.",
+    "awards": [
+      "Won 5 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "The Hunt",
+    "imdb_rating": 8.3,
+    "language": "Danish",
+    "country": "Denmark",
+    "year": "2012",
+    "genre": "Drama",
+    "sub-genre": "Social Thriller",
+    "stars": [
+      "Mads Mikkelsen",
+      "Thomas Bo Larsen",
+      "Annika Wedderkopp"
+    ],
+    "director": "Thomas Vinterberg",
+    "writer": "Thomas Vinterberg, Tobias Lindholm",
+    "popu": 50,
+    "production_house": "Zentropa Entertainments",
+    "movie": "The Hunt",
+    "movie_plot": "A kindergarten teacher is wrongly accused of child abuse. The accusation spreads like wildfire, turning his entire community against him and destroying his life.",
+    "awards": [
+      "Nominated for Oscar for Best Foreign Language Film"
+    ]
+  },
+  {
+    "title": "The Florida Project",
+    "imdb_rating": 7.6,
+    "language": "English",
+    "country": "USA",
+    "year": "2017",
+    "genre": "Drama",
+    "sub-genre": "Coming-of-Age",
+    "stars": [
+      "Brooklynn Prince",
+      "Bria Vinaite",
+      "Willem Dafoe"
+    ],
+    "director": "Sean Baker",
+    "writer": "Sean Baker, Chris Bergoch",
+    "popu": 52,
+    "production_house": "A24",
+    "movie": "The Florida Project",
+    "movie_plot": "The film follows the summer adventures of a vibrant 6-year-old girl, Moonee, and her friends living in a motel near Walt Disney World. They make the most of their lives, while the adults around them struggle to make ends meet.",
+    "awards": [
+      "Nominated for Oscar for Best Supporting Actor"
+    ]
+  },
+  {
+    "title": "The Lighthouse",
+    "imdb_rating": 7.4,
+    "language": "English",
+    "country": "USA",
+    "year": "2019",
+    "genre": "Horror",
+    "sub-genre": "Psychological",
+    "stars": [
+      "Robert Pattinson",
+      "Willem Dafoe"
+    ],
+    "director": "Robert Eggers",
+    "writer": "Robert Eggers, Max Eggers",
+    "popu": 53,
+    "production_house": "A24",
+    "movie": "The Lighthouse",
+    "movie_plot": "Two lighthouse keepers on a remote, mysterious island off the coast of New England slowly descend into madness as a storm threatens to engulf them, and a terrifying supernatural presence looms.",
+    "awards": [
+      "Nominated for Oscar for Best Cinematography"
+    ]
+  },
+  {
+    "title": "Ladri di biciclette (Bicycle Thieves)",
+    "imdb_rating": 8.3,
+    "language": "Italian",
+    "country": "Italy",
+    "year": "1948",
+    "genre": "Drama",
+    "sub-genre": "Neorealism",
+    "stars": [
+      "Lamberto Maggiorani",
+      "Enzo Staiola"
+    ],
+    "director": "Vittorio De Sica",
+    "writer": "Cesare Zavattini, Vittorio De Sica",
+    "popu": 54,
+    "production_house": "Ente Nazionale Industrie Cinematografiche",
+    "movie": "Ladri di biciclette (Bicycle Thieves)",
+    "movie_plot": "In post-WWII Rome, a poor father's newly acquired job, which requires a bicycle, is put in jeopardy when his bicycle is stolen. He and his young son set out on a desperate search for the bike through the city's crowded streets.",
+    "awards": [
+      "Academy Honorary Award"
+    ]
+  },
+  {
+    "title": "Il conformista (The Conformist)",
+    "imdb_rating": 7.9,
+    "language": "Italian",
+    "country": "Italy, France, West Germany",
+    "year": "1970",
+    "genre": "Drama",
+    "sub-genre": "Political Thriller",
+    "stars": [
+      "Jean-Louis Trintignant",
+      "Stefania Sandrelli",
+      "Dominique Sanda"
+    ],
+    "director": "Bernardo Bertolucci",
+    "writer": "Bernardo Bertolucci",
+    "popu": 55,
+    "production_house": "Mars Film",
+    "movie": "Il conformista (The Conformist)",
+    "movie_plot": "A weak-willed man, haunted by a childhood trauma, attempts to fit in by joining the fascist secret police in 1930s Italy. He is assigned to assassinate his former professor, a political dissident.",
+    "awards": [
+      "Nominated for Oscar for Best Adapted Screenplay"
+    ]
+  },
+  {
+    "title": "Lost in Translation",
+    "imdb_rating": 7.7,
+    "language": "English, Japanese",
+    "country": "USA, Japan",
+    "year": "2003",
+    "genre": "Drama",
+    "sub-genre": "Romantic Comedy",
+    "stars": [
+      "Bill Murray",
+      "Scarlett Johansson",
+      "Giovanni Ribisi"
+    ],
+    "director": "Sofia Coppola",
+    "writer": "Sofia Coppola",
+    "popu": 56,
+    "production_house": "Focus Features",
+    "movie": "Lost in Translation",
+    "movie_plot": "An aging movie star and a lonely young woman form an unlikely friendship in Tokyo. They bond over their shared sense of alienation and culture shock, leading to a profound connection.",
+    "awards": [
+      "Won Oscar for Best Original Screenplay"
+    ]
+  },
+  {
+    "title": "I Saw the Devil",
+    "imdb_rating": 7.8,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2010",
+    "genre": "Thriller",
+    "sub-genre": "Psychological Thriller",
+    "stars": [
+      "Lee Byung-hun",
+      "Choi Min-sik",
+      "Oh San-ha"
+    ],
+    "director": "Kim Jee-woon",
+    "writer": "Park Hoon-jung",
+    "popu": 3,
+    "production_house": "Sidus Pictures",
+    "movie": "I Saw the Devil",
+    "movie_plot": "A secret agent embarks on a gruesome quest for revenge against a psychopathic serial killer who murdered his fianc\u00e9e. The hunt turns into a cat-and-mouse game, blurring the lines between good and evil.",
+    "awards": [
+      "Won Best Director at the 2011 Fantasporto International Film Festival"
+    ]
+  },
+  {
+    "title": "The Wailing",
+    "imdb_rating": 7.4,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2016",
+    "genre": "Horror",
+    "sub-genre": "Supernatural Horror",
+    "stars": [
+      "Kwak Do-won",
+      "Hwang Jung-min",
+      "Chun Woo-hee"
+    ],
+    "director": "Na Hong-jin",
+    "writer": "Na Hong-jin",
+    "popu": 4,
+    "production_house": "20th Century Fox Korea",
+    "movie": "The Wailing",
+    "movie_plot": "A small village is plagued by a mysterious illness after the arrival of a stranger. A local police officer finds himself embroiled in a horrifying investigation that forces him to question his sanity and faith.",
+    "awards": [
+      "Won Best Film at the 37th Blue Dragon Film Awards"
+    ]
+  },
+  {
+    "title": "Memories of Murder",
+    "imdb_rating": 8.1,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2003",
+    "genre": "Crime",
+    "sub-genre": "Neo-noir",
+    "stars": [
+      "Song Kang-ho",
+      "Kim Sang-kyung",
+      "Park Hae-il"
+    ],
+    "director": "Bong Joon-ho",
+    "writer": "Bong Joon-ho, Shim Sung-bo",
+    "popu": 5,
+    "production_house": "CJ Entertainment",
+    "movie": "Memories of Murder",
+    "movie_plot": "In 1986, two bumbling provincial detectives struggle with the case of a serial rapist and killer in a small town. Their investigation is hampered by their own incompetence and the lack of forensic technology.",
+    "awards": [
+      "Won Best Film and Best Director at the 2003 Grand Bell Awards"
+    ]
+  },
+  {
+    "title": "Crouching Tiger, Hidden Dragon",
+    "imdb_rating": 7.8,
+    "language": "Mandarin",
+    "country": "Taiwan, Hong Kong, USA, China",
+    "year": "2000",
+    "genre": "Action",
+    "sub-genre": "Wuxia",
+    "stars": [
+      "Chow Yun-fat",
+      "Michelle Yeoh",
+      "Zhang Ziyi"
+    ],
+    "director": "Ang Lee",
+    "writer": "Wang Hui-ling, James Schamus, Tsai Kuo-jung",
+    "popu": 6,
+    "production_house": "Sony Pictures Classics",
+    "movie": "Crouching Tiger, Hidden Dragon",
+    "movie_plot": "A young woman in 19th-century China is in love with her father's servant, but her fate forces her to marry another man. She finds freedom in the world of martial arts, where she encounters a legendary sword.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Foreign Language Film"
+    ]
+  },
+  {
+    "title": "Hero",
+    "imdb_rating": 7.9,
+    "language": "Mandarin",
+    "country": "China, Hong Kong",
+    "year": "2002",
+    "genre": "Action",
+    "sub-genre": "Wuxia",
+    "stars": [
+      "Jet Li",
+      "Tony Leung Chiu-wai",
+      "Maggie Cheung"
+    ],
+    "director": "Zhang Yimou",
+    "writer": "Zhang Yimou, Feng Li, Wang Bin",
+    "popu": 7,
+    "production_house": "Miramax Films",
+    "movie": "Hero",
+    "movie_plot": "A nameless swordsman, who has defeated the three most feared assassins in the land, is granted an audience with the king. He recounts his epic tale, but the truth of his mission may not be what it seems.",
+    "awards": [
+      "Nominated for an Academy Award for Best Foreign Language Film"
+    ]
+  },
+  {
+    "title": "House of Flying Daggers",
+    "imdb_rating": 7.5,
+    "language": "Mandarin",
+    "country": "China, Hong Kong",
+    "year": "2004",
+    "genre": "Action",
+    "sub-genre": "Wuxia",
+    "stars": [
+      "Takeshi Kaneshiro",
+      "Andy Lau",
+      "Zhang Ziyi"
+    ],
+    "director": "Zhang Yimou",
+    "writer": "Zhang Yimou, Wang Bin, Li Feng",
+    "popu": 8,
+    "production_house": "Sony Pictures Classics",
+    "movie": "House of Flying Daggers",
+    "movie_plot": "In 9th-century China, a Tang Dynasty police officer arrests a blind dancer who may be the daughter of the leader of a revolutionary group. He becomes entangled in a dangerous love triangle and a web of deceit.",
+    "awards": [
+      "Nominated for an Academy Award for Best Cinematography"
+    ]
+  },
+  {
+    "title": "Ip Man",
+    "imdb_rating": 8.0,
+    "language": "Cantonese",
+    "country": "Hong Kong, China",
+    "year": "2008",
+    "genre": "Action",
+    "sub-genre": "Martial Arts",
+    "stars": [
+      "Donnie Yen",
+      "Simon Yam",
+      "Lynn Hung"
+    ],
+    "director": "Wilson Yip",
+    "writer": "Edmond Wong",
+    "popu": 9,
+    "production_house": "Mandarin Films Distribution Co.",
+    "movie": "Ip Man",
+    "movie_plot": "The biographical story of Ip Man, the legendary grandmaster of Wing Chun and the first to teach the martial art publicly. The film follows his life during the Sino-Japanese War and his fight for dignity.",
+    "awards": [
+      "Won Best Film at the 28th Hong Kong Film Awards"
+    ]
+  },
+  {
+    "title": "Thappad",
+    "imdb_rating": 6.8,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2020",
+    "genre": "Drama",
+    "sub-genre": "Social Drama",
+    "stars": [
+      "Taapsee Pannu",
+      "Pavail Gulati",
+      "Dia Mirza"
+    ],
+    "director": "Anubhav Sinha",
+    "writer": "Anubhav Sinha, Mrunmayee Lagoo",
+    "popu": 10,
+    "production_house": "Benaras Media Works",
+    "movie": "Thappad",
+    "movie_plot": "A woman's seemingly perfect life is shattered when her husband slaps her at a party. She decides to file for divorce, challenging the societal notion that a slap is a minor incident in a marriage.",
+    "awards": [
+      "Won Best Film at the 66th Filmfare Awards"
+    ]
+  },
+  {
+    "title": "Swades",
+    "imdb_rating": 8.2,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2004",
+    "genre": "Drama",
+    "sub-genre": "Social Drama",
+    "stars": [
+      "Shah Rukh Khan",
+      "Gayatri Joshi",
+      "Kishori Ballal"
+    ],
+    "director": "Ashutosh Gowariker",
+    "writer": "Ashutosh Gowariker",
+    "popu": 11,
+    "production_house": "Ashutosh Gowariker Productions",
+    "movie": "Swades",
+    "movie_plot": "A successful Indian-American scientist working at NASA returns to his native village to find his nanny. His journey reconnects him with his roots and makes him realize his responsibility towards his country.",
+    "awards": [
+      "Won Best Actor (Shah Rukh Khan) at the 50th Filmfare Awards"
+    ]
+  },
+  {
+    "title": "Kaminey",
+    "imdb_rating": 7.3,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2009",
+    "genre": "Action",
+    "sub-genre": "Crime Thriller",
+    "stars": [
+      "Shahid Kapoor",
+      "Priyanka Chopra",
+      "Amol Gupte"
+    ],
+    "director": "Vishal Bhardwaj",
+    "writer": "Vishal Bhardwaj, Abhishek Chaubey, Sabrina Dhawan",
+    "popu": 12,
+    "production_house": "UTV Spotboy",
+    "movie": "Kaminey",
+    "movie_plot": "Estranged twin brothers, one with a lisp and the other with a stutter, are thrown into a cat-and-mouse chase when they become embroiled in a world of drugs, politics, and crime.",
+    "awards": [
+      "Won Best Film (Critics) at the 55th Filmfare Awards"
+    ]
+  },
+  {
+    "title": "Andhadhun",
+    "imdb_rating": 8.2,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2018",
+    "genre": "Thriller",
+    "sub-genre": "Black Comedy",
+    "stars": [
+      "Ayushmann Khurrana",
+      "Tabu",
+      "Radhika Apte"
+    ],
+    "director": "Sriram Raghavan",
+    "writer": "Sriram Raghavan, Arijit Biswas, Pooja Ladha Surti",
+    "popu": 13,
+    "production_house": "Viacom18 Motion Pictures",
+    "movie": "Andhadhun",
+    "movie_plot": "A seemingly blind pianist's life takes a horrifying turn when he witnesses the murder of a former film actor. He is forced to keep up the charade of being blind to survive, leading to a series of comedic and terrifying events.",
+    "awards": [
+      "Won 3 National Film Awards, including Best Feature Film in Hindi"
+    ]
+  },
+  {
+    "title": "Newton",
+    "imdb_rating": 7.7,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2017",
+    "genre": "Comedy",
+    "sub-genre": "Political Satire",
+    "stars": [
+      "Rajkummar Rao",
+      "Pankaj Tripathi",
+      "Anjali Patil"
+    ],
+    "director": "Amit V. Masurkar",
+    "writer": "Amit V. Masurkar, Mayank Tewari",
+    "popu": 14,
+    "production_house": "Drishyam Films",
+    "movie": "Newton",
+    "movie_plot": "A government clerk is sent to a remote, conflict-ridden jungle of Chhattisgarh to conduct elections. He is determined to hold a fair election despite the apathy of security forces and the threat of Naxalite insurgents.",
+    "awards": [
+      "Won National Film Award for Best Feature Film in Hindi"
+    ]
+  },
+  {
+    "title": "Rashomon",
+    "imdb_rating": 8.2,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1950",
+    "genre": "Crime",
+    "sub-genre": "Psychological Drama",
+    "stars": [
+      "Toshiro Mifune",
+      "Machiko Ky\u014d",
+      "Masayuki Mori"
+    ],
+    "director": "Akira Kurosawa",
+    "writer": "Akira Kurosawa, Shinobu Hashimoto",
+    "popu": 16,
+    "production_house": "Daiei Film",
+    "movie": "Rashomon",
+    "movie_plot": "A masterfully constructed crime story told from four different, conflicting perspectives\u2014a bandit, a samurai's wife, a woodcutter, and the samurai's spirit\u2014leaving the viewer to question the very nature of truth.",
+    "awards": [
+      "Won an Honorary Academy Award for Best Foreign Language Film"
+    ]
+  },
+  {
+    "title": "Tokyo Story",
+    "imdb_rating": 8.2,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1953",
+    "genre": "Drama",
+    "sub-genre": "Family Drama",
+    "stars": [
+      "Chish\u016b Ry\u016b",
+      "Chieko Higashiyama",
+      "Setsuko Hara"
+    ],
+    "director": "Yasujir\u014d Ozu",
+    "writer": "Yasujir\u014d Ozu, K\u014dgo Noda",
+    "popu": 17,
+    "production_house": "Shochiku",
+    "movie": "Tokyo Story",
+    "movie_plot": "An aging couple travels to Tokyo to visit their grown children, but are disappointed by their children's indifference and preoccupation with their own lives. The film is a poignant meditation on family and aging.",
+    "awards": [
+      "Frequently ranked as one of the greatest films of all time"
+    ]
+  },
+  {
+    "title": "Harakiri",
+    "imdb_rating": 8.6,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1962",
+    "genre": "Drama",
+    "sub-genre": "Jidaigeki",
+    "stars": [
+      "Tatsuya Nakadai",
+      "Shima Iwashita",
+      "Tetsur\u014d Tamba"
+    ],
+    "director": "Masaki Kobayashi",
+    "writer": "Shinobu Hashimoto",
+    "popu": 18,
+    "production_house": "Shochiku",
+    "movie": "Harakiri",
+    "movie_plot": "A masterless samurai arrives at a feudal lord's home, requesting a ritual suicide in the courtyard. The film unfolds in a series of flashbacks, revealing his true motives and a story of honor and betrayal.",
+    "awards": [
+      "Won the Jury Special Prize at the 1963 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "Ran",
+    "imdb_rating": 8.2,
+    "language": "Japanese",
+    "country": "Japan, France",
+    "year": "1985",
+    "genre": "Action",
+    "sub-genre": "Jidaigeki",
+    "stars": [
+      "Tatsuya Nakadai",
+      "Akira Terao",
+      "Jinpachi Nezu"
+    ],
+    "director": "Akira Kurosawa",
+    "writer": "Akira Kurosawa, Hideo Oguni, Masato Ide",
+    "popu": 19,
+    "production_house": "T\u014dh\u014d",
+    "movie": "Ran",
+    "movie_plot": "A Japanese warlord, inspired by Shakespeare's King Lear, decides to abdicate his throne and divide his kingdom among his three sons. His decision unleashes a bloody civil war, plunging his family into chaos.",
+    "awards": [
+      "Won an Academy Award for Best Costume Design"
+    ]
+  },
+  {
+    "title": "A Wednesday!",
+    "imdb_rating": 8.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2008",
+    "genre": "Thriller",
+    "sub-genre": "Drama",
+    "stars": [
+      "Anupam Kher",
+      "Naseeruddin Shah",
+      "Jimmy Shergill"
+    ],
+    "director": "Neeraj Pandey",
+    "writer": "Neeraj Pandey",
+    "popu": 24,
+    "production_house": "UTV Motion Pictures",
+    "movie": "A Wednesday!",
+    "movie_plot": "A retiring police officer reminisces about a seemingly insignificant day in his career when a single, anonymous man held the city of Mumbai hostage, challenging the law and order to get justice.",
+    "awards": [
+      "Won Best Debut Director at the 54th Filmfare Awards"
+    ]
+  },
+  {
+    "title": "Dangal",
+    "imdb_rating": 8.3,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2016",
+    "genre": "Biographical",
+    "sub-genre": "Sports Drama",
+    "stars": [
+      "Aamir Khan",
+      "Fatima Sana Shaikh",
+      "Sanya Malhotra"
+    ],
+    "director": "Nitesh Tiwari",
+    "writer": "Nitesh Tiwari, Piyush Gupta, Shreyas Jain",
+    "popu": 25,
+    "production_house": "Walt Disney Studios",
+    "movie": "Dangal",
+    "movie_plot": "Based on a true story, a former wrestler dreams of winning a gold medal for his country. When his dream is left unfulfilled, he trains his two daughters to become world-class wrestlers.",
+    "awards": [
+      "Won 4 National Film Awards, including Best Film on Other Social Issues"
+    ]
+  },
+  {
+    "title": "Rang De Basanti",
+    "imdb_rating": 8.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2006",
+    "genre": "Drama",
+    "sub-genre": "Social Drama",
+    "stars": [
+      "Aamir Khan",
+      "Siddharth",
+      "Sharman Joshi"
+    ],
+    "director": "Rakeysh Omprakash Mehra",
+    "writer": "Rakeysh Omprakash Mehra, Rensil D'Silva",
+    "popu": 26,
+    "production_house": "UTV Motion Pictures",
+    "movie": "Rang De Basanti",
+    "movie_plot": "An English documentary filmmaker arrives in India to film a documentary on five freedom fighters. She recruits five friends, who, while acting in the film, begin to question the state of their country.",
+    "awards": [
+      "Won the National Film Award for Best Popular Film"
+    ]
+  },
+  {
+    "title": "Gangs of Wasseypur",
+    "imdb_rating": 8.2,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2012",
+    "genre": "Crime",
+    "sub-genre": "Drama",
+    "stars": [
+      "Manoj Bajpayee",
+      "Nawazuddin Siddiqui",
+      "Richa Chadha"
+    ],
+    "director": "Anurag Kashyap",
+    "writer": "Zeishan Quadri, Akhilesh Jaiswal, Anurag Kashyap",
+    "popu": 27,
+    "production_house": "Viacom18 Motion Pictures",
+    "movie": "Gangs of Wasseypur",
+    "movie_plot": "The film chronicles a bloody, decades-long feud between two rival crime families, the Khans and the Qureshis, in the coal-mining town of Wasseypur, India.",
+    "awards": [
+      "Nominated for Best Film at the Asia Pacific Screen Awards"
+    ]
+  },
+  {
+    "title": "The Grandmaster",
+    "imdb_rating": 6.5,
+    "language": "Cantonese, Mandarin",
+    "country": "Hong Kong, China",
+    "year": "2013",
+    "genre": "Action",
+    "sub-genre": "Biographical",
+    "stars": [
+      "Tony Leung Chiu-wai",
+      "Zhang Ziyi",
+      "Chang Chen"
+    ],
+    "director": "Wong Kar-wai",
+    "writer": "Zou Jingzhi, Xu Haofeng, Wong Kar-wai",
+    "popu": 28,
+    "production_house": "Block 2 Pictures",
+    "movie": "The Grandmaster",
+    "movie_plot": "A biographical film about the life of Ip Man, the legendary Wing Chun grandmaster. The film follows his life from the 1930s until his final days in Hong Kong, detailing his love story and the political turmoil of the time.",
+    "awards": [
+      "Won Best Cinematography and Best Art Direction at the 86th Academy Awards"
+    ]
+  },
+  {
+    "title": "A Taxi Driver",
+    "imdb_rating": 7.9,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2017",
+    "genre": "Biographical",
+    "sub-genre": "Historical Drama",
+    "stars": [
+      "Song Kang-ho",
+      "Thomas Kretschmann",
+      "Yoo Hae-jin"
+    ],
+    "director": "Jang Hoon",
+    "writer": "Eom Yu-na",
+    "popu": 29,
+    "production_house": "Showbox",
+    "movie": "A Taxi Driver",
+    "movie_plot": "Based on a true story, a Gwangju taxi driver helps a German journalist cover the 1980 Gwangju Uprising. The film captures the courage of ordinary citizens in the face of government oppression.",
+    "awards": [
+      "Won Best Film at the 38th Blue Dragon Film Awards"
+    ]
+  },
+  {
+    "title": "The Chaser",
+    "imdb_rating": 7.8,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2008",
+    "genre": "Crime",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Kim Yoon-seok",
+      "Ha Jung-woo",
+      "Seo Young-hee"
+    ],
+    "director": "Na Hong-jin",
+    "writer": "Na Hong-jin",
+    "popu": 30,
+    "production_house": "Finecut",
+    "movie": "The Chaser",
+    "movie_plot": "A disgraced ex-cop turned pimp is in debt and desperate to find his missing call girls. His investigation leads him to a serial killer who has been targeting his employees, forcing him into a terrifying race against time.",
+    "awards": [
+      "Won Best Film at the 29th Blue Dragon Film Awards"
+    ]
+  },
+  {
+    "title": "The Man from Nowhere",
+    "imdb_rating": 7.7,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2010",
+    "genre": "Action",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Won Bin",
+      "Kim Sae-ron",
+      "Kim Tae-hoon"
+    ],
+    "director": "Lee Jeong-beom",
+    "writer": "Lee Jeong-beom",
+    "popu": 31,
+    "production_house": "Opus Pictures",
+    "movie": "The Man from Nowhere",
+    "movie_plot": "A mysterious and reclusive pawnshop owner with a dark past embarks on a violent rampage to save a young girl, his only friend, who has been kidnapped by a drug trafficking ring.",
+    "awards": [
+      "Won Best Actor (Won Bin) at the 47th Grand Bell Awards"
+    ]
+  },
+  {
+    "title": "Burning",
+    "imdb_rating": 7.5,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2018",
+    "genre": "Drama",
+    "sub-genre": "Psychological Thriller",
+    "stars": [
+      "Yoo Ah-in",
+      "Steven Yeun",
+      "Jeon Jong-seo"
+    ],
+    "director": "Lee Chang-dong",
+    "writer": "Oh Jung-mi, Lee Chang-dong",
+    "popu": 32,
+    "production_house": "PINEHOUSE FILM",
+    "movie": "Burning",
+    "movie_plot": "A young man finds himself in a strange love triangle with a former high-school classmate and a wealthy, enigmatic man. His suspicions grow as his classmate vanishes, and he begins to investigate the man's secret hobby.",
+    "awards": [
+      "Nominated for the Palme d'Or at the 2018 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "The Host",
+    "imdb_rating": 7.1,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2006",
+    "genre": "Sci-Fi",
+    "sub-genre": "Monster Film",
+    "stars": [
+      "Song Kang-ho",
+      "Byun Hee-bong",
+      "Park Hae-il"
+    ],
+    "director": "Bong Joon-ho",
+    "writer": "Bong Joon-ho, Baek Chul-hyun, Ha Joon-won",
+    "popu": 33,
+    "production_house": "Chungeorahm Film",
+    "movie": "The Host",
+    "movie_plot": "A clumsy but devoted father and his family must save his daughter from a giant mutant creature that emerges from Seoul's Han River, caused by an American military pathologist dumping chemicals into the water.",
+    "awards": [
+      "Won Best Film at the 2007 Asian Film Awards"
+    ]
+  },
+  {
+    "title": "Bhaag Milkha Bhaag",
+    "imdb_rating": 8.2,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2013",
+    "genre": "Biographical",
+    "sub-genre": "Sports Drama",
+    "stars": [
+      "Farhan Akhtar",
+      "Sonam Kapoor",
+      "Divya Dutta"
+    ],
+    "director": "Rakeysh Omprakash Mehra",
+    "writer": "Prasoon Joshi",
+    "popu": 34,
+    "production_house": "Rakeysh Omprakash Mehra Pictures",
+    "movie": "Bhaag Milkha Bhaag",
+    "movie_plot": "The biographical story of Milkha Singh, a former Indian track and field athlete who was a national champion runner and an Olympian. The film details his struggles and triumphs, earning him the title 'The Flying Sikh'.",
+    "awards": [
+      "Won 2 National Film Awards, including Best Popular Film Providing Wholesome Entertainment"
+    ]
+  },
+  {
+    "title": "Lagaan: Once Upon a Time in India",
+    "imdb_rating": 8.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2001",
+    "genre": "Musical",
+    "sub-genre": "Sports Drama",
+    "stars": [
+      "Aamir Khan",
+      "Gracy Singh",
+      "Rachel Shelley"
+    ],
+    "director": "Ashutosh Gowariker",
+    "writer": "Ashutosh Gowariker, Kumar Dave, Sanjay Daima",
+    "popu": 35,
+    "production_house": "Aamir Khan Productions",
+    "movie": "Lagaan: Once Upon a Time in India",
+    "movie_plot": "In a small Indian village during the British Raj, a farmer challenges a tyrannical British officer to a game of cricket to avoid paying a heavy tax. If they win, their taxes will be waived for three years.",
+    "awards": [
+      "Nominated for an Academy Award for Best Foreign Language Film"
+    ]
+  },
+  {
+    "title": "Black",
+    "imdb_rating": 8.1,
+    "language": "Hindi, English",
+    "country": "India",
+    "year": "2005",
+    "genre": "Drama",
+    "sub-genre": "Biographical Drama",
+    "stars": [
+      "Amitabh Bachchan",
+      "Rani Mukerji",
+      "Shernaz Patel"
+    ],
+    "director": "Sanjay Leela Bhansali",
+    "writer": "Sanjay Leela Bhansali, Bhavani Iyer, Prakash Kapadia",
+    "popu": 36,
+    "production_house": "Sanjay Leela Bhansali Films",
+    "movie": "Black",
+    "movie_plot": "A story of a blind, deaf, and mute girl, and her teacher who battles to bring her into the light of life by helping her communicate. It is inspired by the life of Helen Keller and Anne Sullivan.",
+    "awards": [
+      "Won 3 National Film Awards, including Best Feature Film in Hindi"
+    ]
+  },
+  {
+    "title": "Visaranai",
+    "imdb_rating": 8.5,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2015",
+    "genre": "Crime",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Dinesh",
+      "Anandhi",
+      "Samuthirakani"
+    ],
+    "director": "Vetrimaaran",
+    "writer": "Vetrimaaran",
+    "popu": 37,
+    "production_house": "Wunderbar Films",
+    "movie": "Visaranai",
+    "movie_plot": "Based on a true story, four laborers are arrested by police and brutally tortured to confess to a crime they did not commit. They must find a way to escape this systemic injustice and survive.",
+    "awards": [
+      "Won 3 National Film Awards, including Best Feature Film in Tamil"
+    ]
+  },
+  {
+    "title": "Vada Chennai",
+    "imdb_rating": 8.5,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2018",
+    "genre": "Action",
+    "sub-genre": "Crime Drama",
+    "stars": [
+      "Dhanush",
+      "Aishwarya Rajesh",
+      "Andrea Jeremiah"
+    ],
+    "director": "Vetrimaaran",
+    "writer": "Vetrimaaran",
+    "popu": 38,
+    "production_house": "Wunderbar Films",
+    "movie": "Vada Chennai",
+    "movie_plot": "A gifted carrom player gets drawn into the world of crime and politics in North Chennai. He becomes entangled in a power struggle between two rival gangs, forcing him to choose a side.",
+    "awards": [
+      "Won Best Actor (Dhanush) at the 66th National Film Awards"
+    ]
+  },
+  {
+    "title": "Baahubali: The Beginning",
+    "imdb_rating": 8.0,
+    "language": "Telugu, Tamil",
+    "country": "India",
+    "year": "2015",
+    "genre": "Action",
+    "sub-genre": "Fantasy",
+    "stars": [
+      "Prabhas",
+      "Rana Daggubati",
+      "Anushka Shetty"
+    ],
+    "director": "S.S. Rajamouli",
+    "writer": "K. V. Vijayendra Prasad",
+    "popu": 39,
+    "production_house": "Arka Media Works",
+    "movie": "Baahubali: The Beginning",
+    "movie_plot": "A young man with superhuman strength is raised by a tribe. His quest to find his purpose leads him to an ancient kingdom and a complex family history that reveals his true identity as a prince.",
+    "awards": [
+      "Won National Film Award for Best Feature Film"
+    ]
+  },
+  {
+    "title": "Kumbalangi Nights",
+    "imdb_rating": 8.6,
+    "language": "Malayalam",
+    "country": "India",
+    "year": "2019",
+    "genre": "Drama",
+    "sub-genre": "Family Drama",
+    "stars": [
+      "Soubin Shahir",
+      "Shane Nigam",
+      "Fahadh Faasil"
+    ],
+    "director": "Madhu C. Narayanan",
+    "writer": "Syam Pushkaran",
+    "popu": 40,
+    "production_house": "Fahadh Faasil and Friends",
+    "movie": "Kumbalangi Nights",
+    "movie_plot": "Four eccentric brothers, living in a dilapidated house in the coastal village of Kumbalangi, learn to overcome their differences and become a family after a new person enters their lives.",
+    "awards": [
+      "Won Best Film with a Message at the IFFI"
+    ]
+  },
+  {
+    "title": "The Yellow Sea",
+    "imdb_rating": 7.3,
+    "language": "Korean, Mandarin",
+    "country": "South Korea",
+    "year": "2010",
+    "genre": "Action",
+    "sub-genre": "Crime Thriller",
+    "stars": [
+      "Ha Jung-woo",
+      "Kim Yoon-seok",
+      "Jo Sung-ha"
+    ],
+    "director": "Na Hong-jin",
+    "writer": "Na Hong-jin",
+    "popu": 41,
+    "production_house": "Showbox",
+    "movie": "The Yellow Sea",
+    "movie_plot": "An ethnic Korean man in China is sent to South Korea on a mission to assassinate a man. He finds himself embroiled in a bloody chase when he is framed for the murder he did not commit.",
+    "awards": [
+      "Won Best Director at the 2011 Asian Film Awards"
+    ]
+  },
+  {
+    "title": "Peepli Live",
+    "imdb_rating": 7.6,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2010",
+    "genre": "Comedy",
+    "sub-genre": "Satire",
+    "stars": [
+      "Nawazuddin Siddiqui",
+      "Omkar Das Manikpuri",
+      "Raghubir Yadav"
+    ],
+    "director": "Anusha Rizvi",
+    "writer": "Anusha Rizvi",
+    "popu": 42,
+    "production_house": "Aamir Khan Productions",
+    "movie": "Peepli Live",
+    "movie_plot": "A poor farmer threatens to commit suicide to receive government compensation. His decision becomes a media circus, with news channels and politicians fighting to cover his story.",
+    "awards": [
+      "Won Best First Film of a Director at the 58th National Film Awards"
+    ]
+  },
+  {
+    "title": "My Sassy Girl",
+    "imdb_rating": 7.9,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2001",
+    "genre": "Comedy",
+    "sub-genre": "Romantic Comedy",
+    "stars": [
+      "Jun Ji-hyun",
+      "Cha Tae-hyun",
+      "Han Sang-jin"
+    ],
+    "director": "Kwak Jae-yong",
+    "writer": "Kwak Jae-yong",
+    "popu": 43,
+    "production_house": "Shin Cine",
+    "movie": "My Sassy Girl",
+    "movie_plot": "A timid engineering student's life changes when he encounters a drunk and sassy young woman at a subway station. Their relationship blossoms through a series of misadventures and funny incidents.",
+    "awards": [
+      "Voted Best Asian Film at the 2003 Udine Far East Film Festival"
+    ]
+  },
+  {
+    "title": "The Handmaiden",
+    "imdb_rating": 8.1,
+    "language": "Korean, Japanese",
+    "country": "South Korea",
+    "year": "2016",
+    "genre": "Thriller",
+    "sub-genre": "Erotic Thriller",
+    "stars": [
+      "Kim Min-hee",
+      "Kim Tae-ri",
+      "Ha Jung-woo"
+    ],
+    "director": "Park Chan-wook",
+    "writer": "Park Chan-wook, Jung Seo-kyung",
+    "popu": 44,
+    "production_house": "CJ Entertainment",
+    "movie": "The Handmaiden",
+    "movie_plot": "In 1930s Korea, a young woman is hired as a handmaiden to a Japanese heiress, but secretly conspires with a con man to defraud her. The plot thickens with betrayal, lies, and unexpected desires.",
+    "awards": [
+      "Won the Vulcan Award at the 2016 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "The Good, the Bad, the Weird",
+    "imdb_rating": 7.5,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2008",
+    "genre": "Western",
+    "sub-genre": "Action Comedy",
+    "stars": [
+      "Song Kang-ho",
+      "Lee Byung-hun",
+      "Jung Woo-sung"
+    ],
+    "director": "Kim Jee-woon",
+    "writer": "Kim Jee-woon, Kim Min-suk",
+    "popu": 45,
+    "production_house": "Barunson E&A",
+    "movie": "The Good, the Bad, the Weird",
+    "movie_plot": "In 1930s Manchuria, a train robbery sets off a chaotic chase between three characters: a bounty hunter, a bandit, and a hitman. All three are after a hidden treasure map.",
+    "awards": [
+      "Won Best Director at the 2008 Sitges Film Festival"
+    ]
+  },
+  {
+    "title": "Mahanati",
+    "imdb_rating": 8.4,
+    "language": "Telugu",
+    "country": "India",
+    "year": "2018",
+    "genre": "Biographical",
+    "sub-genre": "Musical Drama",
+    "stars": [
+      "Keerthy Suresh",
+      "Dulquer Salmaan",
+      "Samantha Ruth Prabhu"
+    ],
+    "director": "Nag Ashwin",
+    "writer": "Nag Ashwin",
+    "popu": 48,
+    "production_house": "Vyjayanthi Movies",
+    "movie": "Mahanati",
+    "movie_plot": "A biographical film based on the life of Savitri, a legendary actress from South India. The film explores her rise to stardom and her tragic personal life, including her struggles with addiction.",
+    "awards": [
+      "Won 3 National Film Awards, including Best Actress (Keerthy Suresh)"
+    ]
+  },
+  {
+    "title": "Baahubali 2: The Conclusion",
+    "imdb_rating": 8.2,
+    "language": "Telugu, Tamil",
+    "country": "India",
+    "year": "2017",
+    "genre": "Action",
+    "sub-genre": "Fantasy",
+    "stars": [
+      "Prabhas",
+      "Rana Daggubati",
+      "Anushka Shetty"
+    ],
+    "director": "S.S. Rajamouli",
+    "writer": "K. V. Vijayendra Prasad",
+    "popu": 49,
+    "production_house": "Arka Media Works",
+    "movie": "Baahubali 2: The Conclusion",
+    "movie_plot": "Following the events of the first film, this sequel continues the epic saga of Baahubali and his fight to reclaim his throne. The film reveals the answer to the famous question: 'Why did Katappa kill Baahubali?'",
+    "awards": [
+      "Won 3 National Film Awards, including Best Popular Film Providing Wholesome Entertainment"
+    ]
+  },
+  {
+    "title": "RRR",
+    "imdb_rating": 7.8,
+    "language": "Telugu",
+    "country": "India",
+    "year": "2022",
+    "genre": "Action",
+    "sub-genre": "Historical Drama",
+    "stars": [
+      "N. T. Rama Rao Jr.",
+      "Ram Charan",
+      "Alia Bhatt"
+    ],
+    "director": "S.S. Rajamouli",
+    "writer": "K. V. Vijayendra Prasad",
+    "popu": 50,
+    "production_house": "DVV Entertainment",
+    "movie": "RRR",
+    "movie_plot": "A fictional story about two legendary Indian revolutionaries, Alluri Sitarama Raju and Komaram Bheem, and their friendship and fight against the British Raj.",
+    "awards": [
+      "Won the Golden Globe for Best Original Song"
+    ]
+  },
+  {
+    "title": "The Battle of Algiers",
+    "imdb_rating": 8.1,
+    "language": "Arabic, French",
+    "country": "Algeria, Italy",
+    "year": "1966",
+    "genre": "War",
+    "sub-genre": "Docudrama",
+    "stars": [
+      "Brahim Haggiag",
+      "Jean Martin",
+      "Yacef Sa\u00e2di"
+    ],
+    "director": "Gillo Pontecorvo",
+    "writer": "Gillo Pontecorvo, Franco Solinas",
+    "popu": 51,
+    "production_house": "Igor Film",
+    "movie": "The Battle of Algiers",
+    "movie_plot": "A recreation of the events leading up to Algeria's war of independence against the French. The film focuses on the revolutionary fighters and the French paratroopers who try to stop them.",
+    "awards": [
+      "Won the Golden Lion at the 1966 Venice Film Festival"
+    ]
+  },
+  {
+    "title": "Grave of the Fireflies",
+    "imdb_rating": 8.5,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1988",
+    "genre": "Animation",
+    "sub-genre": "War Drama",
+    "stars": [
+      "Tsutomu Tatsumi",
+      "Ayano Shiraishi",
+      "Yoshiko Shinohara"
+    ],
+    "director": "Isao Takahata",
+    "writer": "Isao Takahata",
+    "popu": 53,
+    "production_house": "Studio Ghibli",
+    "movie": "Grave of the Fireflies",
+    "movie_plot": "In the final months of World War II, a teenage boy and his young sister struggle to survive in the Japanese countryside after their mother is killed in an American bombing raid.",
+    "awards": [
+      "Won Best Animation Film at the 1989 Blue Ribbon Awards"
+    ]
+  },
+  {
+    "title": "Akira",
+    "imdb_rating": 8.0,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1988",
+    "genre": "Animation",
+    "sub-genre": "Cyberpunk",
+    "stars": [
+      "Mitsuo Iwata",
+      "Nozomu Sasaki",
+      "Mami Koyama"
+    ],
+    "director": "Katsuhiro Otomo",
+    "writer": "Katsuhiro Otomo, Izo Hashimoto",
+    "popu": 54,
+    "production_house": "Tokyo Movie Shinsha",
+    "movie": "Akira",
+    "movie_plot": "In Neo-Tokyo, a biker gang leader's life is thrown into chaos when his childhood friend awakens powerful telekinetic abilities. He must race against a clandestine government project to save his friend from himself.",
+    "awards": [
+      "Widely considered one of the greatest animated and science fiction films ever made"
+    ]
+  },
+  {
+    "title": "Godzilla",
+    "imdb_rating": 7.5,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1954",
+    "genre": "Sci-Fi",
+    "sub-genre": "Kaiju",
+    "stars": [
+      "Akira Takarada",
+      "Momoko K\u014dchi",
+      "Akihiko Hirata"
+    ],
+    "director": "Ishir\u014d Honda",
+    "writer": "Takeo Murata, Ishir\u014d Honda",
+    "popu": 55,
+    "production_house": "Toho",
+    "movie": "Godzilla",
+    "movie_plot": "A prehistoric sea creature, awakened by nuclear bomb testing, terrorizes Japan as it wreaks havoc on Tokyo. A group of scientists must find a way to stop the monster before it destroys the country.",
+    "awards": [
+      "Won the Japan Film Professional Award for Best Film"
+    ]
+  },
+  {
+    "title": "Yojimbo",
+    "imdb_rating": 8.2,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1961",
+    "genre": "Action",
+    "sub-genre": "Jidaigeki",
+    "stars": [
+      "Toshiro Mifune",
+      "Tatsuya Nakadai",
+      "Yoko Tsukasa"
+    ],
+    "director": "Akira Kurosawa",
+    "writer": "Ryuzo Kikushima, Akira Kurosawa",
+    "popu": 56,
+    "production_house": "Toho",
+    "movie": "Yojimbo",
+    "movie_plot": "A masterless samurai arrives in a small town divided by two warring gangs. He offers his services as a bodyguard to both sides, secretly manipulating them against each other for his own gain.",
+    "awards": [
+      "Won Best Actor (Toshiro Mifune) at the 22nd Venice Film Festival"
+    ]
+  },
+  {
+    "title": "Ikiru",
+    "imdb_rating": 8.3,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1952",
+    "genre": "Drama",
+    "sub-genre": "Humanist Drama",
+    "stars": [
+      "Takashi Shimura",
+      "Shinichi Himori",
+      "Haruo Tanaka"
+    ],
+    "director": "Akira Kurosawa",
+    "writer": "Akira Kurosawa, Shinobu Hashimoto, Hideo Oguni",
+    "popu": 57,
+    "production_house": "Toho",
+    "movie": "Ikiru",
+    "movie_plot": "A dying man, a middle-aged bureaucrat, decides to find meaning in his life after learning he has cancer. He embarks on a quest to make a difference and build a small playground for children.",
+    "awards": [
+      "Won the Golden Bear at the 1952 Berlin International Film Festival"
+    ]
+  },
+  {
+    "title": "Kantara",
+    "imdb_rating": 8.3,
+    "language": "Kannada",
+    "country": "India",
+    "year": "2022",
+    "genre": "Action",
+    "sub-genre": "Fantasy Thriller",
+    "stars": [
+      "Rishab Shetty",
+      "Sapthami Gowda",
+      "Kishore"
+    ],
+    "director": "Rishab Shetty",
+    "writer": "Rishab Shetty",
+    "popu": 58,
+    "production_house": "Hombale Films",
+    "movie": "Kantara",
+    "movie_plot": "A demigod, who protects a tribal village and its forest, disappears. The film follows a human protector who takes on the responsibility, leading him to a conflict with the local authorities.",
+    "awards": [
+      "Nominated for Best Film at the 2023 Filmfare Awards South"
+    ]
+  },
+  {
+    "title": "Ponniyin Selvan: I",
+    "imdb_rating": 7.6,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2022",
+    "genre": "Historical",
+    "sub-genre": "Action Drama",
+    "stars": [
+      "Vikram",
+      "Aishwarya Rai Bachchan",
+      "Jayam Ravi"
+    ],
+    "director": "Mani Ratnam",
+    "writer": "Mani Ratnam, Elango Kumaravel, B. Jeyamohan",
+    "popu": 59,
+    "production_house": "Madras Talkies",
+    "movie": "Ponniyin Selvan: I",
+    "movie_plot": "Based on a Tamil novel, the film chronicles the early days of the Chola prince Arulmozhi Varman, who would later become the great king Rajaraja I. It explores the political intrigues and conspiracies of the era.",
+    "awards": [
+      "Won Best Film at the 68th Filmfare Awards South"
+    ]
+  },
+  {
+    "title": "Leo",
+    "imdb_rating": 7.4,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2023",
+    "genre": "Action",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Joseph Vijay",
+      "Sanjay Dutt",
+      "Trisha Krishnan"
+    ],
+    "director": "Lokesh Kanagaraj",
+    "writer": "Lokesh Kanagaraj, Rathna Kumar, Deeraj Vaidy",
+    "popu": 60,
+    "production_house": "Seven Screen Studio",
+    "movie": "Leo",
+    "movie_plot": "A cafe owner and a former gangster living a peaceful life in Himachal Pradesh, must defend his family from a drug cartel that is hunting him down for his past sins.",
+    "awards": [
+      "Highest grossing Tamil film of 2023"
+    ]
+  },
+  {
+    "title": "The First Slam Dunk",
+    "imdb_rating": 8.0,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "2022",
+    "genre": "Animation",
+    "sub-genre": "Sports Drama",
+    "stars": [
+      "Shugo Nakamura",
+      "Jun Kasama",
+      "Shin'ichir\u014d Kamio"
+    ],
+    "director": "Takehiko Inoue",
+    "writer": "Takehiko Inoue",
+    "popu": 61,
+    "production_house": "Toei Animation",
+    "movie": "The First Slam Dunk",
+    "movie_plot": "The story follows Ryota Miyagi, the point guard of the Shohoku High School basketball team. The film chronicles his journey and the team's relentless quest to win the national basketball championship.",
+    "awards": [
+      "Won the Japan Academy Film Prize for Animation of the Year"
+    ]
+  },
+  {
+    "title": "The Night Comes for Us",
+    "imdb_rating": 6.9,
+    "language": "Indonesian",
+    "country": "Indonesia",
+    "year": "2018",
+    "genre": "Action",
+    "sub-genre": "Crime Thriller",
+    "stars": [
+      "Joe Taslim",
+      "Iko Uwais",
+      "Julie Estelle"
+    ],
+    "director": "Timo Tjahjanto",
+    "writer": "Timo Tjahjanto",
+    "popu": 64,
+    "production_house": "Netflix",
+    "movie": "The Night Comes for Us",
+    "movie_plot": "A former elite gang enforcer betrays his crime family to save a young girl. He finds himself hunted by his former allies and must fight his way out of the city to protect her.",
+    "awards": [
+      "Nominated for Best Film at the 2019 Fantasia International Film Festival"
+    ]
+  },
+  {
+    "title": "The Raid: Redemption",
+    "imdb_rating": 7.6,
+    "language": "Indonesian",
+    "country": "Indonesia",
+    "year": "2011",
+    "genre": "Action",
+    "sub-genre": "Martial Arts",
+    "stars": [
+      "Iko Uwais",
+      "Joe Taslim",
+      "Yayan Ruhian"
+    ],
+    "director": "Gareth Evans",
+    "writer": "Gareth Evans",
+    "popu": 65,
+    "production_house": "Merantau Films",
+    "movie": "The Raid: Redemption",
+    "movie_plot": "A rookie S.W.A.T. team is sent on a mission to storm a high-rise apartment building controlled by a ruthless drug lord. They must fight their way through hordes of gangsters to complete their mission.",
+    "awards": [
+      "Won the Midnight Madness People's Choice Award at the 2011 Toronto International Film Festival"
+    ]
+  },
+  {
+    "title": "The Road",
+    "imdb_rating": 7.2,
+    "language": "English",
+    "country": "USA",
+    "year": "2009",
+    "genre": "Drama",
+    "sub-genre": "Post-apocalyptic",
+    "stars": [
+      "Viggo Mortensen",
+      "Kodi Smit-McPhee",
+      "Charlize Theron"
+    ],
+    "director": "John Hillcoat",
+    "writer": "Joe Penhall",
+    "popu": 66,
+    "production_house": "2929 Productions",
+    "movie": "The Road",
+    "movie_plot": "In a post-apocalyptic world, a father and his son journey across a desolate landscape to reach the coast. They face the constant threat of cannibalistic gangs and the struggle to survive.",
+    "awards": [
+      "Nominated for a BAFTA Award for Best Cinematography"
+    ]
+  },
+  {
+    "title": "The King's Speech",
+    "imdb_rating": 8.0,
+    "language": "English",
+    "country": "UK, Australia, USA",
+    "year": "2010",
+    "genre": "Biographical",
+    "sub-genre": "Historical Drama",
+    "stars": [
+      "Colin Firth",
+      "Geoffrey Rush",
+      "Helena Bonham Carter"
+    ],
+    "director": "Tom Hooper",
+    "writer": "David Seidler",
+    "popu": 67,
+    "production_house": "The Weinstein Company",
+    "movie": "The King's Speech",
+    "movie_plot": "The story of King George VI of the United Kingdom, who, with the help of a speech therapist, overcomes his stammer to deliver an important radio broadcast before the start of World War II.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "A Fantastic Woman",
+    "imdb_rating": 7.2,
+    "language": "Spanish",
+    "country": "Chile, Germany, Spain, USA",
+    "year": "2017",
+    "genre": "Drama",
+    "sub-genre": "LGBTQ+ Drama",
+    "stars": [
+      "Daniela Vega",
+      "Francisco Reyes",
+      "Luis Gnecco"
+    ],
+    "director": "Sebasti\u00e1n Lelio",
+    "writer": "Sebasti\u00e1n Lelio, Gonzalo Maza",
+    "popu": 68,
+    "production_house": "Fabula",
+    "movie": "A Fantastic Woman",
+    "movie_plot": "A transgender woman faces discrimination and scrutiny after her much older partner suddenly dies. She must fight for her right to grieve and exist in a society that doesn't accept her.",
+    "awards": [
+      "Won the Academy Award for Best Foreign Language Film"
+    ]
+  },
+  {
+    "title": "Jojo Rabbit",
+    "imdb_rating": 7.9,
+    "language": "English",
+    "country": "New Zealand, Czech Republic, USA",
+    "year": "2019",
+    "genre": "Comedy",
+    "sub-genre": "Satire",
+    "stars": [
+      "Roman Griffin Davis",
+      "Thomasin McKenzie",
+      "Scarlett Johansson"
+    ],
+    "director": "Taika Waititi",
+    "writer": "Taika Waititi",
+    "popu": 69,
+    "production_house": "Fox Searchlight Pictures",
+    "movie": "Jojo Rabbit",
+    "movie_plot": "A lonely German boy in World War II, who is a member of the Hitler Youth, discovers that his mother is hiding a young Jewish girl in their home. His imaginary friend, a whimsical version of Hitler, guides him through his moral dilemma.",
+    "awards": [
+      "Won the Academy Award for Best Adapted Screenplay"
+    ]
+  },
+  {
+    "title": "The Shape of Water",
+    "imdb_rating": 7.3,
+    "language": "English, American Sign Language",
+    "country": "USA",
+    "year": "2017",
+    "genre": "Fantasy",
+    "sub-genre": "Romantic Drama",
+    "stars": [
+      "Sally Hawkins",
+      "Doug Jones",
+      "Michael Shannon"
+    ],
+    "director": "Guillermo del Toro",
+    "writer": "Guillermo del Toro, Vanessa Taylor",
+    "popu": 70,
+    "production_house": "Fox Searchlight Pictures",
+    "movie": "The Shape of Water",
+    "movie_plot": "A mute cleaning lady at a secret government laboratory falls in love with an amphibious creature being held captive. She embarks on a plan to rescue the creature with the help of her friends.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Moonlight",
+    "imdb_rating": 7.4,
+    "language": "English",
+    "country": "USA",
+    "year": "2016",
+    "genre": "Drama",
+    "sub-genre": "Coming-of-age",
+    "stars": [
+      "Mahershala Ali",
+      "Naomie Harris",
+      "Trevante Rhodes"
+    ],
+    "director": "Barry Jenkins",
+    "writer": "Barry Jenkins",
+    "popu": 71,
+    "production_house": "A24",
+    "movie": "Moonlight",
+    "movie_plot": "A three-part story that follows a young African-American man named Chiron through three defining chapters of his life. The film explores his struggles with his identity and sexuality.",
+    "awards": [
+      "Won 3 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Arrival",
+    "imdb_rating": 7.9,
+    "language": "English, Russian, Mandarin",
+    "country": "USA",
+    "year": "2016",
+    "genre": "Sci-Fi",
+    "sub-genre": "Drama",
+    "stars": [
+      "Amy Adams",
+      "Jeremy Renner",
+      "Forest Whitaker"
+    ],
+    "director": "Denis Villeneuve",
+    "writer": "Eric Heisserer",
+    "popu": 72,
+    "production_house": "21 Laps Entertainment",
+    "movie": "Arrival",
+    "movie_plot": "When mysterious alien spacecrafts land on Earth, a linguistics expert is recruited by the military to communicate with the extraterrestrials. Her work becomes a race against time to prevent a global war.",
+    "awards": [
+      "Won an Academy Award for Best Sound Editing"
+    ]
+  },
+  {
+    "title": "Dune: Part Two",
+    "imdb_rating": 8.6,
+    "language": "English",
+    "country": "USA, Canada",
+    "year": "2024",
+    "genre": "Sci-Fi",
+    "sub-genre": "Epic",
+    "stars": [
+      "Timoth\u00e9e Chalamet",
+      "Zendaya",
+      "Rebecca Ferguson"
+    ],
+    "director": "Denis Villeneuve",
+    "writer": "Denis Villeneuve, Jon Spaihts, Frank Herbert",
+    "popu": 73,
+    "production_house": "Legendary Pictures",
+    "movie": "Dune: Part Two",
+    "movie_plot": "Paul Atreides unites with Chani and the Fremen to wage war against House Harkonnen, who destroyed his family. He must choose between the love of his life and the fate of the universe.",
+    "awards": [
+      "Highest-grossing film of 2024"
+    ]
+  },
+  {
+    "title": "Bohemian Rhapsody",
+    "imdb_rating": 7.9,
+    "language": "English",
+    "country": "UK, USA",
+    "year": "2018",
+    "genre": "Biographical",
+    "sub-genre": "Musical Drama",
+    "stars": [
+      "Rami Malek",
+      "Lucy Boynton",
+      "Gwilym Lee"
+    ],
+    "director": "Bryan Singer",
+    "writer": "Anthony McCarten",
+    "popu": 74,
+    "production_house": "20th Century Fox",
+    "movie": "Bohemian Rhapsody",
+    "movie_plot": "A celebration of the legendary rock band Queen and their lead singer Freddie Mercury. The film follows Mercury's rise to fame, his personal struggles, and his final iconic performance at Live Aid.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Actor (Rami Malek)"
+    ]
+  },
+  {
+    "title": "Walk the Line",
+    "imdb_rating": 7.8,
+    "language": "English",
+    "country": "USA, Germany",
+    "year": "2005",
+    "genre": "Biographical",
+    "sub-genre": "Musical Drama",
+    "stars": [
+      "Joaquin Phoenix",
+      "Reese Witherspoon",
+      "Ginnifer Goodwin"
+    ],
+    "director": "James Mangold",
+    "writer": "Gill Dennis, James Mangold",
+    "popu": 75,
+    "production_house": "20th Century Fox",
+    "movie": "Walk the Line",
+    "movie_plot": "A biographical film about the life of country music icon Johnny Cash. The film explores his early life, his rise to fame, his struggles with addiction, and his love story with June Carter.",
+    "awards": [
+      "Won the Academy Award for Best Actress (Reese Witherspoon)"
+    ]
+  },
+  {
+    "title": "Ray",
+    "imdb_rating": 7.7,
+    "language": "English",
+    "country": "USA",
+    "year": "2004",
+    "genre": "Biographical",
+    "sub-genre": "Musical Drama",
+    "stars": [
+      "Jamie Foxx",
+      "Kerry Washington",
+      "Clifton Powell"
+    ],
+    "director": "Taylor Hackford",
+    "writer": "James L. White, Taylor Hackford",
+    "popu": 76,
+    "production_house": "Universal Pictures",
+    "movie": "Ray",
+    "movie_plot": "The biographical story of the legendary musician Ray Charles. The film follows his journey from a blind and poor boy to an international superstar, and his struggles with addiction and personal demons.",
+    "awards": [
+      "Won the Academy Award for Best Actor (Jamie Foxx)"
+    ]
+  },
+  {
+    "title": "Elvis",
+    "imdb_rating": 7.3,
+    "language": "English",
+    "country": "USA, Australia",
+    "year": "2022",
+    "genre": "Biographical",
+    "sub-genre": "Musical Drama",
+    "stars": [
+      "Austin Butler",
+      "Tom Hanks",
+      "Olivia DeJonge"
+    ],
+    "director": "Baz Luhrmann",
+    "writer": "Baz Luhrmann, Sam Bromell, Craig Pearce",
+    "popu": 78,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "Elvis",
+    "movie_plot": "The life of rock-and-roll icon Elvis Presley is seen through the eyes of his enigmatic manager, Colonel Tom Parker. The film explores their complex relationship and the rise of Presley's stardom.",
+    "awards": [
+      "Nominated for 8 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Rocketman",
+    "imdb_rating": 7.3,
+    "language": "English",
+    "country": "UK, Canada, USA",
+    "year": "2019",
+    "genre": "Biographical",
+    "sub-genre": "Musical Fantasy",
+    "stars": [
+      "Taron Egerton",
+      "Jamie Bell",
+      "Richard Madden"
+    ],
+    "director": "Dexter Fletcher",
+    "writer": "Lee Hall",
+    "popu": 79,
+    "production_house": "Paramount Pictures",
+    "movie": "Rocketman",
+    "movie_plot": "A musical fantasy about the extraordinary life of Elton John, from his early years as a shy prodigy to his legendary rise to fame. The film is a magical journey through his most iconic songs.",
+    "awards": [
+      "Won the Academy Award for Best Original Song"
+    ]
+  },
+  {
+    "title": "Poor Things",
+    "imdb_rating": 8.0,
+    "language": "English",
+    "country": "Ireland, UK, USA",
+    "year": "2023",
+    "genre": "Sci-Fi",
+    "sub-genre": "Black Comedy",
+    "stars": [
+      "Emma Stone",
+      "Mark Ruffalo",
+      "Willem Dafoe"
+    ],
+    "director": "Yorgos Lanthimos",
+    "writer": "Tony McNamara",
+    "popu": 85,
+    "production_house": "Searchlight Pictures",
+    "movie": "Poor Things",
+    "movie_plot": "A young woman who has been reanimated by an eccentric scientist embarks on a fantastic and surreal journey of self-discovery, escaping the confines of her Victorian world.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Actress (Emma Stone)"
+    ]
+  },
+  {
+    "title": "Anatomy of a Fall",
+    "imdb_rating": 7.8,
+    "language": "French, English",
+    "country": "France",
+    "year": "2023",
+    "genre": "Crime",
+    "sub-genre": "Courtroom Drama",
+    "stars": [
+      "Sandra H\u00fcller",
+      "Swann Arlaud",
+      "Milo Machado Graner"
+    ],
+    "director": "Justine Triet",
+    "writer": "Justine Triet, Arthur Harari",
+    "popu": 86,
+    "production_house": "Les Films Pell\u00e9as",
+    "movie": "Anatomy of a Fall",
+    "movie_plot": "A woman is the prime suspect in the death of her husband, who fell from their chalet. Their blind son's testimony becomes crucial as the trial delves into the complexities of their marriage.",
+    "awards": [
+      "Won the Palme d'Or at the 2023 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "Oppenheimer",
+    "imdb_rating": 8.5,
+    "language": "English",
+    "country": "USA, UK",
+    "year": "2023",
+    "genre": "Biographical",
+    "sub-genre": "Historical Drama",
+    "stars": [
+      "Cillian Murphy",
+      "Emily Blunt",
+      "Matt Damon"
+    ],
+    "director": "Christopher Nolan",
+    "writer": "Christopher Nolan",
+    "popu": 87,
+    "production_house": "Syncopy Inc.",
+    "movie": "Oppenheimer",
+    "movie_plot": "The biographical story of J. Robert Oppenheimer, the theoretical physicist who led the Manhattan Project and developed the first nuclear weapons. The film explores the moral and ethical dilemmas he faced.",
+    "awards": [
+      "Won 7 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "The Banshees of Inisherin",
+    "imdb_rating": 7.7,
+    "language": "English",
+    "country": "Ireland, UK, USA",
+    "year": "2022",
+    "genre": "Comedy",
+    "sub-genre": "Black Comedy",
+    "stars": [
+      "Colin Farrell",
+      "Brendan Gleeson",
+      "Kerry Condon"
+    ],
+    "director": "Martin McDonagh",
+    "writer": "Martin McDonagh",
+    "popu": 88,
+    "production_house": "Searchlight Pictures",
+    "movie": "The Banshees of Inisherin",
+    "movie_plot": "Two lifelong friends on a remote Irish island find themselves at an impasse when one of them abruptly ends their friendship. The film explores the absurd and tragic consequences of their feud.",
+    "awards": [
+      "Nominated for 9 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Anora",
+    "imdb_rating": 7.7,
+    "language": "English, Russian",
+    "country": "USA",
+    "year": "2024",
+    "genre": "Comedy",
+    "sub-genre": "Romantic Comedy",
+    "stars": [
+      "Mikey Madison",
+      "Mark Eydelshteyn",
+      "Yura Borisov"
+    ],
+    "director": "Sean Baker",
+    "writer": "Sean Baker",
+    "popu": 89,
+    "production_house": "FilmNation Entertainment",
+    "movie": "Anora",
+    "movie_plot": "A New York stripper's life changes when she meets and impulsively marries the son of a Russian oligarch. Their marriage becomes a whirlwind of chaotic events as his parents try to annul their union.",
+    "awards": [
+      "Won the Palme d'Or at the 2024 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "Gladiator II",
+    "imdb_rating": 7.5,
+    "language": "English",
+    "country": "USA, UK",
+    "year": "2024",
+    "genre": "Action",
+    "sub-genre": "Historical Epic",
+    "stars": [
+      "Paul Mescal",
+      "Denzel Washington",
+      "Pedro Pascal"
+    ],
+    "director": "Ridley Scott",
+    "writer": "David Scarpa",
+    "popu": 90,
+    "production_house": "Paramount Pictures",
+    "movie": "Gladiator II",
+    "movie_plot": "The sequel to the 2000 epic film follows Lucius, the nephew of Commodus, and his journey through the political intrigues of Rome. He finds himself in the gladiatorial arena, seeking justice and revenge.",
+    "awards": [
+      "Highly anticipated blockbuster of 2024"
+    ]
+  },
+  {
+    "title": "A Complete Unknown",
+    "imdb_rating": 7.8,
+    "language": "English",
+    "country": "USA",
+    "year": "2024",
+    "genre": "Biographical",
+    "sub-genre": "Musical Drama",
+    "stars": [
+      "Timoth\u00e9e Chalamet",
+      "Edward Norton",
+      "Elle Fanning"
+    ],
+    "director": "James Mangold",
+    "writer": "Jay Cocks, James Mangold",
+    "popu": 91,
+    "production_house": "Searchlight Pictures",
+    "movie": "A Complete Unknown",
+    "movie_plot": "The biographical story of Bob Dylan, the legendary folk musician. The film chronicles his rise to fame and his controversial decision to go electric at the Newport Folk Festival in 1965.",
+    "awards": [
+      "Premiered at the 2024 Telluride Film Festival"
+    ]
+  },
+  {
+    "title": "The Substance",
+    "imdb_rating": 7.6,
+    "language": "English",
+    "country": "UK, USA, France",
+    "year": "2024",
+    "genre": "Horror",
+    "sub-genre": "Body Horror",
+    "stars": [
+      "Demi Moore",
+      "Margaret Qualley",
+      "Dennis Quaid"
+    ],
+    "director": "Coralie Fargeat",
+    "writer": "Coralie Fargeat",
+    "popu": 92,
+    "production_house": "MUBI",
+    "movie": "The Substance",
+    "movie_plot": "A woman uses a revolutionary new substance that creates a more beautiful, perfect version of herself. But when the two versions of herself must share time, a violent and terrifying conflict ensues.",
+    "awards": [
+      "Won Best Screenplay at the 2024 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "Thelma",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "2024",
+    "genre": "Comedy",
+    "sub-genre": "Action Comedy",
+    "stars": [
+      "June Squibb",
+      "Fred Hechinger",
+      "Richard Roundtree"
+    ],
+    "director": "Josh Margolin",
+    "writer": "Josh Margolin",
+    "popu": 93,
+    "production_house": "Magnolia Pictures",
+    "movie": "Thelma",
+    "movie_plot": "A 93-year-old woman is scammed by a fraudster pretending to be her grandson. She embarks on a 'Mission: Impossible'-style quest to retrieve her money and get revenge.",
+    "awards": [
+      "Nominated for the Grand Jury Prize at the 2024 Sundance Film Festival"
+    ]
+  },
+  {
+    "title": "Blade Runner 2049",
+    "imdb_rating": 8.0,
+    "language": "English",
+    "country": "USA, UK, Canada",
+    "year": "2017",
+    "genre": "Sci-Fi",
+    "sub-genre": "Neo-noir",
+    "stars": [
+      "Ryan Gosling",
+      "Harrison Ford",
+      "Ana de Armas"
+    ],
+    "director": "Denis Villeneuve",
+    "writer": "Hampton Fancher, Michael Green",
+    "popu": 94,
+    "production_house": "Alcon Entertainment",
+    "movie": "Blade Runner 2049",
+    "movie_plot": "A new 'Blade Runner,' LAPD Officer K, unearths a long-buried secret that has the potential to plunge what\u2019s left of society into chaos. His discovery leads him on a quest to find Rick Deckard, a former Blade Runner who has been missing for 30 years.",
+    "awards": [
+      "Won 2 Academy Awards, including Best Cinematography"
+    ]
+  },
+  {
+    "title": "Nomadland",
+    "imdb_rating": 7.3,
+    "language": "English",
+    "country": "USA, Germany",
+    "year": "2020",
+    "genre": "Drama",
+    "sub-genre": "Road Movie",
+    "stars": [
+      "Frances McDormand",
+      "David Strathairn",
+      "Linda May"
+    ],
+    "director": "Chlo\u00e9 Zhao",
+    "writer": "Chlo\u00e9 Zhao",
+    "popu": 97,
+    "production_house": "Searchlight Pictures",
+    "movie": "Nomadland",
+    "movie_plot": "A woman in her sixties, who lost everything in the Great Recession, embarks on a journey through the American West, living as a modern-day nomad in a van. She finds a new sense of purpose and community.",
+    "awards": [
+      "Won 3 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "The Power of the Dog",
+    "imdb_rating": 6.8,
+    "language": "English",
+    "country": "UK, USA, Australia, New Zealand, Canada",
+    "year": "2021",
+    "genre": "Western",
+    "sub-genre": "Psychological Drama",
+    "stars": [
+      "Benedict Cumberbatch",
+      "Kirsten Dunst",
+      "Jesse Plemons"
+    ],
+    "director": "Jane Campion",
+    "writer": "Jane Campion",
+    "popu": 98,
+    "production_house": "Netflix",
+    "movie": "The Power of the Dog",
+    "movie_plot": "A charismatic but menacing rancher intimidates his brother's new wife and her son. The family drama unfolds on a beautiful but tense Montana ranch, revealing secrets and a complex web of relationships.",
+    "awards": [
+      "Won the Academy Award for Best Director"
+    ]
+  },
+  {
+    "title": "CODA",
+    "imdb_rating": 8.0,
+    "language": "English, American Sign Language",
+    "country": "USA, France",
+    "year": "2021",
+    "genre": "Drama",
+    "sub-genre": "Coming-of-age",
+    "stars": [
+      "Emilia Jones",
+      "Troy Kotsur",
+      "Marlee Matlin"
+    ],
+    "director": "Sian Heder",
+    "writer": "Sian Heder",
+    "popu": 99,
+    "production_house": "Apple TV+",
+    "movie": "CODA",
+    "movie_plot": "A young girl, the only hearing member of her deaf family, struggles to balance her passion for singing with her family's dependence on her. The film is a heartfelt story about family and finding your voice.",
+    "awards": [
+      "Won 3 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Manchester by the Sea",
+    "imdb_rating": 7.8,
+    "language": "English",
+    "country": "USA",
+    "year": "2016",
+    "genre": "Drama",
+    "sub-genre": "Family Drama",
+    "stars": [
+      "Casey Affleck",
+      "Michelle Williams",
+      "Kyle Chandler"
+    ],
+    "director": "Kenneth Lonergan",
+    "writer": "Kenneth Lonergan",
+    "popu": 100,
+    "production_house": "Amazon Studios",
+    "movie": "Manchester by the Sea",
+    "movie_plot": "A reclusive handyman is forced to return to his hometown to care for his teenage nephew after his brother's death. He must confront his traumatic past and the people he left behind.",
+    "awards": [
+      "Won 2 Academy Awards, including Best Original Screenplay and Best Actor (Casey Affleck)"
+    ]
+  },
+  {
+    "title": "Hereditary",
+    "imdb_rating": 7.3,
+    "language": "English",
+    "country": "USA",
+    "year": "2018",
+    "genre": "Horror",
+    "sub-genre": "Supernatural Horror",
+    "stars": [
+      "Toni Collette",
+      "Alex Wolff",
+      "Milly Shapiro"
+    ],
+    "director": "Ari Aster",
+    "writer": "Ari Aster",
+    "popu": 101,
+    "production_house": "A24",
+    "movie": "Hereditary",
+    "movie_plot": "After the death of their secretive grandmother, a family is haunted by a malevolent presence. They are forced to uncover terrifying family secrets and battle an ancient, demonic force.",
+    "awards": [
+      "Won Best Actress (Toni Collette) at the 2018 Gotham Awards"
+    ]
+  },
+  {
+    "title": "Midsommar",
+    "imdb_rating": 7.1,
+    "language": "English",
+    "country": "USA, Sweden",
+    "year": "2019",
+    "genre": "Horror",
+    "sub-genre": "Folk Horror",
+    "stars": [
+      "Florence Pugh",
+      "Jack Reynor",
+      "Will Poulter"
+    ],
+    "director": "Ari Aster",
+    "writer": "Ari Aster",
+    "popu": 102,
+    "production_house": "A24",
+    "movie": "Midsommar",
+    "movie_plot": "A couple travels to a remote Swedish village for a legendary midsummer festival. Their idyllic vacation turns into a violent and disturbing competition as they uncover the sinister traditions of the cult.",
+    "awards": [
+      "Nominated for the Critics' Choice Movie Award for Best Sci-Fi/Horror Movie"
+    ]
+  },
+  {
+    "title": "Everything Everywhere All at Once",
+    "imdb_rating": 7.8,
+    "language": "English, Mandarin, Cantonese",
+    "country": "USA",
+    "year": "2022",
+    "genre": "Action",
+    "sub-genre": "Sci-Fi Comedy",
+    "stars": [
+      "Michelle Yeoh",
+      "Ke Huy Quan",
+      "Stephanie Hsu"
+    ],
+    "director": "Daniel Kwan, Daniel Scheinert",
+    "writer": "Daniel Kwan, Daniel Scheinert",
+    "popu": 103,
+    "production_house": "A24",
+    "movie": "Everything Everywhere All at Once",
+    "movie_plot": "A Chinese immigrant is swept up in a wild adventure, where she alone can save the world by exploring other universes and connecting with the lives she could have lived.",
+    "awards": [
+      "Won 7 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Lady Bird",
+    "imdb_rating": 7.4,
+    "language": "English",
+    "country": "USA",
+    "year": "2017",
+    "genre": "Comedy",
+    "sub-genre": "Coming-of-age",
+    "stars": [
+      "Saoirse Ronan",
+      "Laurie Metcalf",
+      "Tracy Letts"
+    ],
+    "director": "Greta Gerwig",
+    "writer": "Greta Gerwig",
+    "popu": 104,
+    "production_house": "A24",
+    "movie": "Lady Bird",
+    "movie_plot": "An artistically inclined teenager with a strong will and a rebellious nature navigates her turbulent relationship with her mother and her senior year of high school in Sacramento, California.",
+    "awards": [
+      "Nominated for 5 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "Minari",
+    "imdb_rating": 7.4,
+    "language": "English, Korean",
+    "country": "USA",
+    "year": "2020",
+    "genre": "Drama",
+    "sub-genre": "Family Drama",
+    "stars": [
+      "Steven Yeun",
+      "Youn Yuh-jung",
+      "Han Ye-ri"
+    ],
+    "director": "Lee Isaac Chung",
+    "writer": "Lee Isaac Chung",
+    "popu": 105,
+    "production_house": "A24",
+    "movie": "Minari",
+    "movie_plot": "A Korean-American family moves to a tiny farm in rural Arkansas in search of their own American Dream. Their family dynamics are tested with the arrival of their eccentric, foul-mouthed grandmother.",
+    "awards": [
+      "Won the Academy Award for Best Supporting Actress (Youn Yuh-jung)"
+    ]
+  },
+  {
+    "title": "The Killing of a Sacred Deer",
+    "imdb_rating": 7.0,
+    "language": "English",
+    "country": "Ireland, UK, USA",
+    "year": "2017",
+    "genre": "Thriller",
+    "sub-genre": "Psychological Thriller",
+    "stars": [
+      "Colin Farrell",
+      "Nicole Kidman",
+      "Barry Keoghan"
+    ],
+    "director": "Yorgos Lanthimos",
+    "writer": "Efthymis Filippou, Yorgos Lanthimos",
+    "popu": 111,
+    "production_house": "A24",
+    "movie": "The Killing of a Sacred Deer",
+    "movie_plot": "A surgeon's life spirals into chaos when a young man he has taken under his wing begins to make strange demands. He is forced to make a horrifying sacrifice to save his family.",
+    "awards": [
+      "Won Best Screenplay at the 2017 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "Good Time",
+    "imdb_rating": 7.4,
+    "language": "English",
+    "country": "USA",
+    "year": "2017",
+    "genre": "Crime",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Robert Pattinson",
+      "Benny Safdie",
+      "Jennifer Jason Leigh"
+    ],
+    "director": "Benny Safdie, Josh Safdie",
+    "writer": "Josh Safdie, Ronald Bronstein",
+    "popu": 112,
+    "production_house": "A24",
+    "movie": "Good Time",
+    "movie_plot": "After a botched bank robbery, a small-time criminal embarks on a frantic and dangerous journey through New York's underworld to get his mentally disabled brother out of jail.",
+    "awards": [
+      "Nominated for the Palme d'Or at the 2017 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "The Favourite",
+    "imdb_rating": 7.5,
+    "language": "English",
+    "country": "UK, Ireland, USA",
+    "year": "2018",
+    "genre": "Comedy",
+    "sub-genre": "Historical Drama",
+    "stars": [
+      "Olivia Colman",
+      "Emma Stone",
+      "Rachel Weisz"
+    ],
+    "director": "Yorgos Lanthimos",
+    "writer": "Deborah Davis, Tony McNamara",
+    "popu": 115,
+    "production_house": "Searchlight Pictures",
+    "movie": "The Favourite",
+    "movie_plot": "In 18th-century England, a frail Queen Anne is on the throne, but her closest friend and advisor, Lady Sarah, governs the country in her place. The arrival of a new servant turns the political landscape into a fierce rivalry.",
+    "awards": [
+      "Won the Academy Award for Best Actress (Olivia Colman)"
+    ]
+  },
+  {
+    "title": "The Social Network",
+    "imdb_rating": 7.8,
+    "language": "English",
+    "country": "USA",
+    "year": "2010",
+    "genre": "Biographical",
+    "sub-genre": "Drama",
+    "stars": [
+      "Jesse Eisenberg",
+      "Andrew Garfield",
+      "Justin Timberlake"
+    ],
+    "director": "David Fincher",
+    "writer": "Aaron Sorkin",
+    "popu": 116,
+    "production_house": "Columbia Pictures",
+    "movie": "The Social Network",
+    "movie_plot": "The story of Facebook's creation, from the moment a brilliant but arrogant Harvard student decides to create a social network, to the legal battles and betrayals that followed.",
+    "awards": [
+      "Won 3 Academy Awards, including Best Adapted Screenplay"
+    ]
+  },
+  {
+    "title": "The Revenant",
+    "imdb_rating": 8.0,
+    "language": "English, Pawnee, French",
+    "country": "USA",
+    "year": "2015",
+    "genre": "Adventure",
+    "sub-genre": "Western",
+    "stars": [
+      "Leonardo DiCaprio",
+      "Tom Hardy",
+      "Domhnall Gleeson"
+    ],
+    "director": "Alejandro G. I\u00f1\u00e1rritu",
+    "writer": "Mark L. Smith, Alejandro G. I\u00f1\u00e1rritu",
+    "popu": 120,
+    "production_house": "20th Century Fox",
+    "movie": "The Revenant",
+    "movie_plot": "Based on a true story, a frontiersman is mauled by a bear and left for dead by his hunting party. He must fight his way through the wilderness to find revenge on the man who betrayed him.",
+    "awards": [
+      "Won 3 Academy Awards, including Best Director and Best Actor (Leonardo DiCaprio)"
+    ]
+  },
+  {
+    "title": "Dunkirk",
+    "imdb_rating": 7.8,
+    "language": "English, French, German",
+    "country": "UK, USA, France, Netherlands",
+    "year": "2017",
+    "genre": "War",
+    "sub-genre": "Historical Drama",
+    "stars": [
+      "Fionn Whitehead",
+      "Tom Hardy",
+      "Harry Styles"
+    ],
+    "director": "Christopher Nolan",
+    "writer": "Christopher Nolan",
+    "popu": 121,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "Dunkirk",
+    "movie_plot": "The story of the evacuation of Allied soldiers from the beaches of Dunkirk during World War II. The film is told from three different perspectives: the land, the sea, and the air.",
+    "awards": [
+      "Won 3 Academy Awards, including Best Sound Mixing"
+    ]
+  },
+  {
+    "title": "The Post",
+    "imdb_rating": 7.2,
+    "language": "English",
+    "country": "USA",
+    "year": "2017",
+    "genre": "Biographical",
+    "sub-genre": "Political Thriller",
+    "stars": [
+      "Meryl Streep",
+      "Tom Hanks",
+      "Sarah Paulson"
+    ],
+    "director": "Steven Spielberg",
+    "writer": "Liz Hannah, Josh Singer",
+    "popu": 122,
+    "production_house": "20th Century Fox",
+    "movie": "The Post",
+    "movie_plot": "The story of the Washington Post's publisher, Katharine Graham, and editor, Ben Bradlee, and their decision to publish the Pentagon Papers, exposing a government cover-up of four decades of secrets.",
+    "awards": [
+      "Nominated for an Academy Award for Best Picture"
+    ]
+  },
+  {
+    "title": "Three Billboards Outside Ebbing, Missouri",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "UK, USA",
+    "year": "2017",
+    "genre": "Crime",
+    "sub-genre": "Black Comedy",
+    "stars": [
+      "Frances McDormand",
+      "Woody Harrelson",
+      "Sam Rockwell"
+    ],
+    "director": "Martin McDonagh",
+    "writer": "Martin McDonagh",
+    "popu": 123,
+    "production_house": "Fox Searchlight Pictures",
+    "movie": "Three Billboards Outside Ebbing, Missouri",
+    "movie_plot": "A mother rents three billboards to challenge the local police to solve her daughter's murder case. Her bold move ignites a war between her and the town's chief of police.",
+    "awards": [
+      "Won 2 Academy Awards, including Best Actress (Frances McDormand)"
+    ]
+  },
+  {
+    "title": "The Big Sick",
+    "imdb_rating": 7.5,
+    "language": "English, Urdu",
+    "country": "USA",
+    "year": "2017",
+    "genre": "Comedy",
+    "sub-genre": "Romantic Comedy",
+    "stars": [
+      "Kumail Nanjiani",
+      "Zoe Kazan",
+      "Holly Hunter"
+    ],
+    "director": "Michael Showalter",
+    "writer": "Emily V. Gordon, Kumail Nanjiani",
+    "popu": 124,
+    "production_house": "Amazon Studios",
+    "movie": "The Big Sick",
+    "movie_plot": "A Pakistani-American stand-up comedian falls in love with a white American woman. Their relationship is complicated by his family's strict traditional values, but they are brought together when she falls into a mysterious coma.",
+    "awards": [
+      "Nominated for an Academy Award for Best Original Screenplay"
+    ]
+  },
+  {
+    "title": "Perfect Blue",
+    "imdb_rating": 8.0,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1997",
+    "genre": "Animation",
+    "sub-genre": "Psychological Thriller",
+    "stars": [
+      "Junko Iwao",
+      "Rica Matsumoto",
+      "Shiho Niiyama"
+    ],
+    "director": "Satoshi Kon",
+    "writer": "Sadayuki Murai",
+    "popu": 130,
+    "production_house": "Madhouse",
+    "movie": "Perfect Blue",
+    "movie_plot": "A former pop idol retires to pursue an acting career. As she takes on a psychologically demanding role, she becomes increasingly unhinged and paranoid, unsure of what is real and what is a fantasy.",
+    "awards": [
+      "Widely influential and praised for its complex themes"
+    ]
+  },
+  {
+    "title": "The Tale of the Princess Kaguya",
+    "imdb_rating": 8.0,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "2013",
+    "genre": "Animation",
+    "sub-genre": "Fantasy",
+    "stars": [
+      "Aki Asakura",
+      "Kengo Kora",
+      "Nobuko Miyamoto"
+    ],
+    "director": "Isao Takahata",
+    "writer": "Isao Takahata, Riko Sakaguchi",
+    "popu": 131,
+    "production_house": "Studio Ghibli",
+    "movie": "The Tale of the Princess Kaguya",
+    "movie_plot": "Based on a 10th-century Japanese folk tale, a young bamboo cutter finds a tiny baby girl in a glowing bamboo stalk. She grows at an incredible rate and is soon courted by many suitors, but she longs for her true home.",
+    "awards": [
+      "Nominated for the Academy Award for Best Animated Feature"
+    ]
+  },
+  {
+    "title": "The Wind Rises",
+    "imdb_rating": 7.8,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "2013",
+    "genre": "Animation",
+    "sub-genre": "Biographical",
+    "stars": [
+      "Hideaki Anno",
+      "Miori Takimoto",
+      "Hidetoshi Nishijima"
+    ],
+    "director": "Hayao Miyazaki",
+    "writer": "Hayao Miyazaki",
+    "popu": 132,
+    "production_house": "Studio Ghibli",
+    "movie": "The Wind Rises",
+    "movie_plot": "A fictionalized biography of Jiro Horikoshi, the designer of the Zero fighter plane used by the Japanese in World War II. The film explores his dreams, his love, and the complex relationship between art and destruction.",
+    "awards": [
+      "Nominated for the Academy Award for Best Animated Feature"
+    ]
+  },
+  {
+    "title": "The Raid: Berandal",
+    "imdb_rating": 7.9,
+    "language": "Indonesian",
+    "country": "Indonesia",
+    "year": "2014",
+    "genre": "Action",
+    "sub-genre": "Martial Arts",
+    "stars": [
+      "Iko Uwais",
+      "Arifin Putra",
+      "Oka Antara"
+    ],
+    "director": "Gareth Evans",
+    "writer": "Gareth Evans",
+    "popu": 133,
+    "production_house": "XYZ Films",
+    "movie": "The Raid: Berandal",
+    "movie_plot": "A rookie cop goes undercover to infiltrate a brutal crime syndicate. His mission leads him into a complex web of betrayal, gang wars, and a dangerous quest to uncover police corruption.",
+    "awards": [
+      "Nominated for Best Action Film at the 2014 Saturn Awards"
+    ]
+  },
+  {
+    "title": "Princess Mononoke",
+    "imdb_rating": 8.4,
+    "language": "Japanese",
+    "country": "Japan",
+    "year": "1997",
+    "genre": "Animation",
+    "sub-genre": "Fantasy",
+    "stars": [
+      "Y\u014dji Matsuda",
+      "Yuriko Ishida",
+      "Y\u016bko Tanaka"
+    ],
+    "director": "Hayao Miyazaki",
+    "writer": "Hayao Miyazaki",
+    "popu": 152,
+    "production_house": "Studio Ghibli",
+    "movie": "Princess Mononoke",
+    "movie_plot": "A young warrior is cursed after a battle with a demon. He must journey to a sacred forest to find a cure and is caught in the middle of a conflict between the human world and the spirits of the forest.",
+    "awards": [
+      "Won the Japan Academy Prize for Picture of the Year"
+    ]
+  },
+  {
+    "title": "Eighth Grade",
+    "imdb_rating": 7.4,
+    "language": "English",
+    "country": "USA",
+    "year": "2018",
+    "genre": "Comedy",
+    "sub-genre": "Coming-of-age",
+    "stars": [
+      "Elsie Fisher",
+      "Josh Hamilton",
+      "Emily Robinson"
+    ],
+    "director": "Bo Burnham",
+    "writer": "Bo Burnham",
+    "popu": 160,
+    "production_house": "A24",
+    "movie": "Eighth Grade",
+    "movie_plot": "A 13-year-old girl navigates the final week of her disastrous eighth-grade year before she embarks on the terrifying journey of high school. The film is a poignant and hilarious look at the awkwardness of puberty.",
+    "awards": [
+      "Won Best First Film at the 2018 National Board of Review Awards"
+    ]
+  },
+  {
+    "title": "Uncut Gems",
+    "imdb_rating": 7.4,
+    "language": "English",
+    "country": "USA",
+    "year": "2019",
+    "genre": "Crime",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Adam Sandler",
+      "Julia Fox",
+      "Lakeith Stanfield"
+    ],
+    "director": "Josh Safdie, Benny Safdie",
+    "writer": "Josh Safdie, Benny Safdie, Ronald Bronstein",
+    "popu": 162,
+    "production_house": "A24",
+    "movie": "Uncut Gems",
+    "movie_plot": "A charismatic and reckless New York jeweler must make a series of high-stakes bets to pay off his debts. His life spirals out of control as he gambles on a rare opal.",
+    "awards": [
+      "Won Best Actor (Adam Sandler) at the 2020 Independent Spirit Awards"
+    ]
+  },
+  {
+    "title": "The Farewell",
+    "imdb_rating": 7.5,
+    "language": "English, Mandarin",
+    "country": "USA, China",
+    "year": "2019",
+    "genre": "Comedy",
+    "sub-genre": "Drama",
+    "stars": [
+      "Awkwafina",
+      "Tzi Ma",
+      "Diana Lin"
+    ],
+    "director": "Lulu Wang",
+    "writer": "Lulu Wang",
+    "popu": 163,
+    "production_house": "A24",
+    "movie": "The Farewell",
+    "movie_plot": "A Chinese-American family hides the fact that their beloved grandmother has only a short time to live. They plan a big family reunion to say their goodbyes, without the grandmother's knowledge.",
+    "awards": [
+      "Won the Golden Globe for Best Actress \u2013 Motion Picture Comedy or Musical (Awkwafina)"
+    ]
+  },
+  {
+    "title": "The Witch",
+    "imdb_rating": 6.9,
+    "language": "English",
+    "country": "USA, Canada",
+    "year": "2015",
+    "genre": "Horror",
+    "sub-genre": "Folk Horror",
+    "stars": [
+      "Anya Taylor-Joy",
+      "Ralph Ineson",
+      "Kate Dickie"
+    ],
+    "director": "Robert Eggers",
+    "writer": "Robert Eggers",
+    "popu": 164,
+    "production_house": "A24",
+    "movie": "The Witch",
+    "movie_plot": "A Puritan family is cast out of their community and settles on a remote farm in the 17th century. They are plagued by a supernatural evil, forcing them to question their faith and their sanity.",
+    "awards": [
+      "Won Best First Feature at the 2016 Independent Spirit Awards"
+    ]
+  },
+  {
+    "title": "Pather Panchali",
+    "imdb_rating": 8.4,
+    "language": "Bengali",
+    "country": "India",
+    "year": "1955",
+    "genre": "Drama",
+    "sub-genre": "Family Drama",
+    "stars": [
+      "Subir Banerjee",
+      "Kanchan Badra",
+      "Karuna Banerjee"
+    ],
+    "director": "Satyajit Ray",
+    "writer": "Satyajit Ray",
+    "popu": 165,
+    "production_house": "Government of West Bengal",
+    "movie": "Pather Panchali",
+    "movie_plot": "The first film in the Apu Trilogy, this film follows the impoverished life of a young boy named Apu and his family in a rural village in Bengal. The film is a poetic and emotional look at childhood and poverty.",
+    "awards": [
+      "Won the Best Human Document award at the 1956 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "The Apu Trilogy: Aparajito",
+    "imdb_rating": 8.3,
+    "language": "Bengali",
+    "country": "India",
+    "year": "1956",
+    "genre": "Drama",
+    "sub-genre": "Family Drama",
+    "stars": [
+      "Pinaki Sengupta",
+      "Smaran Ghosal",
+      "Karuna Banerjee"
+    ],
+    "director": "Satyajit Ray",
+    "writer": "Satyajit Ray",
+    "popu": 166,
+    "production_house": "Satyajit Ray Productions",
+    "movie": "Aparajito",
+    "movie_plot": "The second film in the Apu Trilogy, this film continues the story of Apu, who has moved to the city with his parents. He faces new challenges and learns about life, death, and responsibility.",
+    "awards": [
+      "Won the Golden Lion at the 1957 Venice Film Festival"
+    ]
+  },
+  {
+    "title": "The Apu Trilogy: The World of Apu",
+    "imdb_rating": 8.5,
+    "language": "Bengali",
+    "country": "India",
+    "year": "1959",
+    "genre": "Drama",
+    "sub-genre": "Family Drama",
+    "stars": [
+      "Soumitra Chatterjee",
+      "Sharmila Tagore",
+      "Alok Chakraborty"
+    ],
+    "director": "Satyajit Ray",
+    "writer": "Satyajit Ray",
+    "popu": 167,
+    "production_house": "Satyajit Ray Productions",
+    "movie": "The World of Apu",
+    "movie_plot": "The final film in the Apu Trilogy, this film follows Apu as he embarks on his journey to become a writer. He finds love, marries, and faces the new challenges of adulthood.",
+    "awards": [
+      "Won Best Film at the 1960 National Film Awards"
+    ]
+  },
+  {
+    "title": "Thondimuthalum Driksakshiyum",
+    "imdb_rating": 8.4,
+    "language": "Malayalam",
+    "country": "India",
+    "year": "2017",
+    "genre": "Comedy",
+    "sub-genre": "Crime Drama",
+    "stars": [
+      "Fahadh Faasil",
+      "Suraj Venjaramoodu",
+      "Nimisha Sajayan"
+    ],
+    "director": "Dileesh Pothan",
+    "writer": "Sajeev Pazhoor",
+    "popu": 168,
+    "production_house": "Urusa Films",
+    "movie": "Thondimuthalum Driksakshiyum",
+    "movie_plot": "A newlywed couple on a bus is robbed of a gold chain. The suspect, a small-time thief, swallows the chain and is taken to the police station. The film follows the absurd events that follow.",
+    "awards": [
+      "Won 2 National Film Awards, including Best Feature Film in Malayalam"
+    ]
+  },
+  {
+    "title": "Kaaka Muttai",
+    "imdb_rating": 8.4,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2015",
+    "genre": "Comedy",
+    "sub-genre": "Drama",
+    "stars": [
+      "Vignesh",
+      "Ramesh",
+      "Iyshwarya Rajesh"
+    ],
+    "director": "M. Manikandan",
+    "writer": "M. Manikandan",
+    "popu": 169,
+    "production_house": "Fox Star Studios",
+    "movie": "Kaaka Muttai",
+    "movie_plot": "Two slum-dwelling brothers develop a craving for pizza after seeing it in a TV commercial. They embark on a hilarious and heartwarming quest to get their first slice, learning about poverty, class, and friendship.",
+    "awards": [
+      "Won 2 National Film Awards, including Best Children's Film"
+    ]
+  },
+  {
+    "title": "Sairat",
+    "imdb_rating": 8.2,
+    "language": "Marathi",
+    "country": "India",
+    "year": "2016",
+    "genre": "Romance",
+    "sub-genre": "Drama",
+    "stars": [
+      "Rinku Rajguru",
+      "Akash Thosar",
+      "Arbaz Shaikh"
+    ],
+    "director": "Nagraj Manjule",
+    "writer": "Nagraj Manjule",
+    "popu": 170,
+    "production_house": "Zee Studios",
+    "movie": "Sairat",
+    "movie_plot": "A wealthy upper-caste girl and a poor lower-caste boy fall in love. They are forced to flee their village when their romance is discovered, leading them on a tragic journey of survival.",
+    "awards": [
+      "Won the National Film Award \u2013 Special Mention"
+    ]
+  },
+  {
+    "title": "Airlift",
+    "imdb_rating": 7.9,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2016",
+    "genre": "Historical",
+    "sub-genre": "War Drama",
+    "stars": [
+      "Akshay Kumar",
+      "Nimrat Kaur",
+      "Purab Kohli"
+    ],
+    "director": "Raja Krishna Menon",
+    "writer": "Raja Krishna Menon",
+    "popu": 171,
+    "production_house": "T-Series Films",
+    "movie": "Airlift",
+    "movie_plot": "Based on a true story, a wealthy Indian businessman helps evacuate over 170,000 Indians from Kuwait during the 1990 Invasion of Kuwait. He risks his life to save his countrymen in a daring mission.",
+    "awards": [
+      "Won Best Actor (Akshay Kumar) at the 62nd National Film Awards"
+    ]
+  },
+  {
+    "title": "Barfi!",
+    "imdb_rating": 8.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2012",
+    "genre": "Comedy",
+    "sub-genre": "Romance",
+    "stars": [
+      "Ranbir Kapoor",
+      "Priyanka Chopra",
+      "Ileana D'Cruz"
+    ],
+    "director": "Anurag Basu",
+    "writer": "Anurag Basu",
+    "popu": 172,
+    "production_house": "UTV Motion Pictures",
+    "movie": "Barfi!",
+    "movie_plot": "The story of a deaf and mute boy named Barfi and his two love interests. The film is a charming and heartwarming tale of love, friendship, and happiness.",
+    "awards": [
+      "Won 7 Filmfare Awards, including Best Film"
+    ]
+  },
+  {
+    "title": "Kahaani",
+    "imdb_rating": 8.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2012",
+    "genre": "Mystery",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Vidya Balan",
+      "Parambrata Chatterjee",
+      "Nawazuddin Siddiqui"
+    ],
+    "director": "Sujoy Ghosh",
+    "writer": "Sujoy Ghosh, Suresh Nair, Ritesh Shah",
+    "popu": 173,
+    "production_house": "Pen India Limited",
+    "movie": "Kahaani",
+    "movie_plot": "A pregnant woman arrives in Kolkata to search for her missing husband. She navigates the dangerous streets and corrupt officials to find him, but a deeper conspiracy awaits her.",
+    "awards": [
+      "Won 5 National Film Awards, including Best Screenplay"
+    ]
+  },
+  {
+    "title": "Queen",
+    "imdb_rating": 8.2,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2013",
+    "genre": "Comedy",
+    "sub-genre": "Drama",
+    "stars": [
+      "Kangana Ranaut",
+      "Rajkummar Rao",
+      "Lisa Haydon"
+    ],
+    "director": "Vikas Bahl",
+    "writer": "Vikas Bahl, Chaitally Parmar, Parvez Shaikh",
+    "popu": 174,
+    "production_house": "Phantom Films",
+    "movie": "Queen",
+    "movie_plot": "A young Punjabi woman, whose wedding is called off, decides to go on her planned honeymoon to Paris and Amsterdam alone. Her journey becomes a coming-of-age story of self-discovery and freedom.",
+    "awards": [
+      "Won 6 Filmfare Awards, including Best Film"
+    ]
+  },
+  {
+    "title": "PK",
+    "imdb_rating": 8.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2014",
+    "genre": "Comedy",
+    "sub-genre": "Sci-Fi",
+    "stars": [
+      "Aamir Khan",
+      "Anushka Sharma",
+      "Sushant Singh Rajput"
+    ],
+    "director": "Rajkumar Hirani",
+    "writer": "Rajkumar Hirani, Abhijat Joshi",
+    "popu": 175,
+    "production_house": "Vinod Chopra Films",
+    "movie": "PK",
+    "movie_plot": "An alien arrives on Earth to study humanity, but he is stranded when his remote control is stolen. He embarks on a quest to find his way back home, questioning religion and superstitions along the way.",
+    "awards": [
+      "Highest-grossing Indian film of 2014"
+    ]
+  },
+  {
+    "title": "Udaan",
+    "imdb_rating": 8.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2010",
+    "genre": "Drama",
+    "sub-genre": "Coming-of-age",
+    "stars": [
+      "Rajat Barmecha",
+      "Ronit Roy",
+      "Aayan Boradia"
+    ],
+    "director": "Vikramaditya Motwane",
+    "writer": "Vikramaditya Motwane, Anurag Kashyap",
+    "popu": 181,
+    "production_house": "UTV Motion Pictures",
+    "movie": "Udaan",
+    "movie_plot": "A young boy is expelled from his boarding school and is forced to return to his small town. He must live with his abusive father and finds a way to escape his oppressive reality and pursue his dreams.",
+    "awards": [
+      "Won 7 Filmfare Awards, including Best Film"
+    ]
+  },
+  {
+    "title": "Chak De! India",
+    "imdb_rating": 8.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2007",
+    "genre": "Sports",
+    "sub-genre": "Drama",
+    "stars": [
+      "Shah Rukh Khan",
+      "Vidya Malvade",
+      "Sagarika Ghatge"
+    ],
+    "director": "Shimit Amin",
+    "writer": "Jaideep Sahni",
+    "popu": 182,
+    "production_house": "Yash Raj Films",
+    "movie": "Chak De! India",
+    "movie_plot": "A former hockey star, who was disgraced after losing a match, becomes the coach of the Indian women's hockey team. He must train a group of diverse and undisciplined girls to win the World Cup.",
+    "awards": [
+      "Won the National Film Award for Best Popular Film Providing Wholesome Entertainment"
+    ]
+  },
+  {
+    "title": "3 Idiots",
+    "imdb_rating": 8.4,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2009",
+    "genre": "Comedy",
+    "sub-genre": "Coming-of-age",
+    "stars": [
+      "Aamir Khan",
+      "R. Madhavan",
+      "Sharman Joshi"
+    ],
+    "director": "Rajkumar Hirani",
+    "writer": "Rajkumar Hirani, Abhijat Joshi",
+    "popu": 183,
+    "production_house": "Vinod Chopra Films",
+    "movie": "3 Idiots",
+    "movie_plot": "Two friends embark on a search for their long-lost college friend, who inspired them to think differently. Their journey takes them back to their college days, where they revisit their memories and friendship.",
+    "awards": [
+      "Won 6 Filmfare Awards, including Best Film"
+    ]
+  },
+  {
+    "title": "Lage Raho Munna Bhai",
+    "imdb_rating": 8.0,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2006",
+    "genre": "Comedy",
+    "sub-genre": "Drama",
+    "stars": [
+      "Sanjay Dutt",
+      "Arshad Warsi",
+      "Vidya Balan"
+    ],
+    "director": "Rajkumar Hirani",
+    "writer": "Rajkumar Hirani, Abhijat Joshi",
+    "popu": 184,
+    "production_house": "Vinod Chopra Films",
+    "movie": "Lage Raho Munna Bhai",
+    "movie_plot": "A kind-hearted mobster begins to see the spirit of Mahatma Gandhi. He uses Gandhi's non-violent philosophy to help people and solve their problems, leading to a hilarious and heartfelt journey.",
+    "awards": [
+      "Won the National Film Award for Best Popular Film Providing Wholesome Entertainment"
+    ]
+  },
+  {
+    "title": "Khosla Ka Ghosla!",
+    "imdb_rating": 8.3,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2006",
+    "genre": "Comedy",
+    "sub-genre": "Black Comedy",
+    "stars": [
+      "Anupam Kher",
+      "Boman Irani",
+      "Parvin Dabas"
+    ],
+    "director": "Dibakar Banerjee",
+    "writer": "Jaideep Sahni",
+    "popu": 185,
+    "production_house": "UTV Motion Pictures",
+    "movie": "Khosla Ka Ghosla!",
+    "movie_plot": "A retired middle-class man's life savings are stolen by a swindling builder who has illegally occupied his plot of land. He and his family must find a way to get their property back and get revenge on the builder.",
+    "awards": [
+      "Won the National Film Award for Best Feature Film in Hindi"
+    ]
+  },
+  {
+    "title": "Hera Pheri",
+    "imdb_rating": 8.2,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2000",
+    "genre": "Comedy",
+    "sub-genre": "Black Comedy",
+    "stars": [
+      "Akshay Kumar",
+      "Paresh Rawal",
+      "Suniel Shetty"
+    ],
+    "director": "Priyadarshan",
+    "writer": "Neeraj Vora",
+    "popu": 186,
+    "production_house": "A. G. Films",
+    "movie": "Hera Pheri",
+    "movie_plot": "Three desperate and unemployed men are in search of money. They accidentally get their hands on a ransom call, and they must find a way to make money out of the situation, leading to hilarious chaos.",
+    "awards": [
+      "Considered a cult classic of Indian cinema"
+    ]
+  },
+  {
+    "title": "Bajrangi Bhaijaan",
+    "imdb_rating": 8.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2015",
+    "genre": "Drama",
+    "sub-genre": "Family Drama",
+    "stars": [
+      "Salman Khan",
+      "Harshaali Malhotra",
+      "Nawazuddin Siddiqui"
+    ],
+    "director": "Kabir Khan",
+    "writer": "K. V. Vijayendra Prasad",
+    "popu": 187,
+    "production_house": "Salman Khan Films",
+    "movie": "Bajrangi Bhaijaan",
+    "movie_plot": "A devout Hindu man from India embarks on a journey to Pakistan to return a mute girl to her home. He faces numerous challenges, including crossing the border and dealing with the political tensions between the two countries.",
+    "awards": [
+      "Won the National Film Award for Best Popular Film Providing Wholesome Entertainment"
+    ]
+  },
+  {
+    "title": "Dev.D",
+    "imdb_rating": 8.0,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2009",
+    "genre": "Drama",
+    "sub-genre": "Romance",
+    "stars": [
+      "Abhay Deol",
+      "Mahie Gill",
+      "Kalki Koechlin"
+    ],
+    "director": "Anurag Kashyap",
+    "writer": "Anurag Kashyap, Abhay Deol",
+    "popu": 188,
+    "production_house": "UTV Spotboy",
+    "movie": "Dev.D",
+    "movie_plot": "A modern and dark adaptation of the classic Bengali novel 'Devdas'. The film follows a young man's descent into self-destruction and addiction after his childhood love leaves him.",
+    "awards": [
+      "Won Best Actress (Kalki Koechlin) at the 55th Filmfare Awards"
+    ]
+  },
+  {
+    "title": "Black Friday",
+    "imdb_rating": 8.5,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2004",
+    "genre": "Crime",
+    "sub-genre": "Biographical",
+    "stars": [
+      "Kay Kay Menon",
+      "Pavan Malhotra",
+      "Aditya Srivastava"
+    ],
+    "director": "Anurag Kashyap",
+    "writer": "Anurag Kashyap",
+    "popu": 189,
+    "production_house": "Mid-Day Multimedia",
+    "movie": "Black Friday",
+    "movie_plot": "Based on a book, the film chronicles the events leading up to the 1993 Bombay bomb blasts. The film is told from the perspectives of the police, the criminals, and the victims, revealing a complex web of conspiracy and betrayal.",
+    "awards": [
+      "Won the Grand Jury Prize at the 2005 Indian Film Festival of Los Angeles"
+    ]
+  },
+  {
+    "title": "Taare Zameen Par",
+    "imdb_rating": 8.4,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2007",
+    "genre": "Drama",
+    "sub-genre": "Family Drama",
+    "stars": [
+      "Darsheel Safary",
+      "Aamir Khan",
+      "Tisca Chopra"
+    ],
+    "director": "Aamir Khan",
+    "writer": "Amole Gupte",
+    "popu": 190,
+    "production_house": "Aamir Khan Productions",
+    "movie": "Taare Zameen Par",
+    "movie_plot": "A young boy with dyslexia is sent to a boarding school, where he is misunderstood and labeled as a troublemaker. His life changes when a new art teacher recognizes his struggles and helps him to overcome them.",
+    "awards": [
+      "Won the National Film Award for Best Film on Family Welfare"
+    ]
+  },
+  {
+    "title": "Gully Boy",
+    "imdb_rating": 8.0,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2019",
+    "genre": "Musical",
+    "sub-genre": "Drama",
+    "stars": [
+      "Ranveer Singh",
+      "Alia Bhatt",
+      "Siddhant Chaturvedi"
+    ],
+    "director": "Zoya Akhtar",
+    "writer": "Reema Kagti, Zoya Akhtar",
+    "popu": 191,
+    "production_house": "Excel Entertainment",
+    "movie": "Gully Boy",
+    "movie_plot": "A young man from a Mumbai slum wants to become a rapper. He must navigate the challenges of his impoverished life, his overbearing father, and his own self-doubt to achieve his dreams.",
+    "awards": [
+      "Won 13 Filmfare Awards, including Best Film"
+    ]
+  },
+  {
+    "title": "Tumbbad",
+    "imdb_rating": 8.2,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2018",
+    "genre": "Horror",
+    "sub-genre": "Fantasy",
+    "stars": [
+      "Sohum Shah",
+      "Jyoti Malshe",
+      "Anita Date"
+    ],
+    "director": "Rahi Anil Barve",
+    "writer": "Rahi Anil Barve, Mitesh Shah, Anand Gandhi",
+    "popu": 192,
+    "production_house": "Eros International",
+    "movie": "Tumbbad",
+    "movie_plot": "A man's greed for a hidden treasure leads him to an ancient curse and a demon that he must battle. The film is a dark and terrifying fairy tale about the human desire for more.",
+    "awards": [
+      "Widely praised for its unique visual style and storytelling"
+    ]
+  },
+  {
+    "title": "Dune",
+    "imdb_rating": 8.0,
+    "language": "English",
+    "country": "USA, Canada",
+    "year": "2021",
+    "genre": "Sci-Fi",
+    "sub-genre": "Epic",
+    "stars": [
+      "Timoth\u00e9e Chalamet",
+      "Rebecca Ferguson",
+      "Oscar Isaac"
+    ],
+    "director": "Denis Villeneuve",
+    "writer": "Jon Spaihts, Denis Villeneuve, Eric Roth",
+    "popu": 193,
+    "production_house": "Legendary Pictures",
+    "movie": "Dune",
+    "movie_plot": "In the distant future, a young man from a noble family is entrusted with the protection of the most valuable resource in the galaxy. He must navigate a dangerous world of betrayal, politics, and a hidden power that could change the universe.",
+    "awards": [
+      "Won 6 Academy Awards, including Best Original Score"
+    ]
+  },
+  {
+    "title": "No Time to Die",
+    "imdb_rating": 7.3,
+    "language": "English",
+    "country": "UK, USA",
+    "year": "2021",
+    "genre": "Action",
+    "sub-genre": "Spy Film",
+    "stars": [
+      "Daniel Craig",
+      "Ana de Armas",
+      "Rami Malek"
+    ],
+    "director": "Cary Joji Fukunaga",
+    "writer": "Neal Purvis, Robert Wade, Cary Joji Fukunaga",
+    "popu": 194,
+    "production_house": "Metro-Goldwyn-Mayer",
+    "movie": "No Time to Die",
+    "movie_plot": "James Bond has left active service and is enjoying a tranquil life in Jamaica. His peace is short-lived when his old friend Felix Leiter from the CIA comes asking for help.",
+    "awards": [
+      "Won the Academy Award for Best Original Song"
+    ]
+  },
+  {
+    "title": "The Matrix Resurrections",
+    "imdb_rating": 5.7,
+    "language": "English",
+    "country": "USA",
+    "year": "2021",
+    "genre": "Sci-Fi",
+    "sub-genre": "Action",
+    "stars": [
+      "Keanu Reeves",
+      "Carrie-Anne Moss",
+      "Yahya Abdul-Mateen II"
+    ],
+    "director": "Lana Wachowski",
+    "writer": "Lana Wachowski, David Mitchell, Aleksandar Hemon",
+    "popu": 195,
+    "production_house": "Warner Bros. Pictures",
+    "movie": "The Matrix Resurrections",
+    "movie_plot": "Thomas Anderson, also known as Neo, is back to his mundane life in San Francisco. When he is given a new pill, he must choose whether to follow the white rabbit and discover the truth about the Matrix.",
+    "awards": [
+      "Nominated for a Saturn Award for Best Science Fiction Film"
+    ]
+  },
+  {
+    "title": "Top Gun: Maverick",
+    "imdb_rating": 8.3,
+    "language": "English",
+    "country": "USA",
+    "year": "2022",
+    "genre": "Action",
+    "sub-genre": "Drama",
+    "stars": [
+      "Tom Cruise",
+      "Miles Teller",
+      "Jennifer Connelly"
+    ],
+    "director": "Joseph Kosinski",
+    "writer": "Ehren Kruger, Eric Warren Singer, Christopher McQuarrie",
+    "popu": 196,
+    "production_house": "Paramount Pictures",
+    "movie": "Top Gun: Maverick",
+    "movie_plot": "After more than 30 years of service, Maverick is still pushing the limits as a naval aviator. He is tasked with training a new team of graduates for a high-stakes mission.",
+    "awards": [
+      "Nominated for 6 Academy Awards, including Best Picture"
+    ]
+  },
+  {
+    "title": "All We Imagine as Light",
+    "imdb_rating": 8.1,
+    "language": "Malayalam, Hindi",
+    "country": "India, France",
+    "year": "2024",
+    "genre": "Drama",
+    "sub-genre": "Slice-of-life",
+    "stars": [
+      "Kani Kusruti",
+      "Divya Prabha",
+      "Chhaya Kadam"
+    ],
+    "director": "Payal Kapadia",
+    "writer": "Payal Kapadia",
+    "popu": 206,
+    "production_house": "Petit Chaos",
+    "movie": "All We Imagine as Light",
+    "movie_plot": "Two nurses from Kerala, living in Mumbai, are tired of their mundane lives. They embark on a road trip to a coastal town, where they find a new sense of freedom and hope.",
+    "awards": [
+      "Won the Grand Prix at the 2024 Cannes Film Festival"
+    ]
+  },
+  {
+    "title": "Sakra",
+    "imdb_rating": 6.3,
+    "language": "Mandarin, Cantonese",
+    "country": "Hong Kong, China",
+    "year": "2023",
+    "genre": "Action",
+    "sub-genre": "Wuxia",
+    "stars": [
+      "Donnie Yen",
+      "Kara Wai",
+      "Liu Yifei"
+    ],
+    "director": "Donnie Yen",
+    "writer": "Lui Tze-long",
+    "popu": 207,
+    "production_house": "Mandarin Motion Pictures",
+    "movie": "Sakra",
+    "movie_plot": "Based on a martial arts novel, the film follows a martial arts master who is wrongfully accused of murder. He must fight his way through a dangerous world to clear his name and uncover a conspiracy.",
+    "awards": [
+      "Nominated for Best Action Film at the 2024 Hong Kong Film Awards"
+    ]
+  },
+  {
+    "title": "A Bittersweet Life",
+    "imdb_rating": 7.6,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2005",
+    "genre": "Action",
+    "sub-genre": "Neo-noir",
+    "stars": [
+      "Lee Byung-hun",
+      "Kim Young-chul",
+      "Shin Min-a"
+    ],
+    "director": "Kim Jee-woon",
+    "writer": "Kim Jee-woon",
+    "popu": 208,
+    "production_house": "Genie Pictures",
+    "movie": "A Bittersweet Life",
+    "movie_plot": "A mob enforcer is ordered by his boss to dispose of his boss's mistress. He disobeys the order and is forced to go on the run from his former allies, leading to a brutal and bloody war.",
+    "awards": [
+      "Won Best Director at the 2005 Chunsa Film Art Awards"
+    ]
+  },
+  {
+    "title": "The Admiral: Roaring Currents",
+    "imdb_rating": 7.2,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2014",
+    "genre": "Historical",
+    "sub-genre": "War Drama",
+    "stars": [
+      "Choi Min-sik",
+      "Ryoo Seung-ryong",
+      "Jo Jin-woong"
+    ],
+    "director": "Kim Han-min",
+    "writer": "Jeon Cheol-hong, Kim Han-min",
+    "popu": 209,
+    "production_house": "Bigstone Pictures",
+    "movie": "The Admiral: Roaring Currents",
+    "movie_plot": "Based on a true story, a brilliant but disgraced admiral is tasked with defending his country against a massive Japanese fleet with only 12 ships. He must use his strategic genius to defeat the enemy and save his country.",
+    "awards": [
+      "Highest-grossing film in South Korean history"
+    ]
+  },
+  {
+    "title": "War of the Arrows",
+    "imdb_rating": 7.2,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2011",
+    "genre": "Historical",
+    "sub-genre": "Action",
+    "stars": [
+      "Park Hae-il",
+      "Ryoo Seung-ryong",
+      "Moon Chae-won"
+    ],
+    "director": "Kim Han-min",
+    "writer": "Kim Han-min",
+    "popu": 210,
+    "production_house": "Dasepo Film",
+    "movie": "War of the Arrows",
+    "movie_plot": "During the Second Manchu invasion of Korea, a master archer is on a quest to rescue his sister who has been taken captive. He must use his archery skills to defeat a brutal enemy and save his family.",
+    "awards": [
+      "Won Best Actor (Park Hae-il) at the 48th Grand Bell Awards"
+    ]
+  },
+  {
+    "title": "Mother",
+    "imdb_rating": 7.8,
+    "language": "Korean",
+    "country": "South Korea",
+    "year": "2009",
+    "genre": "Crime",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Kim Hye-ja",
+      "Won Bin",
+      "Jin Goo"
+    ],
+    "director": "Bong Joon-ho",
+    "writer": "Bong Joon-ho, Park Eun-kyo",
+    "popu": 211,
+    "production_house": "CJ Entertainment",
+    "movie": "Mother",
+    "movie_plot": "A mother's life is turned upside down when her mentally disabled son is accused of murder. She embarks on a desperate and dangerous quest to prove his innocence, uncovering dark secrets in her village.",
+    "awards": [
+      "Won Best Film at the 2009 Buil Film Awards"
+    ]
+  },
+  {
+    "title": "Jailer",
+    "imdb_rating": 7.1,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2023",
+    "genre": "Action",
+    "sub-genre": "Black Comedy",
+    "stars": [
+      "Rajinikanth",
+      "Vinayakan",
+      "Ramya Krishnan"
+    ],
+    "director": "Nelson Dilipkumar",
+    "writer": "Nelson Dilipkumar",
+    "popu": 231,
+    "production_house": "Sun Pictures",
+    "movie": "Jailer",
+    "movie_plot": "A retired police officer and family man is living a peaceful life until his son, a cop, goes missing. He is forced to confront his past and use his criminal network to save his son.",
+    "awards": [
+      "Highest-grossing Tamil film of 2023"
+    ]
+  },
+  {
+    "title": "Ponniyin Selvan: II",
+    "imdb_rating": 7.3,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2023",
+    "genre": "Historical",
+    "sub-genre": "Action Drama",
+    "stars": [
+      "Vikram",
+      "Aishwarya Rai Bachchan",
+      "Jayam Ravi"
+    ],
+    "director": "Mani Ratnam",
+    "writer": "Mani Ratnam, Elango Kumaravel, B. Jeyamohan",
+    "popu": 232,
+    "production_house": "Madras Talkies",
+    "movie": "Ponniyin Selvan: II",
+    "movie_plot": "The continuation of the epic saga of the Chola prince and his quest for the throne. The film concludes the political intrigues and battles, leading to the coronation of the rightful king.",
+    "awards": [
+      "Won Best Film at the 69th Filmfare Awards South"
+    ]
+  },
+  {
+    "title": "Vikram",
+    "imdb_rating": 8.3,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2022",
+    "genre": "Action",
+    "sub-genre": "Thriller",
+    "stars": [
+      "Kamal Haasan",
+      "Vijay Sethupathi",
+      "Fahadh Faasil"
+    ],
+    "director": "Lokesh Kanagaraj",
+    "writer": "Lokesh Kanagaraj",
+    "popu": 233,
+    "production_house": "Raaj Kamal Films International",
+    "movie": "Vikram",
+    "movie_plot": "A black-ops agent investigates a series of brutal murders committed by a masked gang. He uncovers a drug cartel that has been operating in the city and goes on a rampage to take them down.",
+    "awards": [
+      "One of the highest-grossing Tamil films of all time"
+    ]
+  },
+  {
+    "title": "Soorarai Pottru",
+    "imdb_rating": 8.7,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2020",
+    "genre": "Biographical",
+    "sub-genre": "Drama",
+    "stars": [
+      "Suriya",
+      "Aparna Balamurali",
+      "Paresh Rawal"
+    ],
+    "director": "Sudha Kongara",
+    "writer": "Sudha Kongara",
+    "popu": 234,
+    "production_house": "2D Entertainment",
+    "movie": "Soorarai Pottru",
+    "movie_plot": "Based on a true story, a common man with a big dream of starting a low-cost airline faces numerous challenges and obstacles. He must fight against the corrupt system and an airline tycoon to achieve his dream.",
+    "awards": [
+      "Won 5 National Film Awards, including Best Feature Film"
+    ]
+  },
+  {
+    "title": "Chhichhore",
+    "imdb_rating": 8.2,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2019",
+    "genre": "Comedy",
+    "sub-genre": "Drama",
+    "stars": [
+      "Sushant Singh Rajput",
+      "Shraddha Kapoor",
+      "Varun Sharma"
+    ],
+    "director": "Nitesh Tiwari",
+    "writer": "Nitesh Tiwari, Piyush Gupta, Nikhil Mehrotra",
+    "popu": 235,
+    "production_house": "Nadiadwala Grandson Entertainment",
+    "movie": "Chhichhore",
+    "movie_plot": "A group of college friends reunite to help one of them get through a difficult time. They reminisce about their college days and the lessons they learned about success and failure.",
+    "awards": [
+      "Won the National Film Award for Best Feature Film in Hindi"
+    ]
+  },
+  {
+    "title": "Bala",
+    "imdb_rating": 7.4,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2019",
+    "genre": "Comedy",
+    "sub-genre": "Drama",
+    "stars": [
+      "Ayushmann Khurrana",
+      "Bhumi Pednekar",
+      "Yami Gautam"
+    ],
+    "director": "Amar Kaushik",
+    "writer": "Niren Bhatt",
+    "popu": 236,
+    "production_house": "Maddock Films",
+    "movie": "Bala",
+    "movie_plot": "A young man who is suffering from premature baldness becomes a laughingstock in his community. He must overcome his insecurities and learn to accept himself for who he is.",
+    "awards": [
+      "Nominated for Best Film at the 65th Filmfare Awards"
+    ]
+  },
+  {
+    "title": "Dream Girl",
+    "imdb_rating": 7.1,
+    "language": "Hindi",
+    "country": "India",
+    "year": "2019",
+    "genre": "Comedy",
+    "sub-genre": "Romance",
+    "stars": [
+      "Ayushmann Khurrana",
+      "Nushrat Bharucha",
+      "Annu Kapoor"
+    ],
+    "director": "Raaj Shaandilyaa",
+    "writer": "Raaj Shaandilyaa",
+    "popu": 237,
+    "production_house": "Balaji Motion Pictures",
+    "movie": "Dream Girl",
+    "movie_plot": "A young man with a unique talent for mimicking a woman's voice gets a job at a call center. He becomes a sensation as a 'dream girl,' but his new identity leads to hilarious complications and unexpected love.",
+    "awards": [
+      "Won Best Film at the 65th Filmfare Awards"
+    ]
+  },
+  {
+    "title": "Super Deluxe",
+    "imdb_rating": 8.3,
+    "language": "Tamil",
+    "country": "India",
+    "year": "2019",
+    "genre": "Thriller",
+    "sub-genre": "Black Comedy",
+    "stars": [
+      "Vijay Sethupathi",
+      "Fahadh Faasil",
+      "Samantha Ruth Prabhu"
+    ],
+    "director": "Thiagarajan Kumararaja",
+    "writer": "Thiagarajan Kumararaja, Nalan Kumarasamy",
+    "popu": 239,
+    "production_house": "Tyler Durden and Co.",
+    "movie": "Super Deluxe",
+    "movie_plot": "Four parallel stories intersect in a series of strange and unexpected events. A man returning home as a transgender woman, a young couple trying to hide a murder, and a family's encounter with a spiritual guru.",
+    "awards": [
+      "Won the National Film Award for Best Original Screenplay"
+    ]
+  },
+  {
+    "title": "Maheshinte Prathikaaram",
+    "imdb_rating": 8.3,
+    "language": "Malayalam",
+    "country": "India",
+    "year": "2016",
+    "genre": "Comedy",
+    "sub-genre": "Drama",
+    "stars": [
+      "Fahadh Faasil",
+      "Aparna Balamurali",
+      "Anusree"
+    ],
+    "director": "Dileesh Pothan",
+    "writer": "Syam Pushkaran",
+    "popu": 240,
+    "production_house": "Dream Big Films",
+    "movie": "Maheshinte Prathikaaram",
+    "movie_plot": "A humble photographer is publicly humiliated in a fight. He vows to not wear his slippers until he gets revenge on the man who beat him. His quest for revenge leads him on a journey of self-discovery.",
+    "awards": [
+      "Won 2 National Film Awards, including Best Feature Film in Malayalam"
+    ]
+  },
+  {
+    "title": "E.T. the Extra-Terrestrial",
+    "imdb_rating": 7.9,
+    "language": "English",
+    "country": "USA",
+    "year": "1982",
+    "genre": "Sci-Fi",
+    "sub-genre": "Fantasy",
+    "stars": [
+      "Henry Thomas",
+      "Drew Barrymore",
+      "Dee Wallace"
+    ],
+    "director": "Steven Spielberg",
+    "writer": "Melissa Mathison",
+    "popu": 242,
+    "production_house": "Universal Pictures",
+    "movie": "E.T. the Extra-Terrestrial",
+    "movie_plot": "A lonely boy befriends a lost alien who is stranded on Earth. He and his siblings must find a way to help the alien return to his home planet while keeping him hidden from the authorities.",
+    "awards": [
+      "Won 4 Academy Awards, including Best Original Score"
+    ]
+  },
+  {
+    "title": "Jurassic Park",
+    "imdb_rating": 8.1,
+    "language": "English",
+    "country": "USA",
+    "year": "1993",
+    "genre": "Sci-Fi",
+    "sub-genre": "Adventure",
+    "stars": [
+      "Sam Neill",
+      "Laura Dern",
+      "Jeff Goldblum"
+    ],
+    "director": "Steven Spielberg",
+    "writer": "Michael Crichton, David Koepp",
+    "popu": 243,
+    "production_house": "Universal Pictures",
+    "movie": "Jurassic Park",
+    "movie_plot": "A wealthy eccentric creates a theme park with genetically engineered dinosaurs. The park's grand opening goes horribly wrong when the prehistoric creatures break free and go on a rampage.",
+    "awards": [
+      "Won 3 Academy Awards, including Best Sound Mixing"
+    ]
+  },
+  {
+    "title": "The Devil Wears Prada",
+    "imdb_rating": 6.9,
+    "language": "English",
+    "country": "USA, France",
+    "year": "2006",
+    "genre": "Comedy",
+    "sub-genre": "Drama",
+    "stars": [
+      "Meryl Streep",
+      "Anne Hathaway",
+      "Emily Blunt"
+    ],
+    "director": "David Frankel",
+    "writer": "Aline Brosh McKenna",
+    "popu": 246,
+    "production_house": "20th Century Fox",
+    "movie": "The Devil Wears Prada",
+    "movie_plot": "A young and ambitious journalist gets a job as an assistant to a tyrannical editor-in-chief of a prestigious fashion magazine. She must survive her boss's ruthless demands while navigating the cutthroat world of fashion.",
+    "awards": [
+      "Nominated for 2 Academy Awards, including Best Actress (Meryl Streep)"
+    ]
+  },
+  {
+    "title": "Eternal Sunshine of the Spotless Mind",
+    "imdb_rating": 8.3,
+    "language": "English",
+    "country": "USA",
+    "year": "2004",
+    "genre": "Sci-Fi",
+    "sub-genre": "Romance",
+    "stars": [
+      "Jim Carrey",
+      "Kate Winslet",
+      "Kirsten Dunst"
+    ],
+    "director": "Michel Gondry",
+    "writer": "Charlie Kaufman, Michel Gondry, Pierre Bismuth",
+    "popu": 248,
+    "production_house": "Focus Features",
+    "movie": "Eternal Sunshine of the Spotless Mind",
+    "movie_plot": "After a painful breakup, a man and his ex-girlfriend erase their memories of each other. He embarks on a journey through his mind to relive their memories and finds himself fighting to hold on to them.",
+    "awards": [
+      "Won the Academy Award for Best Original Screenplay"
+    ]
+  }
+]

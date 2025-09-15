@@ -64,16 +64,25 @@ def cleanse_record(
             if isinstance(metadata, dict):
                 for key, value in metadata.items():
                     if key in movie_data and value:
-                        movie_data[key] = value
+                        # Convert arrays to strings for Redis Search compatibility
+                        if key in ['stars', 'awards'] and isinstance(value, list):
+                            movie_data[key] = ', '.join(str(item) for item in value)
+                        else:
+                            movie_data[key] = value
         
-        # Extract genre, subgenre, and year from folder path
+        # Extract genre, subgenre, and year from folder path only
         extracted_genre = extract_genre_from_path(folder_path)
         extracted_subgenre = extract_subgenre_from_path(folder_path)
         extracted_year = extract_year_from_path(folder_path)
 
         movie_title = movie_data["title"] or title
 
-        print(f"Extracted Genre: {file_id}, title: {movie_title}")
+        # Use folder path extraction only (no JSON content for genre/subgenre/year)
+        final_genre = extracted_genre
+        final_subgenre = extracted_subgenre
+        final_year = extracted_year
+
+        print(f"Final Genre: {final_genre}, title: {movie_title}")
         
         
         return {
@@ -81,16 +90,16 @@ def cleanse_record(
             "title": movie_title,
             "content": content,
             "source": source,
-            "content_type": "movies",
+            "content_type": CONTENT_TYPES.get("MOVIES", "movie"),
             "doc_type": DOCUMENT_TYPE.get("JSON_FILE", "json_file"),
             "file_name": file_name,
             "folder_path": folder_path,
             "modified_time": modified_time,
             "metadata": metadata,
             "url": f"https://drive.google.com/file/d/{file_id}/view",
-            "genre": extracted_genre,
-            "subgenre": extracted_subgenre,
-            "year": extracted_year,
+            "genre": final_genre,
+            "subgenre": final_subgenre,
+            "year": final_year,
             "imdb_rating": movie_data["imdb_rating"],
             "language": movie_data["language"],
             "country": movie_data["country"],
@@ -162,23 +171,107 @@ def parse_file_content(drive_service: GoogleDriveService, file_data: Dict[str, A
 
 
 def extract_genre_from_path(folder_path: str) -> str:
-    """Extract genre from folder path."""
+    """Extract genre from folder path using the predefined genre-subgenre map."""
     if not folder_path:
         return 'unknown'
     
-    # Split path and get first part as genre
+    # Genre-subgenre mapping for faster extraction
+    genre_subgenre_map = {
+        'Action': ['Adventure', 'Biographical', 'Black Comedy', 'Crime Drama', 'Crime Thriller', 'Drama', 'Dystopian', 'Fantasy', 'Fantasy Thriller', 'Historical Drama', 'Historical Epic', 'Jidaigeki', 'Martial Arts', 'Mystery', 'Neo-noir', 'Post-Apocalyptic', 'Sci-Fi Comedy', 'Spy Film', 'Superhero', 'Thriller', 'War', 'Wuxia'],
+        'Adventure': ['Fantasy', 'Western'],
+        'Animation': ['Biographical', 'Cyberpunk', 'Fantasy', 'Psychological Thriller', 'Sports Drama', 'War Drama'],
+        'Biographical': ['Comedy', 'Drama', 'Historical Drama', 'Musical Drama', 'Musical Fantasy', 'Political Thriller', 'Psychological', 'Sports Drama'],
+        'Comedy': ['Action', 'Action Comedy', 'Black Comedy', 'Christmas', 'Coming-of-Age', 'Coming-of-age', 'Crime', 'Crime Drama', 'Drama', 'Family', 'Fantasy', 'Historical Drama', 'Political Satire', 'Romance', 'Romantic', 'Romantic Comedy', 'Satire', 'Sci-Fi'],
+        'Crime': ['Action', 'Biographical', 'Black Comedy', 'Courtroom Drama', 'Drama', 'Gangster', 'Neo-Noir', 'Neo-noir', 'Psychological Drama', 'Thriller', 'Urban Drama'],
+        'Drama': ['Anthology', 'Biographical', 'Biographical Drama', 'Coming-of-Age', 'Coming-of-age', 'Family Drama', 'Historical', 'Humanist Drama', 'Jidaigeki', 'LGBTQ+ Drama', 'Legal', 'Musical', 'Neorealism', 'Political Thriller', 'Post-apocalyptic', 'Prison', 'Psychological', 'Psychological Thriller', 'Road Movie', 'Romance', 'Romantic Comedy', 'Sci-Fi', 'Slice-of-life', 'Social', 'Social Drama', 'Social Thriller', 'Supernatural'],
+        'Fantasy': ['Adventure', 'Comedy', 'Dark Fantasy', 'High Fantasy', 'Romantic Comedy', 'Romantic Drama'],
+        'Historical': ['Action', 'Action Drama', 'War Drama'],
+        'Horror': ['Body Horror', 'Fantasy', 'Folk Horror', 'Psychological', 'SciFi', 'Slasher', 'Supernatural', 'Supernatural Horror', 'Zombie'],
+        'Musical': ['Biographical', 'Comedy', 'Drama', 'Romantic', 'Sports Drama'],
+        'Mystery': ['Thriller'],
+        'Romance': ['Comedy', 'Coming-of-Age', 'Drama', 'Fantasy Comedy'],
+        'Sci-Fi': ['Action', 'Adventure', 'Black Comedy', 'Drama', 'Dystopian', 'Epic', 'Fantasy', 'Kaiju', 'Monster Film', 'Neo-noir', 'Romance'],
+        'SciFi': ['Action', 'Comedy', 'Cyberpunk', 'Dystopian', 'Space Opera', 'Thriller'],
+        'Sports': ['Drama'],
+        'Thriller': ['Adventure', 'Black Comedy', 'Crime Drama', 'Dark Comedy', 'Drama', 'Erotic Thriller', 'Mystery', 'Neo-Western', 'Noir', 'Political', 'Psychological', 'Psychological Horror', 'Psychological Thriller', 'Social', 'Supernatural'],
+        'War': ['Docudrama', 'Historical Drama', 'Revenge'],
+        'Western': ['Action Comedy', 'Epic', 'Mystery', 'Psychological Drama', 'Revenge']
+    }
+    
+    # Split path and find genre using the map
     path_parts = folder_path.split('/')
-    return path_parts[0] if path_parts else 'unknown'
+    
+    for part in path_parts:
+        part = part.strip()
+        if part and not part.isdigit() and not _is_year(part):
+            # Check if this part is a known genre
+            if part in genre_subgenre_map:
+                return part
+    
+    return 'unknown'
+
+
+def _is_year(text: str) -> bool:
+    """Check if text is a year (4-digit number between 1900-2030)."""
+    try:
+        year = int(text)
+        return 1900 <= year <= 2030
+    except (ValueError, TypeError):
+        return False
 
 
 def extract_subgenre_from_path(folder_path: str) -> str:
-    """Extract subgenre from folder path."""
+    """Extract subgenre from folder path using the predefined genre-subgenre map."""
     if not folder_path:
         return 'unknown'
     
-    # Split path and get second part as subgenre
+    # Genre-subgenre mapping for faster extraction
+    genre_subgenre_map = {
+        'Action': ['Adventure', 'Biographical', 'Black Comedy', 'Crime Drama', 'Crime Thriller', 'Drama', 'Dystopian', 'Fantasy', 'Fantasy Thriller', 'Historical Drama', 'Historical Epic', 'Jidaigeki', 'Martial Arts', 'Mystery', 'Neo-noir', 'Post-Apocalyptic', 'Sci-Fi Comedy', 'Spy Film', 'Superhero', 'Thriller', 'War', 'Wuxia'],
+        'Adventure': ['Fantasy', 'Western'],
+        'Animation': ['Biographical', 'Cyberpunk', 'Fantasy', 'Psychological Thriller', 'Sports Drama', 'War Drama'],
+        'Biographical': ['Comedy', 'Drama', 'Historical Drama', 'Musical Drama', 'Musical Fantasy', 'Political Thriller', 'Psychological', 'Sports Drama'],
+        'Comedy': ['Action', 'Action Comedy', 'Black Comedy', 'Christmas', 'Coming-of-Age', 'Coming-of-age', 'Crime', 'Crime Drama', 'Drama', 'Family', 'Fantasy', 'Historical Drama', 'Political Satire', 'Romance', 'Romantic', 'Romantic Comedy', 'Satire', 'Sci-Fi'],
+        'Crime': ['Action', 'Biographical', 'Black Comedy', 'Courtroom Drama', 'Drama', 'Gangster', 'Neo-Noir', 'Neo-noir', 'Psychological Drama', 'Thriller', 'Urban Drama'],
+        'Drama': ['Anthology', 'Biographical', 'Biographical Drama', 'Coming-of-Age', 'Coming-of-age', 'Family Drama', 'Historical', 'Humanist Drama', 'Jidaigeki', 'LGBTQ+ Drama', 'Legal', 'Musical', 'Neorealism', 'Political Thriller', 'Post-apocalyptic', 'Prison', 'Psychological', 'Psychological Thriller', 'Road Movie', 'Romance', 'Romantic Comedy', 'Sci-Fi', 'Slice-of-life', 'Social', 'Social Drama', 'Social Thriller', 'Supernatural'],
+        'Fantasy': ['Adventure', 'Comedy', 'Dark Fantasy', 'High Fantasy', 'Romantic Comedy', 'Romantic Drama'],
+        'Historical': ['Action', 'Action Drama', 'War Drama'],
+        'Horror': ['Body Horror', 'Fantasy', 'Folk Horror', 'Psychological', 'SciFi', 'Slasher', 'Supernatural', 'Supernatural Horror', 'Zombie'],
+        'Musical': ['Biographical', 'Comedy', 'Drama', 'Romantic', 'Sports Drama'],
+        'Mystery': ['Thriller'],
+        'Romance': ['Comedy', 'Coming-of-Age', 'Drama', 'Fantasy Comedy'],
+        'Sci-Fi': ['Action', 'Adventure', 'Black Comedy', 'Drama', 'Dystopian', 'Epic', 'Fantasy', 'Kaiju', 'Monster Film', 'Neo-noir', 'Romance'],
+        'SciFi': ['Action', 'Comedy', 'Cyberpunk', 'Dystopian', 'Space Opera', 'Thriller'],
+        'Sports': ['Drama'],
+        'Thriller': ['Adventure', 'Black Comedy', 'Crime Drama', 'Dark Comedy', 'Drama', 'Erotic Thriller', 'Mystery', 'Neo-Western', 'Noir', 'Political', 'Psychological', 'Psychological Horror', 'Psychological Thriller', 'Social', 'Supernatural'],
+        'War': ['Docudrama', 'Historical Drama', 'Revenge'],
+        'Western': ['Action Comedy', 'Epic', 'Mystery', 'Psychological Drama', 'Revenge']
+    }
+    
+    # Split path and find subgenre using the map
     path_parts = folder_path.split('/')
-    return path_parts[1] if len(path_parts) > 1 else 'unknown'
+    
+    # Find all non-digit, non-year parts
+    non_digit_parts = []
+    for part in path_parts:
+        part = part.strip()
+        if part and not part.isdigit() and not _is_year(part):
+            non_digit_parts.append(part)
+    
+    # Find the first part that's a known subgenre
+    for part in non_digit_parts:
+        # Check if this part is a known subgenre in any genre
+        for genre, subgenres in genre_subgenre_map.items():
+            if part in subgenres:
+                return part
+    
+    # If no known subgenre found, return the second non-digit part or first if only one exists
+    if len(non_digit_parts) >= 2:
+        return non_digit_parts[1]
+    elif len(non_digit_parts) == 1:
+        return non_digit_parts[0]
+    
+    return 'unknown'
 
 
 def extract_year_from_path(folder_path: str) -> int:

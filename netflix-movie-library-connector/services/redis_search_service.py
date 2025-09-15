@@ -3,6 +3,8 @@ import json
 from typing import List, Dict, Any, Optional
 from loguru import logger
 from utils.config import REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, REDIS_DB
+from datetime import datetime
+import time
 
 
 
@@ -68,11 +70,17 @@ class RedisSearchService:
                 "language", "TAG",
                 "production_house", "TAG",
                 "source", "TAG",
+                "content_type", "TAG",
                 
                 # SORTABLE AND FILTERABLE FIELDS (NUMERIC with SORTABLE)
                 "year", "NUMERIC", "SORTABLE",
                 "imdb_rating", "NUMERIC", "SORTABLE",
                 "popu", "NUMERIC", "SORTABLE",
+                
+                # TIMESTAMP FIELDS (NUMERIC with SORTABLE for proper sorting)
+                "created_timestamp", "NUMERIC", "SORTABLE",
+                "updated_timestamp", "NUMERIC", "SORTABLE",
+                "modified_timestamp", "NUMERIC", "SORTABLE",
                 
                 # SORTABLE AND FILTERABLE FIELDS (TEXT with SORTABLE)
                 "modified_time", "TEXT", "SORTABLE",
@@ -125,13 +133,14 @@ class RedisSearchService:
             # Prepare document data for RedisSearch
             doc_data = {
                 "title": data.get("title", ""),
-                "stars": " ".join(data.get("stars", [])),  # Convert array to space-separated string
+                "stars": data.get("stars", ""),  # Already a string
                 "country": data.get("country", ""),
                 "director": data.get("director", ""),
                 "writer": data.get("writer", ""),
                 "movie_plot": data.get("movie_plot", ""),
-                "awards": " ".join(data.get("awards", [])),  # Convert array to space-separated string
+                "awards": data.get("awards", ""),  # Already a string
                 "content": data.get("content", ""),
+                "content_type": data.get("content_type", "movie"),
                 "file_id": data.get("id", ""),
                 # Filterable fields
                 "genre": data.get("genre", "unknown"),
@@ -139,6 +148,7 @@ class RedisSearchService:
                 "language": data.get("language", "unknown"),
                 "production_house": data.get("production_house", "unknown"),
                 "source": data.get("source", "google_drive"),
+
                 
                 # Numeric fields
                 "year": data.get("year", 0),
@@ -149,11 +159,20 @@ class RedisSearchService:
                 "folder_path": data.get("folder_path", ""),
                 "modified_time": data.get("modified_time", ""),
                 "file_name": data.get("file_name", ""),
-                "url": data.get("url", "")
+                "url": data.get("url", ""),
+                
+                # Timestamp fields (convert to Unix timestamps for sorting)
+                "created_timestamp": _convert_to_timestamp(data.get("created_at", "")),
+                "updated_timestamp": _convert_to_timestamp(data.get("updated_at", "")),
+                "modified_timestamp": _convert_to_timestamp(data.get("modified_time", ""))
             }
             
             # Index the document as a Redis Hash using google drive file id as primary key
-            redis_key = f"movie:{document_id}"
+            # Handle document_id that may already have 'movie:' prefix
+            if document_id.startswith('movie:'):
+                redis_key = document_id
+            else:
+                redis_key = f"movie:{document_id}"
             self.redis_client.hset(redis_key, mapping=doc_data)
             
             logger.debug(f"Indexed document: {redis_key} (file_id: {doc_data.get('file_id', 'N/A')})")
@@ -260,7 +279,15 @@ class RedisSearchService:
             
             # Add sorting if specified
             if sort_by:
-                cmd.extend(["SORTBY", sort_by])
+                # Parse sort_by to add @ prefix to field names
+                sort_parts = sort_by.split()
+                if len(sort_parts) == 2:
+                    field, direction = sort_parts
+                    # Add @ prefix to field name for RedisSearch
+                    cmd.extend(["SORTBY", f"@{field}", direction])
+                else:
+                    # Fallback to original format if parsing fails
+                    cmd.extend(["SORTBY", sort_by])
             
             # Add pagination
             cmd.extend(["LIMIT", str(offset), str(limit)])
@@ -298,7 +325,8 @@ class RedisSearchService:
             
         except Exception as e:
             logger.error(f"Search failed: {e}")
-            return []
+            # Re-raise the exception so the GraphQL resolver can handle it
+            raise e
 
     def health_check(self) -> bool:
         """Check if Redis and RedisSearch are healthy."""
@@ -320,3 +348,28 @@ class RedisSearchService:
         except Exception as e:
             logger.error(f"RedisSearch health check failed: {e}")
             return False
+
+
+def _convert_to_timestamp(timestamp_str: str) -> int:
+    """Convert timestamp string to Unix timestamp for sorting."""
+    if not timestamp_str:
+        return int(time.time())  # Current timestamp if empty
+    
+    try:
+        # Try parsing ISO format first (e.g., "2025-09-15T13:30:45.970Z")
+        if 'T' in timestamp_str:
+            # Remove 'Z' and parse ISO format
+            clean_timestamp = timestamp_str.replace('Z', '+00:00')
+            dt = datetime.fromisoformat(clean_timestamp)
+            return int(dt.timestamp())
+        else:
+            # Try parsing as regular datetime
+            dt = datetime.fromisoformat(timestamp_str)
+            return int(dt.timestamp())
+    except (ValueError, TypeError):
+        try:
+            # Try parsing as Unix timestamp
+            return int(float(timestamp_str))
+        except (ValueError, TypeError):
+            # Fallback to current timestamp
+            return int(time.time())
