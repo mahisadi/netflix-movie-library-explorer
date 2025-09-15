@@ -37,7 +37,7 @@ def main():
     except KeyboardInterrupt:
         logger.info("👋 API service stopped by user")
     except Exception as e:
-        logger.error(f"❌ Failed to start API service: {e}")
+        logger.error(f" Failed to start API service: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":

@@ -126,12 +126,12 @@ class RedisSearchService:
             # Prepare document data for RedisSearch
             doc_data = {
                 "title": data.get("title", ""),
-                "stars": " ".join(data.get("stars", [])),  # Convert array to space-separated string
+                "stars": data.get("stars", ""),  # Already a string
                 "country": data.get("country", ""),
                 "director": data.get("director", ""),
                 "writer": data.get("writer", ""),
                 "movie_plot": data.get("movie_plot", ""),
-                "awards": " ".join(data.get("awards", [])),  # Convert array to space-separated string
+                "awards": data.get("awards", ""),  # Already a string
                 "content": data.get("content", ""),
                 "content_type": data.get("content_type", "movie"),
                 "file_id": data.get("id", ""),
@@ -156,7 +156,11 @@ class RedisSearchService:
             }
             
             # Index the document as a Redis Hash using google drive file id as primary key
-            redis_key = f"movie:{document_id}"
+            # Handle document_id that may already have 'movie:' prefix
+            if document_id.startswith('movie:'):
+                redis_key = document_id
+            else:
+                redis_key = f"movie:{document_id}"
             self.redis_client.hset(redis_key, mapping=doc_data)
             
             logger.debug(f"Indexed document: {redis_key} (file_id: {doc_data.get('file_id', 'N/A')})")

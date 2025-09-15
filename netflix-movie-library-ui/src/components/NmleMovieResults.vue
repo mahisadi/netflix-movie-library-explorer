@@ -192,12 +192,37 @@
         <!-- Yearly Breakdown Table -->
         <div class="yearly-section">
           <div class="yearly-table-container">
-            <h3>Movies by Year</h3>
+            <div class="yearly-header">
+              <h3>Movies by Year</h3>
+              <div class="yearly-pagination-info" v-if="yearlyPagination">
+                Showing {{ ((yearlyPagination.page - 1) * yearlyPagination.pageSize) + 1 }} - 
+                {{ Math.min(yearlyPagination.page * yearlyPagination.pageSize, yearlyPagination.totalCount) }} 
+                of {{ yearlyPagination.totalCount }} years
+              </div>
+            </div>
             <table class="yearly-table">
               <thead>
                 <tr>
-                  <th>Year</th>
-                  <th>Count</th>
+                  <th 
+                    class="sortable" 
+                    :class="{ 'sorted': sortField === 'year' }"
+                    @click="sortTable('year')"
+                  >
+                    Year
+                    <span class="sort-indicator" v-if="sortField === 'year'">
+                      {{ sortDirection === 'asc' ? '↑' : '↓' }}
+                    </span>
+                  </th>
+                  <th 
+                    class="sortable" 
+                    :class="{ 'sorted': sortField === 'count' }"
+                    @click="sortTable('count')"
+                  >
+                    Count
+                    <span class="sort-indicator" v-if="sortField === 'count'">
+                      {{ sortDirection === 'asc' ? '↑' : '↓' }}
+                    </span>
+                  </th>
                   <th class="mobile-hidden">Genres</th>
                   <th class="mobile-hidden">Top Movies</th>
                 </tr>
@@ -218,19 +243,50 @@
                     </div>
                   </td>
                   <td class="movies-cell mobile-hidden">
-                    <div class="movie-list">
+                    <div class="movie-tags">
                       <span 
                         v-for="movie in yearData.topMovies" 
-                        :key="movie" 
-                        class="movie-item"
+                        :key="movie.title" 
+                        class="movie-tag"
+                        :class="getRatingClass(movie.rating)"
                       >
-                        {{ movie }}
+                        {{ movie.title }} ⭐ {{ movie.rating }}
                       </span>
                     </div>
                   </td>
                 </tr>
               </tbody>
             </table>
+            
+            <!-- Yearly Pagination -->
+            <div class="yearly-pagination" v-if="yearlyPagination && yearlyPagination.totalPages > 1">
+              <button 
+                @click="previousYearlyPage" 
+                :disabled="!yearlyPagination.hasPrevious"
+                class="btn btn-secondary"
+              >
+                Previous
+              </button>
+              
+              <div class="page-numbers">
+                <button
+                  v-for="page in visibleYearlyPages"
+                  :key="page"
+                  @click="goToYearlyPage(page)"
+                  :class="['page-btn', { active: page === yearlyPagination.page }]"
+                >
+                  {{ page }}
+                </button>
+              </div>
+              
+              <button 
+                @click="nextYearlyPage" 
+                :disabled="!yearlyPagination.hasNext"
+                class="btn btn-secondary"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
         
@@ -362,7 +418,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useSearchStore } from '../stores/searchStore'
 
 const searchStore = useSearchStore()
@@ -380,14 +436,12 @@ const hasSearched = computed(() => searchStore.hasSearched)
 
 // Real yearly stats data from API
 const yearlyStats = computed(() => searchStore.dashboardStats.yearlyStats || [])
+const yearlyPagination = computed(() => searchStore.dashboardStats.yearlyPagination || null)
 
 // Dashboard statistics from real API data
 const totalMovieCount = computed(() => searchStore.dashboardStats.totalMovies || 0)
 
-const totalGenresCount = computed(() => {
-  const genres = searchStore.dashboardStats.top5Genres || []
-  return genres.length
-})
+const totalGenresCount = computed(() => searchStore.dashboardStats.totalGenres || 0)
 
 const top5Genres = computed(() => searchStore.dashboardStats.top5Genres || [])
 
@@ -395,10 +449,49 @@ const top5Genres = computed(() => searchStore.dashboardStats.top5Genres || [])
 const sortedTopRatedMovies = computed(() => searchStore.sortedTopRatedMovies)
 const topRatedSort = computed(() => searchStore.topRatedSort)
 
+// Table sorting for yearly stats - now server-side
+const sortField = ref('year')
+const sortDirection = ref('asc')
+
+const sortTable = async (field) => {
+  if (sortField.value === field) {
+    sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
+  } else {
+    sortField.value = field
+    sortDirection.value = 'asc'
+  }
+  
+  // Reload data with new sorting parameters
+  await searchStore.loadDashboardStats(
+    yearlyPagination.value?.page || 1, 
+    yearlyPagination.value?.pageSize || 10, 
+    sortField.value, 
+    sortDirection.value
+  )
+}
+
 // Pagination helpers
 const visiblePages = computed(() => {
   const current = pagination.value.page
   const total = pagination.value.totalPages
+  const pages = []
+  
+  const start = Math.max(1, current - 2)
+  const end = Math.min(total, current + 2)
+  
+  for (let i = start; i <= end; i++) {
+    pages.push(i)
+  }
+  
+  return pages
+})
+
+// Yearly pagination helpers
+const visibleYearlyPages = computed(() => {
+  if (!yearlyPagination.value) return []
+  
+  const current = yearlyPagination.value.page
+  const total = yearlyPagination.value.totalPages
   const pages = []
   
   const start = Math.max(1, current - 2)
@@ -469,6 +562,49 @@ const nextPage = async () => {
 
 const goToPage = async (page) => {
   await searchStore.goToPage(page)
+}
+
+// Rating class helper
+const getRatingClass = (rating) => {
+  if (rating >= 9.0) return 'rating-excellent'
+  if (rating >= 8.0) return 'rating-great'
+  if (rating >= 7.0) return 'rating-good'
+  if (rating >= 6.0) return 'rating-fair'
+  return 'rating-poor'
+}
+
+// Yearly pagination methods
+const previousYearlyPage = async () => {
+  if (yearlyPagination.value && yearlyPagination.value.hasPrevious) {
+    await searchStore.loadDashboardStats(
+      yearlyPagination.value.page - 1, 
+      yearlyPagination.value.pageSize,
+      sortField.value,
+      sortDirection.value
+    )
+  }
+}
+
+const nextYearlyPage = async () => {
+  if (yearlyPagination.value && yearlyPagination.value.hasNext) {
+    await searchStore.loadDashboardStats(
+      yearlyPagination.value.page + 1, 
+      yearlyPagination.value.pageSize,
+      sortField.value,
+      sortDirection.value
+    )
+  }
+}
+
+const goToYearlyPage = async (page) => {
+  if (yearlyPagination.value) {
+    await searchStore.loadDashboardStats(
+      page, 
+      yearlyPagination.value.pageSize,
+      sortField.value,
+      sortDirection.value
+    )
+  }
 }
 </script>
 
@@ -878,9 +1014,18 @@ const goToPage = async (page) => {
   padding-top: 2rem;
 }
 
-.yearly-table-container h3 {
-  color: #fff;
+.yearly-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.yearly-header h3 {
+  color: #fff;
+  margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
   display: flex;
@@ -888,9 +1033,18 @@ const goToPage = async (page) => {
   gap: 0.5rem;
 }
 
-.yearly-table-container h3::before {
+.yearly-header h3::before {
   content: "📅";
   font-size: 1.2rem;
+}
+
+.yearly-pagination-info {
+  color: #999;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .yearly-table-container {
@@ -917,6 +1071,27 @@ const goToPage = async (page) => {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: 0.9rem;
+}
+
+.yearly-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.yearly-table th.sortable:hover {
+  background: #f40612;
+}
+
+.yearly-table th.sorted {
+  background: #f40612;
+}
+
+.sort-indicator {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 
 .yearly-table td {
@@ -968,21 +1143,53 @@ const goToPage = async (page) => {
   min-width: 200px;
 }
 
-.movie-list {
+.movie-tags {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.movie-item {
-  color: #e5e5e5;
-  font-size: 0.9rem;
-  padding: 0.25rem 0;
-  border-bottom: 1px solid #333;
+.movie-tag {
+  background: #e50914;
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
 }
 
-.movie-item:last-child {
-  border-bottom: none;
+.movie-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Rating color classes for movie tags */
+.movie-tag.rating-excellent {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #000;
+}
+
+.movie-tag.rating-great {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #fff;
+}
+
+.movie-tag.rating-good {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #fff;
+}
+
+.movie-tag.rating-fair {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #fff;
+}
+
+.movie-tag.rating-poor {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #fff;
 }
 
 .dashboard-actions {
@@ -1144,6 +1351,16 @@ const goToPage = async (page) => {
   margin-top: 3rem;
 }
 
+.yearly-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #333;
+}
+
 .page-numbers {
   display: flex;
   gap: 0.5rem;
@@ -1241,8 +1458,9 @@ const goToPage = async (page) => {
     padding: 0.2rem 0.5rem;
   }
   
-  .movie-item {
-    font-size: 0.8rem;
+  .movie-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
   }
 }
 

@@ -31,7 +31,7 @@ def setup_redis_search():
         
         # Test connection
         redis_client.ping()
-        print(f"✅ Connected to Redis at {REDIS_HOST}:{REDIS_PORT} (DB {REDIS_DB})")
+        print(f"Connected to Redis at {REDIS_HOST}:{REDIS_PORT} (DB {REDIS_DB})")
         
         # Check if RedisSearch module is loaded
         try:
@@ -39,10 +39,10 @@ def setup_redis_search():
             redissearch_loaded = any("search" in str(module).lower() for module in modules)
             
             if not redissearch_loaded:
-                print("❌ RedisSearch module not loaded. Please use redis/redis-stack image.")
+                print(" RedisSearch module not loaded. Please use redis/redis-stack image.")
                 sys.exit(1)
             
-            print("✅ RedisSearch module is loaded")
+            print("RedisSearch module is loaded")
         except Exception as e:
             print(f"⚠️  Could not check RedisSearch module: {e}")
         
@@ -59,9 +59,9 @@ def setup_redis_search():
             if response == 'y':
                 print("🗑️  Dropping existing index...")
                 redis_client.execute_command("FT.DROPINDEX", index_name, "DD")
-                print("✅ Existing index dropped")
+                print("Existing index dropped")
             else:
-                print("✅ Using existing index")
+                print("Using existing index")
                 return
         except:
             # Index doesn't exist, continue with creation
@@ -115,7 +115,7 @@ def setup_redis_search():
             "SCHEMA", *schema_definition
         )
         
-        print(f"✅ Created RedisSearch index: {index_name}")
+        print(f"Created RedisSearch index: {index_name}")
         
         # Verify the index was created
         try:
@@ -141,13 +141,13 @@ def setup_redis_search():
         except Exception as e:
             print(f"⚠️  Could not retrieve index info: {e}")
         
-        print("\n✅ RedisSearch setup complete!")
+        print("\nRedisSearch setup complete!")
         print("   🎬 Ready for movie data indexing")
         print("   🔍 Search functionality available")
         print("   📊 Faceted search and filtering enabled")
         
     except Exception as e:
-        print(f"❌ Error setting up RedisSearch: {e}")
+        print(f" Error setting up RedisSearch: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":

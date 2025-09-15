@@ -15,12 +15,12 @@ const routes = [
     component: Home
   },
   {
-    path: '/home/library',
+    path: '/app/library',
     name: 'Library',
     component: ContentCurator
   },
   {
-    path: '/home/insights',
+    path: '/app/insights',
     name: 'Insights',
     component: Insights
   }
@@ -39,13 +39,16 @@ router.afterEach((to, from) => {
     name: to.name
   })
   
-  // Track page view
-  enhancedMetricsService.trackPageView(to.path, {
-    page_name: to.name,
-    full_url: window.location.href,
-    referrer: from.path,
-    navigation_type: 'router'
-  })
+  // Track page view only for Home and Library pages (exclude Insights)
+  if (to.path === '/home' || to.path === '/app/library') {
+    const pageName = enhancedMetricsService.getPageName(to.path)
+    enhancedMetricsService.trackPageView(to.path, {
+      page_name: pageName,
+      full_url: window.location.href,
+      referrer: from.path,
+      navigation_type: 'router'
+    })
+  }
 })
 
 export default router

@@ -412,7 +412,7 @@ class SearchService:
     
     def _is_valid_genre(self, genre: str) -> bool:
         """
-        Check if a genre string is valid (not a folder ID or invalid data).
+        Check if a genre string is valid (not a folder ID, year, or invalid data).
         
         Args:
             genre: Genre string to validate
@@ -422,6 +422,14 @@ class SearchService:
         """
         if not genre or genre == 'Unknown':
             return False
+        
+        # Filter out years (numeric strings between 1900-2030)
+        try:
+            year_value = int(genre)
+            if 1900 <= year_value <= 2030:
+                return False
+        except (ValueError, TypeError):
+            pass  # Not a year, continue validation
         
         # Filter out folder IDs (long alphanumeric strings)
         if len(genre) > 15:

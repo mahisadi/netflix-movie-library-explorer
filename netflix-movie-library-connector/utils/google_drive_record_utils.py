@@ -64,16 +64,25 @@ def cleanse_record(
             if isinstance(metadata, dict):
                 for key, value in metadata.items():
                     if key in movie_data and value:
-                        movie_data[key] = value
+                        # Convert arrays to strings for Redis Search compatibility
+                        if key in ['stars', 'awards'] and isinstance(value, list):
+                            movie_data[key] = ', '.join(str(item) for item in value)
+                        else:
+                            movie_data[key] = value
         
-        # Extract genre, subgenre, and year from folder path
+        # Extract genre, subgenre, and year from folder path only
         extracted_genre = extract_genre_from_path(folder_path)
         extracted_subgenre = extract_subgenre_from_path(folder_path)
         extracted_year = extract_year_from_path(folder_path)
 
         movie_title = movie_data["title"] or title
 
-        print(f"Extracted Genre: {file_id}, title: {movie_title}")
+        # Use folder path extraction only (no JSON content for genre/subgenre/year)
+        final_genre = extracted_genre
+        final_subgenre = extracted_subgenre
+        final_year = extracted_year
+
+        print(f"Final Genre: {final_genre}, title: {movie_title}")
         
         
         return {
@@ -88,9 +97,9 @@ def cleanse_record(
             "modified_time": modified_time,
             "metadata": metadata,
             "url": f"https://drive.google.com/file/d/{file_id}/view",
-            "genre": extracted_genre,
-            "subgenre": extracted_subgenre,
-            "year": extracted_year,
+            "genre": final_genre,
+            "subgenre": final_subgenre,
+            "year": final_year,
             "imdb_rating": movie_data["imdb_rating"],
             "language": movie_data["language"],
             "country": movie_data["country"],
@@ -162,23 +171,51 @@ def parse_file_content(drive_service: GoogleDriveService, file_data: Dict[str, A
 
 
 def extract_genre_from_path(folder_path: str) -> str:
-    """Extract genre from folder path."""
+    """Extract genre from folder path, ensuring it's not a digit."""
     if not folder_path:
         return 'unknown'
     
-    # Split path and get first part as genre
+    # Split path and find first non-digit part as genre
     path_parts = folder_path.split('/')
-    return path_parts[0] if path_parts else 'unknown'
+    
+    for part in path_parts:
+        part = part.strip()
+        if part and not part.isdigit() and not _is_year(part):
+            return part
+    
+    return 'unknown'
+
+
+def _is_year(text: str) -> bool:
+    """Check if text is a year (4-digit number between 1900-2030)."""
+    try:
+        year = int(text)
+        return 1900 <= year <= 2030
+    except (ValueError, TypeError):
+        return False
 
 
 def extract_subgenre_from_path(folder_path: str) -> str:
-    """Extract subgenre from folder path."""
+    """Extract subgenre from folder path, ensuring it's not a digit."""
     if not folder_path:
         return 'unknown'
     
-    # Split path and get second part as subgenre
+    # Split path and find second non-digit part as subgenre
     path_parts = folder_path.split('/')
-    return path_parts[1] if len(path_parts) > 1 else 'unknown'
+    
+    non_digit_parts = []
+    for part in path_parts:
+        part = part.strip()
+        if part and not part.isdigit() and not _is_year(part):
+            non_digit_parts.append(part)
+    
+    # Return second non-digit part as subgenre, or first if only one exists
+    if len(non_digit_parts) >= 2:
+        return non_digit_parts[1]
+    elif len(non_digit_parts) == 1:
+        return non_digit_parts[0]
+    
+    return 'unknown'
 
 
 def extract_year_from_path(folder_path: str) -> int:

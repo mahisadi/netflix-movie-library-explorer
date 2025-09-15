@@ -20,7 +20,6 @@ class RedisService:
         # Initialize connections to different databases
         self.search_db = None      # DB 0 - RedisSearch (Movie data)
         self.analytics_db = None   # DB 1 - App Insights (User metrics)
-        self.operations_db = None  # DB 2 - Service Insights (Application logs)
         
         self._connect_all()
     
@@ -36,7 +35,7 @@ class RedisService:
                 decode_responses=True
             )
             self.search_db.ping()
-            logger.info("✅ Connected to Redis DB 0 (RedisSearch)")
+            logger.info("Connected to Redis DB 0 (RedisSearch)")
             
             # DB 1 - App Insights (User metrics)
             self.analytics_db = redis.Redis(
@@ -47,21 +46,11 @@ class RedisService:
                 decode_responses=True
             )
             self.analytics_db.ping()
-            logger.info("✅ Connected to Redis DB 1 (App Insights)")
+            logger.info("Connected to Redis DB 1 (App Insights)")
             
-            # DB 2 - Service Insights (Application logs)
-            self.operations_db = redis.Redis(
-                host=self.redis_host,
-                port=self.redis_port,
-                password=self.redis_password,
-                db=2,
-                decode_responses=True
-            )
-            self.operations_db.ping()
-            logger.info("✅ Connected to Redis DB 2 (Service Insights)")
             
         except Exception as e:
-            logger.error(f"❌ Failed to connect to Redis: {e}")
+            logger.error(f" Failed to connect to Redis: {e}")
             raise
     
     def get_search_db(self) -> redis.Redis:
@@ -72,9 +61,6 @@ class RedisService:
         """Get connection to analytics database (DB 1)."""
         return self.analytics_db
     
-    def get_operations_db(self) -> redis.Redis:
-        """Get connection to operations database (DB 2)."""
-        return self.operations_db
     
     
     def health_check(self) -> Dict[str, Any]:
@@ -87,8 +73,7 @@ class RedisService:
         
         databases = [
             ("search", self.search_db, "RedisSearch"),
-            ("analytics", self.analytics_db, "App Insights"),
-            ("operations", self.operations_db, "Service Insights")
+            ("analytics", self.analytics_db, "App Insights")
         ]
         
         all_healthy = True

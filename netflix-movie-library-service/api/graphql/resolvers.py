@@ -22,7 +22,7 @@ from services.redis_search_service import RedisSearchService
 from .types import (
     Movie, SearchResult, SearchSuggestions, FilterOptions, 
     SearchStats, SearchQuery, SearchInput, PaginationInput, SortInput,
-    DashboardStats, GenreStats, YearlyStats, TopRatedMovie,
+    DashboardStats, GenreStats, YearlyStats, TopRatedMovie, MovieWithRating, PaginationInfo,
     MovieInput, MovieResponse, MoviesListResponse,
     AdvancedSearchInput, AdvancedSearchResult, MovieFilters,
     YearRange, RatingRange, PopularityRange, FacetData, FacetValue
@@ -238,7 +238,7 @@ class Query:
             
             # Perform search
             page = search.page or 1
-            page_size = min(search.page_size or 20, search.max_page_size or 100)
+            page_size = min(search.page_size or 20, search.max_page_size or 1000)
             
             logger.info(f"Advanced search with query: {full_query}")
             results = redis_service.search(full_query, limit=page_size, offset=(page - 1) * page_size, sort_by=sort_by)
@@ -449,7 +449,7 @@ class Query:
             raise Exception(f"Failed to get search stats: {str(e)}")
     
     @field
-    async def get_dashboard_stats(self) -> DashboardStats:
+    async def get_dashboard_stats(self, page: int = 1, page_size: int = 10, sort_field: str = "year", sort_direction: str = "asc") -> DashboardStats:
         """
         Get dashboard statistics for the movie library.
         
@@ -466,15 +466,31 @@ class Query:
             # Get all movies for analysis
             all_movies = redis_service.search("*", limit=1000)
             
+            # Helper function for rating conversion
+            def get_rating_value(movie):
+                try:
+                    return float(movie.get('imdb_rating', 0))
+                except (ValueError, TypeError):
+                    return 0.0
+            
             # Calculate statistics
             genres = {}
             years = {}
             ratings = []
             
             for movie in all_movies:
-                # Genre stats
+                # Genre stats - filter out years that appear as genres
                 genre = movie.get('genre', 'Unknown')
-                genres[genre] = genres.get(genre, 0) + 1
+                # Filter out years that appear as genres (data corruption)
+                try:
+                    genre_year = int(genre)
+                    if 1900 <= genre_year <= 2030:
+                        continue  # Skip if genre is actually a year
+                except (ValueError, TypeError):
+                    pass  # Not a year, keep the genre
+                
+                if genre and genre != 'Unknown':
+                    genres[genre] = genres.get(genre, 0) + 1
                 
                 # Year stats - handle both string and numeric years
                 year = movie.get('year', 0)
@@ -500,27 +516,85 @@ class Query:
                 for genre, count in sorted(genres.items(), key=lambda x: x[1], reverse=True)[:5]
             ]
             
-            # Yearly stats - use actual years from data, sorted by year
+            # Yearly stats - sort ALL years first, then paginate
+            all_years_data = []
+            for year in years.keys():
+                year_movies = [movie for movie in all_movies if int(movie.get('year', 0)) == year]
+                
+                # Get top movies for this specific year
+                year_top_movies = []
+                if year_movies:
+                    # Sort by rating and get top 3 movies for this year, removing duplicates
+                    year_movies_sorted = sorted(year_movies, key=get_rating_value, reverse=True)
+                    seen_titles = set()
+                    unique_movies = []
+                    for movie in year_movies_sorted:
+                        title = movie.get('title', '')
+                        if title and title not in seen_titles:
+                            seen_titles.add(title)
+                            unique_movies.append({
+                                'title': title,
+                                'rating': get_rating_value(movie)
+                            })
+                            if len(unique_movies) >= 3:
+                                break
+                    year_top_movies = [MovieWithRating(title=movie['title'], rating=movie['rating']) for movie in unique_movies]
+                
+                # Get top genres for this specific year
+                year_genres = {}
+                for movie in year_movies:
+                    genre = movie.get('genre', 'Unknown')
+                    # Filter out years that appear as genres (data corruption)
+                    try:
+                        genre_year = int(genre)
+                        if 1900 <= genre_year <= 2030:
+                            continue  # Skip if genre is actually a year
+                    except (ValueError, TypeError):
+                        pass  # Not a year, keep the genre
+                    
+                    if genre and genre != 'Unknown':
+                        year_genres[genre] = year_genres.get(genre, 0) + 1
+                year_top_genres = [genre for genre, count in sorted(year_genres.items(), key=lambda x: x[1], reverse=True)[:3]]
+                
+                # Calculate average rating for this year
+                year_ratings = [get_rating_value(movie) for movie in year_movies if get_rating_value(movie) > 0]
+                year_avg_rating = sum(year_ratings) / len(year_ratings) if year_ratings else 0.0
+                
+                all_years_data.append({
+                    'year': year,
+                    'count': years[year],
+                    'top_genres': year_top_genres,
+                    'top_movies': year_top_movies,
+                    'average_rating': year_avg_rating
+                })
+            
+            # Sort ALL years data based on sort parameters
+            if sort_field == "year":
+                all_years_data.sort(key=lambda x: x['year'], reverse=(sort_direction == "desc"))
+            elif sort_field == "count":
+                all_years_data.sort(key=lambda x: x['count'], reverse=(sort_direction == "desc"))
+            elif sort_field == "average_rating":
+                all_years_data.sort(key=lambda x: x['average_rating'], reverse=(sort_direction == "desc"))
+            
+            # Now paginate the sorted data
+            total_years = len(all_years_data)
+            start_index = (page - 1) * page_size
+            end_index = start_index + page_size
+            paginated_years_data = all_years_data[start_index:end_index]
+            
+            # Convert paginated data to YearlyStats objects
             yearly_stats = []
-            for year in sorted(years.keys()):
-                count = years[year]
+            for year_data in paginated_years_data:
                 yearly_stats.append(YearlyStats(
-                    year=year,
-                    count=count,
-                    top_genres=[g.name for g in top_5_genres[:3]],
-                    top_movies=[],
-                    average_rating=sum(ratings) / len(ratings) if ratings else 0.0
+                    year=year_data['year'],
+                    count=year_data['count'],
+                    top_genres=year_data['top_genres'],
+                    top_movies=year_data['top_movies'],
+                    average_rating=year_data['average_rating']
                 ))
             
             # Top rated movies
             top_rated_movies = []
-            # Sort by rating, handling string values
-            def get_rating_value(movie):
-                try:
-                    return float(movie.get('imdb_rating', 0))
-                except (ValueError, TypeError):
-                    return 0.0
-            
             for movie in sorted(all_movies, key=get_rating_value, reverse=True)[:5]:
                 try:
                     year_int = int(movie.get('year', 0)) if movie.get('year') else 0
@@ -541,14 +615,30 @@ class Query:
             # Get latest year
             latest_year = max(years.keys()) if years else 2024
             
+            # Calculate pagination info
+            total_pages = math.ceil(total_years / page_size) if total_years > 0 else 1
+            has_next = page < total_pages
+            has_previous = page > 1
+            
+            yearly_pagination = PaginationInfo(
+                page=page,
+                page_size=page_size,
+                total_pages=total_pages,
+                total_count=total_years,
+                has_next=has_next,
+                has_previous=has_previous
+            )
+            
             return DashboardStats(
                 total_movies=total_movies,
+                total_genres=len(genres),
                 average_rating=sum(ratings) / len(ratings) if ratings else 0.0,
                 top_genre=top_genre,
                 latest_year=latest_year,
                 top_5_genres=top_5_genres,
                 yearly_stats=yearly_stats,
-                top_rated_movies=top_rated_movies
+                top_rated_movies=top_rated_movies,
+                yearly_pagination=yearly_pagination
             )
             
         except Exception as e:
@@ -575,7 +665,36 @@ class Mutation:
             from api.services.search_service import SearchService
             search_service = SearchService()
             
-            result = await search_service.create_movie(movie_data)
+            # Convert MovieInput object to dictionary
+            movie_dict = {
+                "title": movie_data.title,
+                "year": movie_data.year,
+                "genre": movie_data.genre,
+                "subgenre": movie_data.subgenre,
+                "director": movie_data.director,
+                "stars": movie_data.stars,
+                "writer": movie_data.writer,
+                "content": movie_data.content,
+                "movie_plot": movie_data.moviePlot,
+                "awards": movie_data.awards,
+                "imdb_rating": movie_data.imdbRating,
+                "language": movie_data.language,
+                "country": movie_data.country,
+                "production_house": movie_data.productionHouse,
+                "source": movie_data.source,
+                "content_type": movie_data.contentType,
+                "limited_to": movie_data.limitedTo,
+                "restricted_to": movie_data.restrictedTo,
+                "folder_path": movie_data.folderPath,
+                "file_name": movie_data.fileName,
+                "url": movie_data.url,
+                "modified_time": movie_data.modifiedTime,
+                "created_at": movie_data.createdAt,
+                "updated_at": movie_data.updatedAt,
+                "popu": movie_data.popu
+            }
+            
+            result = await search_service.create_movie(movie_dict)
             
             return MovieResponse(
                 success=result["success"],
@@ -609,7 +728,36 @@ class Mutation:
             from api.services.search_service import SearchService
             search_service = SearchService()
             
-            result = await search_service.update_movie(movie_id, movie_data)
+            # Convert MovieInput object to dictionary
+            movie_dict = {
+                "title": movie_data.title,
+                "year": movie_data.year,
+                "genre": movie_data.genre,
+                "subgenre": movie_data.subgenre,
+                "director": movie_data.director,
+                "stars": movie_data.stars,
+                "writer": movie_data.writer,
+                "content": movie_data.content,
+                "movie_plot": movie_data.moviePlot,
+                "awards": movie_data.awards,
+                "imdb_rating": movie_data.imdbRating,
+                "language": movie_data.language,
+                "country": movie_data.country,
+                "production_house": movie_data.productionHouse,
+                "source": movie_data.source,
+                "content_type": movie_data.contentType,
+                "limited_to": movie_data.limitedTo,
+                "restricted_to": movie_data.restrictedTo,
+                "folder_path": movie_data.folderPath,
+                "file_name": movie_data.fileName,
+                "url": movie_data.url,
+                "modified_time": movie_data.modifiedTime,
+                "created_at": movie_data.createdAt,
+                "updated_at": movie_data.updatedAt,
+                "popu": movie_data.popu
+            }
+            
+            result = await search_service.update_movie(movie_id, movie_dict)
             
             return MovieResponse(
                 success=result["success"],

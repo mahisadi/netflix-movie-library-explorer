@@ -185,13 +185,15 @@ export const useSearchStore = defineStore('search', () => {
       hasPrevious: result.hasPrevious || false
     }
 
-    // Track search metrics
-    enhancedMetricsService.trackSearch(
-      searchQuery.value,
-      result.totalCount || 0,
-      filters.value,
-      'text'
-    )
+    // Track search metrics only if there's a search query
+    if (searchQuery.value && searchQuery.value.trim()) {
+      enhancedMetricsService.trackSearch(
+        searchQuery.value,
+        result.totalCount || 0,
+        filters.value,
+        'text'
+      )
+    }
   }
 
   const advancedSearch = async () => {
@@ -251,13 +253,15 @@ export const useSearchStore = defineStore('search', () => {
       hasPrevious: result.hasPrevious || false
     }
 
-    // Track search metrics
-    enhancedMetricsService.trackSearch(
-      searchQuery.value,
-      result.totalCount || 0,
-      filters.value,
-      'advanced'
-    )
+    // Track search metrics only if there's a search query
+    if (searchQuery.value && searchQuery.value.trim()) {
+      enhancedMetricsService.trackSearch(
+        searchQuery.value,
+        result.totalCount || 0,
+        filters.value,
+        'advanced'
+      )
+    }
   }
 
   const loadFilterOptions = async () => {
@@ -278,9 +282,9 @@ export const useSearchStore = defineStore('search', () => {
     }
   }
 
-  const loadDashboardStats = async () => {
+  const loadDashboardStats = async (page = 1, pageSize = 10, sortField = 'year', sortDirection = 'asc') => {
     try {
-      const dashboardData = await getDashboardStats()
+      const dashboardData = await getDashboardStats(page, pageSize, sortField, sortDirection)
       dashboardStats.value = dashboardData
     } catch (err) {
       console.error('Failed to load dashboard stats:', err)

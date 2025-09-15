@@ -4,7 +4,7 @@
     <div class="curator-header">
       <div class="header-content">
         <h1 class="page-title">
-          <span class="title-icon">🎬</span>
+          <span class="title-icon"></span>
           Manage Movie Library
         </h1>
         <p class="page-description">Manage your movie library with full CRUD operations</p>
@@ -111,9 +111,6 @@
                   </span>
                   <span class="subgenre-tag" v-if="movie.subgenre && movie.subgenre !== 'unknown'">
                     {{ movie.subgenre }}
-                  </span>
-                  <span class="file-id-tag" v-if="movie.fileId">
-                    ID: {{ movie.fileId.substring(0, 8) }}...
                   </span>
                 </div>
               </td>
@@ -431,6 +428,7 @@
 <script>
 import { ref, computed, onMounted, watch } from 'vue'
 import { useSearchStore } from '@/stores/searchStore'
+import { useUserStore } from '@/stores/userStore'
 import { 
   createMovie, 
   updateMovie, 
@@ -443,6 +441,7 @@ export default {
   name: 'ContentCurator',
   setup() {
     const searchStore = useSearchStore()
+    const userStore = useUserStore()
     
     // Reactive data
     const movies = ref([])
@@ -571,11 +570,14 @@ export default {
         // Enable advanced search for better filtering
         searchStore.useAdvancedSearch = true
         
-        // Use the existing search functionality to get all movies
-        await searchStore.search('', {
+        // Set pagination to get all movies
+        searchStore.setPagination({
           page: 1,
           pageSize: 1000 // Get all movies for curation
         })
+        
+        // Use the existing search functionality to get all movies
+        await searchStore.search()
         movies.value = searchStore.movies || []
       } catch (error) {
         console.error('Error loading movies:', error)
@@ -793,7 +795,22 @@ export default {
     }
     
     // Lifecycle
-    onMounted(() => {
+    onMounted(async () => {
+      // Ensure user store is initialized
+      if (!userStore.user) {
+        console.log(' User store not ready, fetching user...')
+        await userStore.fetchRandomUser()
+      }
+      
+      // Track page view on mount
+      console.log(' Library page mounted, tracking page view')
+      enhancedMetricsService.trackPageView('/app/library', {
+        page_name: 'Library',
+        full_url: window.location.href,
+        referrer: document.referrer,
+        navigation_type: 'mount'
+      })
+      
       loadMovies()
     })
     
@@ -943,7 +960,16 @@ export default {
 
 .filter-section {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  background: #1a1a1a;
+  padding: 1rem 0;
+  z-index: 100;
+  border-bottom: 1px solid #333;
+  margin-bottom: 1rem;
 }
 
 .filter-select {
@@ -953,7 +979,41 @@ export default {
   border-radius: 8px;
   color: white;
   font-size: 1rem;
-  min-width: 150px;
+  min-width: 180px;
+  max-height: 200px;
+  overflow-y: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-select:hover {
+  border-color: #666;
+  background: #333;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #e50914;
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
+}
+
+/* Custom scrollbar for filter selects */
+.filter-select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.filter-select::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.filter-select::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+.filter-select::-webkit-scrollbar-thumb:hover {
+  background: #666;
 }
 
 .movies-grid-container {
@@ -1116,15 +1176,6 @@ export default {
   font-weight: 500;
 }
 
-.file-id-tag {
-  background: #1a1a1a;
-  color: #999;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 400;
-  font-family: monospace;
-}
 
 .country-cell {
   width: 17.5%;

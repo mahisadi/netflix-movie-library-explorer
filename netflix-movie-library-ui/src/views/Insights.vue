@@ -5,7 +5,7 @@
       <div class="insights-header-section">
         <div class="header-content">
           <h1 class="page-title">
-            <span class="title-icon">📊</span>
+            <span class="title-icon"></span>
             Insights & Analytics
           </h1>
           <p class="page-description">Comprehensive metrics and system monitoring</p>
@@ -14,24 +14,37 @@
         <!-- Tab Navigation -->
         <div class="tab-navigation">
           <button 
-            @click="activeTab = 'metrics'" 
+            @click="handleTabChange('metrics')" 
             class="tab-button"
             :class="{ active: activeTab === 'metrics' }"
           >
             📈 Metrics
           </button>
-          <button 
-            @click="activeTab = 'operations'" 
-            class="tab-button"
-            :class="{ active: activeTab === 'operations' }"
-          >
-            🔧 Operations
-          </button>
         </div>
       </div>
 
+    <!-- Loading State -->
+    <div v-if="loading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading insights data...</p>
+    </div>
+
+    <!-- Error State -->
+    <div v-else-if="error" class="error-state">
+      <div class="error-icon">⚠️</div>
+      <h3>Oops! Something went wrong</h3>
+      <p>We're sorry for the inconvenience. We're having trouble loading the insights data right now.</p>
+      <div class="error-details">
+        <p><strong>Error:</strong> {{ error }}</p>
+      </div>
+      <div class="error-actions">
+        <button @click="loadAnalyticsData" class="retry-btn">Try Again</button>
+        <button @click="error = null" class="dismiss-btn">Dismiss</button>
+      </div>
+    </div>
+
     <!-- Main Content Grid - Only show for Metrics tab -->
-    <div v-if="activeTab === 'metrics'" class="main-content-grid">
+    <div v-else-if="activeTab === 'metrics'" class="main-content-grid">
       <!-- Left Half (50%) -->
       <div class="left-half">
         <!-- Top 25% - Page Views Cards -->
@@ -40,21 +53,26 @@
           <div class="playing-card">
             <div class="card-header">
               <h3>All Page Views</h3>
-              <div class="card-icon">📊</div>
+              <div class="card-icon"></div>
             </div>
             <div class="card-content">
-              <div class="stat-row">
-                <span class="stat-label">Home:</span>
-                <span class="stat-value">{{ allPageViews.Home }}</span>
+              <div v-if="!allPageViews || Object.keys(allPageViews).length === 0" class="no-data-small">
+                No data available
               </div>
-              <div class="stat-row">
-                <span class="stat-label">Library:</span>
-                <span class="stat-value">{{ allPageViews.Library }}</span>
-              </div>
-              <div class="stat-row">
-                <span class="stat-label">Insights:</span>
-                <span class="stat-value">{{ allPageViews.Insights }}</span>
-              </div>
+              <template v-else>
+                <div class="stat-row">
+                  <span class="stat-label">Home:</span>
+                  <span class="stat-value">{{ allPageViews.Home || 0 }}</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Library:</span>
+                  <span class="stat-value">{{ allPageViews.Library || 0 }}</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Insights:</span>
+                  <span class="stat-value">{{ allPageViews.Insights || 0 }}</span>
+                </div>
+              </template>
             </div>
           </div>
 
@@ -65,18 +83,23 @@
               <div class="card-icon">👥</div>
             </div>
             <div class="card-content">
-              <div class="stat-row">
-                <span class="stat-label">Home:</span>
-                <span class="stat-value">{{ uniquePageViews.Home }}</span>
+              <div v-if="!uniquePageViews || Object.keys(uniquePageViews).length === 0" class="no-data-small">
+                No data available
               </div>
-              <div class="stat-row">
-                <span class="stat-label">Library:</span>
-                <span class="stat-value">{{ uniquePageViews.Library }}</span>
-              </div>
-              <div class="stat-row">
-                <span class="stat-label">Insights:</span>
-                <span class="stat-value">{{ uniquePageViews.Insights }}</span>
-              </div>
+              <template v-else>
+                <div class="stat-row">
+                  <span class="stat-label">Home:</span>
+                  <span class="stat-value">{{ uniquePageViews.Home || 0 }}</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Library:</span>
+                  <span class="stat-value">{{ uniquePageViews.Library || 0 }}</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Insights:</span>
+                  <span class="stat-value">{{ uniquePageViews.Insights || 0 }}</span>
+                </div>
+              </template>
             </div>
           </div>
         </div>
@@ -85,11 +108,26 @@
         <div class="employee-country-section">
           <div class="metric-card">
             <div class="card-header">
-              <h3>Employee's Country</h3>
-              <div class="card-icon">🌍</div>
+              <h3>User Countries</h3>
+              <div class="card-icon"></div>
             </div>
-            <div class="chart-wrapper">
-              <canvas ref="userCountryChart"></canvas>
+            <div v-if="!userCountries || Object.keys(userCountries).length === 0" class="no-data-chart">
+              <div class="no-data-icon"></div>
+              <p>No country data available</p>
+            </div>
+            <div v-else class="chart-container">
+              <div class="chart-wrapper">
+                <canvas ref="userCountryChart"></canvas>
+              </div>
+              <!-- Fallback text display -->
+              <div class="chart-fallback" v-if="false">
+                <div class="country-list">
+                  <div v-for="(count, country) in userCountries" :key="country" class="country-item">
+                    <span class="country-name">{{ country }}</span>
+                    <span class="country-count">{{ count }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -113,9 +151,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="([query, data], index) in paginatedSearchActivities" :key="query">
-                    <td class="query-cell">{{ query }}</td>
-                    <td class="count-cell">{{ data.resultsCount }}</td>
+                  <tr v-for="index in 8" :key="index">
+                    <td v-if="paginatedSearchActivities[index - 1]" class="query-cell">
+                      {{ paginatedSearchActivities[index - 1][0] }}
+                    </td>
+                    <td v-else class="query-cell empty-cell"></td>
+                    
+                    <td v-if="paginatedSearchActivities[index - 1]" class="count-cell">
+                      {{ paginatedSearchActivities[index - 1][1].resultsCount }}
+                    </td>
+                    <td v-else class="count-cell empty-cell"></td>
                   </tr>
                   <tr v-if="paginatedSearchActivities.length === 0">
                     <td colspan="2" class="no-data">No search activities found</td>
@@ -199,40 +244,15 @@
       </div>
     </div>
 
-    <!-- Operations Tab Content -->
-    <div v-if="activeTab === 'operations'" class="operations-content">
-      <div class="operations-placeholder">
-        <div class="placeholder-icon">🔧</div>
-        <h3>Operations Dashboard</h3>
-        <p>System operations and monitoring tools will be displayed here.</p>
-        <div class="operations-features">
-          <div class="feature-item">
-            <span class="feature-icon">⚙️</span>
-            <span>System Configuration</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">📊</span>
-            <span>Performance Monitoring</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">🔍</span>
-            <span>Log Analysis</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">🚨</span>
-            <span>Alert Management</span>
-          </div>
-        </div>
-      </div>
-    </div>
 
     </div>
   </div>
 </template>
 
 <script>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, nextTick } from 'vue'
 import enhancedMetricsService from '@/services/enhancedMetricsService'
+import redisAnalyticsService from '@/services/redisAnalyticsService'
 import Chart from 'chart.js/auto'
 
 export default {
@@ -240,109 +260,68 @@ export default {
   setup() {
     const activeTab = ref('metrics')
     const userCountryChart = ref(null)
+    const loading = ref(false)
+    const error = ref(null)
 
-    // Mock data for page views
-    const allPageViews = ref({
-      'Home': 45,
-      'Library': 32,
-      'Insights': 18
-    })
+    // Real data from APIs
+    const allPageViews = ref({})
+    const uniquePageViews = ref({})
+    const userCountries = ref({})
+    const searchActivities = ref({})
+    const pageActivities = ref([])
 
-    const uniquePageViews = ref({
-      'Home': 12,
-      'Library': 8,
-      'Insights': 5
-    })
-
-    // Mock data for user countries (expanded for testing responsive behavior)
-    const userCountries = ref({
-      'United States': 25,
-      'Canada': 15,
-      'United Kingdom': 12,
-      'Germany': 8,
-      'Australia': 6,
-      'France': 4,
-      'Japan': 3,
-      'Brazil': 2,
-      'India': 1,
-      'Spain': 3,
-      'Italy': 2,
-      'Netherlands': 2,
-      'Sweden': 1,
-      'Norway': 1,
-      'Denmark': 1,
-      'Finland': 1,
-      'Poland': 1,
-      'Czech Republic': 1,
-      'Hungary': 1,
-      'Portugal': 1
-    })
-
-    // Mock data for search activities (expanded for testing)
-    const searchActivities = ref({
-      'inception': { resultsCount: 5 },
-      'blade runner': { resultsCount: 3 },
-      'gone girl': { resultsCount: 2 },
-      'hereditary': { resultsCount: 1 },
-      'matrix': { resultsCount: 4 },
-      'interstellar': { resultsCount: 3 },
-      'avatar': { resultsCount: 2 },
-      'titanic': { resultsCount: 1 },
-      'joker': { resultsCount: 3 },
-      'parasite': { resultsCount: 2 }
-    })
-
-    // Mock data for page activities (expanded for testing)
-    const pageActivities = ref([
-      {
-        visit_page: 'Home',
-        activity: 'page_view',
-        user_profile: { country: 'United States' }
-      },
-      {
-        visit_page: 'Library',
-        activity: 'sorting',
-        user_profile: { country: 'Canada' }
-      },
-      {
-        visit_page: 'Insights',
-        activity: 'click_navigation',
-        user_profile: { country: 'United Kingdom' }
-      },
-      {
-        visit_page: 'Home',
-        activity: 'search',
-        user_profile: { country: 'Germany' }
-      },
-      {
-        visit_page: 'Library',
-        activity: 'filter',
-        user_profile: { country: 'Australia' }
-      },
-      {
-        visit_page: 'Insights',
-        activity: 'chart_interaction',
-        user_profile: { country: 'France' }
-      },
-      {
-        visit_page: 'Home',
-        activity: 'movie_click',
-        user_profile: { country: 'Japan' }
-      },
-      {
-        visit_page: 'Library',
-        activity: 'sort_by_year',
-        user_profile: { country: 'Brazil' }
-      }
-    ])
 
     // Pagination state
     const searchActivitiesPage = ref(1)
     const pageActivitiesPage = ref(1)
     const itemsPerPage = 5
 
+    // Data loading functions
+    const loadAnalyticsData = async () => {
+      try {
+        loading.value = true
+        error.value = null
+
+        // Load page views data
+        const pageViewsData = await redisAnalyticsService.getPageViewsData()
+        allPageViews.value = pageViewsData || {}
+        uniquePageViews.value = pageViewsData || {} // For now, same as all page views
+
+        // Load user countries data
+        console.log(' Loading user countries data...')
+        const countriesData = await redisAnalyticsService.getUserCountriesData()
+        console.log(' User countries data received:', countriesData)
+        userCountries.value = countriesData || {}
+        console.log(' User countries value set to:', userCountries.value)
+
+        // Load search activities data
+        const searchData = await redisAnalyticsService.getSearchActivitiesData()
+        searchActivities.value = searchData || {}
+
+        // Load page activities data
+        const activitiesData = await redisAnalyticsService.getPageActivitiesData()
+        pageActivities.value = activitiesData || []
+
+        console.log(' Analytics data loaded successfully')
+      } catch (err) {
+        console.error(' Error loading analytics data:', err)
+        error.value = 'Failed to load analytics data. Please check your connection and try again.'
+        
+        // Set fallback empty data to prevent further errors
+        allPageViews.value = {}
+        uniquePageViews.value = {}
+        userCountries.value = {}
+        searchActivities.value = {}
+        pageActivities.value = []
+      } finally {
+        loading.value = false
+      }
+    }
+
+
     // Computed properties for paginated data
     const paginatedSearchActivities = computed(() => {
+      if (!searchActivities.value) return []
       const entries = Object.entries(searchActivities.value)
       const start = (searchActivitiesPage.value - 1) * itemsPerPage
       const end = start + itemsPerPage
@@ -350,6 +329,7 @@ export default {
     })
 
     const paginatedPageActivities = computed(() => {
+      if (!pageActivities.value) return []
       const start = (pageActivitiesPage.value - 1) * itemsPerPage
       const end = start + itemsPerPage
       return pageActivities.value.slice(start, end)
@@ -357,11 +337,11 @@ export default {
 
     // Pagination methods
     const totalSearchPages = computed(() => 
-      Math.ceil(Object.keys(searchActivities.value).length / itemsPerPage)
+      Math.ceil((searchActivities.value ? Object.keys(searchActivities.value).length : 0) / itemsPerPage)
     )
 
     const totalPageActivitiesPages = computed(() => 
-      Math.ceil(pageActivities.value.length / itemsPerPage)
+      Math.ceil((pageActivities.value ? pageActivities.value.length : 0) / itemsPerPage)
     )
 
     const goToSearchPage = (page) => {
@@ -378,11 +358,23 @@ export default {
 
     // Chart creation method
     const createUserCountryChart = () => {
-      if (!userCountryChart.value) return
+      if (!userCountryChart.value) {
+        console.log(' Chart canvas not found')
+        return
+      }
 
       const data = userCountries.value
+      console.log(' User Countries Data:', data)
+      
+      if (!data || Object.keys(data).length === 0) {
+        console.log(' No user countries data available')
+        return
+      }
+
       const labels = Object.keys(data)
       const values = Object.values(data)
+      console.log(' Chart Labels:', labels)
+      console.log(' Chart Values:', values)
       
       // Generate colors dynamically for any number of countries
       const generateColors = (count) => {
@@ -450,7 +442,7 @@ export default {
         data: {
           labels: sortedLabels,
           datasets: [{
-            label: 'Employees',
+            label: 'Users',
             data: sortedValues,
             backgroundColor: backgroundColor,
             borderColor: borderColor,
@@ -491,10 +483,10 @@ export default {
                   if (label === 'Others') {
                     const originalTotal = values.reduce((sum, val) => sum + val, 0)
                     const othersCount = sortedData.length - maxCountries
-                    return `${label}: ${value} employees (${percentage}%) - ${othersCount} countries`
+                    return `${label}: ${value} users (${percentage}%) - ${othersCount} countries`
                   }
                   
-                  return `${label}: ${value} employees (${percentage}%)`
+                  return `${label}: ${value} users (${percentage}%)`
                 }
               }
             }
@@ -512,8 +504,27 @@ export default {
                   size: 10,
                   weight: 'bold'
                 },
-                maxTicksLimit: 8
-              }
+                maxTicksLimit: 8,
+                stepSize: (() => {
+                  const maxValue = Math.max(...sortedValues)
+                  if (maxValue <= 10) return 1
+                  if (maxValue <= 100) return 10
+                  if (maxValue <= 500) return 25
+                  if (maxValue <= 1000) return 50
+                  return 100
+                })(),
+                callback: function(value) {
+                  return value
+                }
+              },
+              max: (() => {
+                const maxValue = Math.max(...sortedValues)
+                if (maxValue <= 10) return 10
+                if (maxValue <= 100) return 100
+                if (maxValue <= 500) return 500
+                if (maxValue <= 1000) return 1000
+                return Math.ceil(maxValue / 100) * 100
+              })()
             },
             y: {
               grid: {
@@ -536,25 +547,61 @@ export default {
         }
       }
 
-      new Chart(userCountryChart.value, config)
+      try {
+        // Destroy existing chart if it exists
+        if (userCountryChart.value.chart) {
+          userCountryChart.value.chart.destroy()
+        }
+        
+        console.log('🎨 Creating chart with config:', config)
+        const chart = new Chart(userCountryChart.value, config)
+        userCountryChart.value.chart = chart
+        console.log(' Chart created successfully')
+      } catch (error) {
+        console.error(' Error creating chart:', error)
+      }
     }
 
-    onMounted(() => {
-      // Track page view
-      enhancedMetricsService.trackPageView('/home/insights', {
-        tab: activeTab.value
-      })
+    onMounted(async () => {
+      console.log(' Insights component mounted')
       
-      // Create chart after component is mounted
+      // Initialize services
+      console.log(' Initializing services...')
+      await redisAnalyticsService.init()
+      console.log(' Services initialized')
+      
+      // Insights page tracking removed - only track Home and Library pages
+      
+      // Load initial data
+      console.log(' Loading analytics data...')
+      await loadAnalyticsData()
+      
+      // Create chart after data is loaded and DOM is updated
+      await nextTick()
       setTimeout(() => {
         createUserCountryChart()
-      }, 100)
+      }, 200)
     })
+
+    // Watch for tab changes to load appropriate data
+    const handleTabChange = async (tab) => {
+      activeTab.value = tab
+      if (tab === 'metrics') {
+        await loadAnalyticsData()
+        await nextTick()
+        setTimeout(() => {
+          createUserCountryChart()
+        }, 200)
+      }
+    }
 
     return {
       activeTab,
+      loading,
+      error,
       allPageViews,
       uniquePageViews,
+      userCountries,
       userCountryChart,
       searchActivities,
       pageActivities,
@@ -565,7 +612,8 @@ export default {
       totalSearchPages,
       totalPageActivitiesPages,
       goToSearchPage,
-      goToPageActivitiesPage
+      goToPageActivitiesPage,
+      handleTabChange
     }
   }
 }
@@ -622,14 +670,14 @@ export default {
 .left-half {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 /* Right Half (50%) */
 .right-half {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 /* Page Views Section (Top 25% of left half) */
@@ -690,6 +738,60 @@ export default {
   height: 280px;
   width: 100%;
   max-height: 280px;
+  min-height: 200px;
+}
+
+.metric-card .chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-container {
+  position: relative;
+  height: 280px;
+  width: 100%;
+}
+
+.chart-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.country-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.country-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  border-left: 3px solid #e50914;
+}
+
+.country-name {
+  color: #fff;
+  font-weight: 600;
+}
+
+.country-count {
+  color: #e50914;
+  font-weight: 700;
+  background: rgba(229, 9, 20, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
 }
 
 /* Playing Card Styles */
@@ -766,7 +868,6 @@ export default {
 .playing-card .stat-value {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #e50914;
   background: rgba(229, 9, 20, 0.15);
   padding: 0.2rem 0.5rem;
   border-radius: 12px;
@@ -834,6 +935,11 @@ export default {
   font-size: 0.75rem;
 }
 
+.empty-cell {
+  color: #666 !important;
+  font-style: italic;
+}
+
 .query-cell {
   font-weight: 500;
   color: #e50914;
@@ -864,6 +970,137 @@ export default {
   color: #666;
   font-style: italic;
   padding: 2rem;
+}
+
+.no-data-small {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+
+.no-data-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  color: #666;
+}
+
+.no-data-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #333;
+  border-top: 4px solid #e50914;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.error-state h3 {
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.error-state p {
+  color: #ccc;
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.error-details {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.error-details p {
+  margin: 0;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.retry-btn {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.retry-btn:hover {
+  background: #b8070f;
+  transform: translateY(-1px);
+}
+
+.dismiss-btn {
+  background: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.dismiss-btn:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
 }
 
 /* Pagination Controls */
@@ -910,75 +1147,6 @@ export default {
   text-align: center;
 }
 
-/* Operations Tab Content */
-.operations-content {
-  padding: 2rem 0;
-  min-height: 60vh;
-}
-
-.operations-placeholder {
-  text-align: center;
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  border-radius: 12px;
-  border: 1px solid #333;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.placeholder-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  opacity: 0.8;
-}
-
-.operations-placeholder h3 {
-  color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.operations-placeholder p {
-  color: #ccc;
-  margin-bottom: 2rem;
-  font-size: 0.9rem;
-}
-
-.operations-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.feature-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(229, 9, 20, 0.3);
-  transform: translateY(-2px);
-}
-
-.feature-icon {
-  font-size: 1.2rem;
-}
-
-.feature-item span:last-child {
-  color: #fff;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
 .tab-navigation {
   display: flex;
   justify-content: flex-start;
@@ -1018,8 +1186,7 @@ export default {
   min-height: 600px;
 }
 
-.metrics-tab,
-.operations-tab {
+.metrics-tab {
   animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -1096,7 +1263,7 @@ export default {
   .main-content-grid {
     grid-template-columns: 1fr;
     height: auto;
-    gap: 0.75rem;
+    gap: 1.5rem;
   }
   
   .page-views-section {

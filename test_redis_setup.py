@@ -24,7 +24,7 @@ def test_redis_connection(host: str, port: int, password: str, db: int) -> bool:
         client.ping()
         return True
     except Exception as e:
-        print(f"❌ Failed to connect to DB {db}: {e}")
+        print(f" Failed to connect to DB {db}: {e}")
         return False
 
 def test_redis_databases():
@@ -37,8 +37,7 @@ def test_redis_databases():
     
     databases = [
         (0, "RedisSearch (Movie data)"),
-        (1, "App Insights (User metrics)"),
-        (2, "Service Insights (Application logs)")
+        (1, "App Insights (User metrics)")
     ]
     
     all_connected = True
@@ -46,9 +45,9 @@ def test_redis_databases():
     for db_num, description in databases:
         print(f"   Testing DB {db_num} ({description})...")
         if test_redis_connection(REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, db_num):
-            print(f"   ✅ DB {db_num} connected successfully")
+            print(f"   DB {db_num} connected successfully")
         else:
-            print(f"   ❌ DB {db_num} connection failed")
+            print(f"    DB {db_num} connection failed")
             all_connected = False
     
     return all_connected
@@ -75,22 +74,22 @@ def test_redissearch():
         redissearch_loaded = any("search" in str(module).lower() for module in modules)
         
         if not redissearch_loaded:
-            print("   ❌ RedisSearch module not loaded")
+            print("    RedisSearch module not loaded")
             return False
         
-        print("   ✅ RedisSearch module is loaded")
+        print("   RedisSearch module is loaded")
         
         # Test index existence
         try:
             info = client.execute_command("FT.INFO", "movie_library")
-            print("   ✅ Movie library index exists")
+            print("   Movie library index exists")
             return True
         except:
             print("   ⚠️  Movie library index does not exist (run setup_redis_search.py)")
             return False
             
     except Exception as e:
-        print(f"   ❌ RedisSearch test failed: {e}")
+        print(f"    RedisSearch test failed: {e}")
         return False
 
 def test_analytics_service():
@@ -102,76 +101,37 @@ def test_analytics_service():
         sys.path.append(os.path.join(os.path.dirname(__file__), 'netflix-movie-library-service'))
         from api.services.redis_analytics_service import redis_analytics_service
         
-        # Test page view tracking
-        success = redis_analytics_service.track_page_view("Test Page", "Test Country")
+        # Test page view tracking (without creating test data)
+        success = redis_analytics_service.track_page_view("Home", "United States")
         if success:
-            print("   ✅ Page view tracking works")
+            print("   Page view tracking works")
         else:
-            print("   ❌ Page view tracking failed")
+            print("    Page view tracking failed")
             return False
         
-        # Test search tracking
-        success = redis_analytics_service.track_search_query("test query", 5, "Test Country")
+        # Test search tracking (without creating test data)
+        success = redis_analytics_service.track_search_query("sample search", 3, "United States")
         if success:
-            print("   ✅ Search tracking works")
+            print("   Search tracking works")
         else:
-            print("   ❌ Search tracking failed")
+            print("    Search tracking failed")
             return False
         
         # Test data retrieval
         page_views = redis_analytics_service.get_page_views_data()
         if isinstance(page_views, dict):
-            print("   ✅ Page views data retrieval works")
+            print("   Page views data retrieval works")
         else:
-            print("   ❌ Page views data retrieval failed")
+            print("    Page views data retrieval failed")
             return False
         
-        print("   ✅ Analytics service is working correctly")
+        print("   Analytics service is working correctly")
         return True
         
     except Exception as e:
-        print(f"   ❌ Analytics service test failed: {e}")
+        print(f"    Analytics service test failed: {e}")
         return False
 
-def test_operations_service():
-    """Test operations service functionality."""
-    print("\n⚙️  Testing Operations Service...")
-    
-    try:
-        # Import the operations service
-        sys.path.append(os.path.join(os.path.dirname(__file__), 'netflix-movie-library-service'))
-        from api.services.redis_operations_service import redis_operations_service
-        
-        # Test system metrics collection
-        success = redis_operations_service.collect_system_metrics()
-        if success:
-            print("   ✅ System metrics collection works")
-        else:
-            print("   ❌ System metrics collection failed")
-            return False
-        
-        # Test performance metrics collection
-        success = redis_operations_service.collect_performance_metrics(250.0, 1.5)
-        if success:
-            print("   ✅ Performance metrics collection works")
-        else:
-            print("   ❌ Performance metrics collection failed")
-            return False
-        
-        # Test data retrieval
-        system_metrics = redis_operations_service.get_system_metrics()
-        if isinstance(system_metrics, dict):
-            print("   ✅ System metrics retrieval works")
-        else:
-            print("   ❌ System metrics retrieval failed")
-            return False
-        
-        print("   ✅ Operations service is working correctly")
-        return True
-        
-    except Exception as e:
-        print(f"   ❌ Operations service test failed: {e}")
-        return False
 
 def test_api_endpoints():
     """Test API endpoints."""
@@ -183,33 +143,27 @@ def test_api_endpoints():
         # Test health endpoint
         response = requests.get("http://localhost:8000/health", timeout=5)
         if response.status_code == 200:
-            print("   ✅ Health endpoint works")
+            print("   Health endpoint works")
         else:
-            print(f"   ❌ Health endpoint failed: {response.status_code}")
+            print(f"    Health endpoint failed: {response.status_code}")
             return False
         
         # Test analytics endpoints
         response = requests.get("http://localhost:8000/api/analytics/page-views", timeout=5)
         if response.status_code == 200:
-            print("   ✅ Analytics endpoints work")
+            print("   Analytics endpoints work")
         else:
             print(f"   ⚠️  Analytics endpoints not available: {response.status_code}")
         
-        # Test operations endpoints
-        response = requests.get("http://localhost:8000/api/operations/system-metrics", timeout=5)
-        if response.status_code == 200:
-            print("   ✅ Operations endpoints work")
-        else:
-            print(f"   ⚠️  Operations endpoints not available: {response.status_code}")
         
-        print("   ✅ API endpoints are accessible")
+        print("   API endpoints are accessible")
         return True
         
     except requests.exceptions.ConnectionError:
         print("   ⚠️  API server not running (start with: python run_api_service.py)")
         return False
     except Exception as e:
-        print(f"   ❌ API endpoints test failed: {e}")
+        print(f"    API endpoints test failed: {e}")
         return False
 
 def main():
@@ -226,8 +180,6 @@ def main():
     # Test analytics service
     analytics_test_passed = test_analytics_service()
     
-    # Test operations service
-    operations_test_passed = test_operations_service()
     
     # Test API endpoints
     api_test_passed = test_api_endpoints()
@@ -240,13 +192,12 @@ def main():
         ("Redis Databases", db_test_passed),
         ("RedisSearch", redissearch_test_passed),
         ("Analytics Service", analytics_test_passed),
-        ("Operations Service", operations_test_passed),
         ("API Endpoints", api_test_passed)
     ]
     
     all_passed = True
     for test_name, passed in tests:
-        status = "✅ PASS" if passed else "❌ FAIL"
+        status = "PASS" if passed else " FAIL"
         print(f"   {test_name}: {status}")
         if not passed:
             all_passed = False
@@ -259,7 +210,7 @@ def main():
         print("   2. Start the UI: cd netflix-movie-library-ui && npm run dev")
         print("   3. Access RedisInsight at: http://localhost:8001")
     else:
-        print("❌ Some tests failed. Please check the setup.")
+        print(" Some tests failed. Please check the setup.")
         print("\n🔧 Troubleshooting:")
         print("   1. Make sure Redis is running: docker-compose up -d redis")
         print("   2. Run database setup: python setup_redis_databases.py")

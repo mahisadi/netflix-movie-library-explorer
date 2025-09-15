@@ -132,20 +132,6 @@ The application uses modern CSS with:
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 
-### Code Organization
-
-- Components follow the `nmle-` prefix convention
-- All components use Vue 3 Composition API
-- State management is centralized in Pinia stores
-- API calls are abstracted in service modules
-
-## Contributing
-
-1. Follow the existing code style and naming conventions
-2. Use the `nmle-` prefix for all components
-3. Write clean, maintainable code
-4. Test your changes thoroughly
-
 ## License
 
-This project is part of the Enterprise Search Connectors suite.
+This project is part of the Netflix Movie Library Explorer Suite.

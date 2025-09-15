@@ -7,17 +7,18 @@ class RedisAnalyticsService {
   constructor() {
     this.redis = null
     this.isConnected = false
-    this.init()
+    // Don't call init() here - it will be called explicitly
   }
 
   async init() {
+    console.log('Redis Analytics Service init() called')
     try {
       // Initialize Redis connection
       this.redis = await this.connectRedis()
       this.isConnected = true
-      console.log('✅ Redis Analytics Service initialized')
+      console.log('Redis Analytics Service initialized, isConnected:', this.isConnected)
     } catch (error) {
-      console.error('❌ Failed to initialize Redis Analytics Service:', error)
+      console.error('Failed to initialize Redis Analytics Service:', error)
       this.isConnected = false
     }
   }
@@ -42,14 +43,20 @@ class RedisAnalyticsService {
         }
       },
       
-      // Get page views data
+      // Get page views data - simplified to avoid phantom data
       hgetall: async (key) => {
         try {
-          const response = await fetch(`${API_BASE_URL}/api/analytics/page-views`)
-          const data = await response.json()
-          return data.success ? data.data : {}
+          console.log('hgetall called with key:', key)
+          // Only return page views data for page_views keys
+          if (key.includes('page_views')) {
+            const response = await fetch(`${API_BASE_URL}/api/analytics/page-views`)
+            const data = await response.json()
+            return data.success ? data.data : {}
+          }
+          // Return empty for other keys to prevent phantom data
+          return {}
         } catch (error) {
-          console.error('Error getting page views:', error)
+          console.error('Error getting data:', error)
           return {}
         }
       },
@@ -125,7 +132,7 @@ class RedisAnalyticsService {
         country: userCountry
       })
 
-      console.log(`📊 Tracked page view: ${page} from ${userCountry}`)
+      console.log(`Tracked page view: ${page} from ${userCountry}`)
     } catch (error) {
       console.error('Error tracking page view:', error)
     }
@@ -135,21 +142,32 @@ class RedisAnalyticsService {
    * Get page views data for Insights dashboard
    */
   async getPageViewsData() {
-    if (!this.isConnected) return this.getMockPageViewsData()
+    console.log('getPageViewsData called, isConnected:', this.isConnected)
+    if (!this.isConnected) {
+      console.log(' Service not connected, returning empty data')
+      return {}
+    }
 
-    const today = this.getTodayString()
-    
     try {
-      const pageViews = await this.redis.hgetall(`page_views:daily:${today}`)
+      // Call the page views API directly
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+      console.log(' Fetching page views from:', `${API_BASE_URL}/api/analytics/page-views`)
+      const response = await fetch(`${API_BASE_URL}/api/analytics/page-views`)
+      console.log(' Page views response status:', response.status)
+      const data = await response.json()
+      console.log('Page views data received:', data)
       
-      return {
-        Home: parseInt(pageViews.Home) || 0,
-        Library: parseInt(pageViews.Library) || 0,
-        Insights: parseInt(pageViews.Insights) || 0
+      if (data.success) {
+        // The API already returns data in the correct format
+        console.log('Page views data success, returning:', data.data)
+        return data.data
       }
+      
+      console.log('Page views API returned success: false')
+      return {}
     } catch (error) {
-      console.error('Error getting page views data:', error)
-      return this.getMockPageViewsData()
+      console.error(' Error getting page views data:', error)
+      return {}
     }
   }
 
@@ -176,7 +194,7 @@ class RedisAnalyticsService {
         results: resultsCount
       })
 
-      console.log(`🔍 Tracked search: "${query}" with ${resultsCount} results`)
+      console.log(` Tracked search: "${query}" with ${resultsCount} results`)
     } catch (error) {
       console.error('Error tracking search query:', error)
     }
@@ -186,23 +204,32 @@ class RedisAnalyticsService {
    * Get search activities data for Insights dashboard
    */
   async getSearchActivitiesData() {
-    if (!this.isConnected) return this.getMockSearchActivitiesData()
+    console.log(' getSearchActivitiesData called, isConnected:', this.isConnected)
+    if (!this.isConnected) {
+      console.log(' Service not connected, returning empty data')
+      return {}
+    }
 
-    const today = this.getTodayString()
-    
     try {
-      const searchActivities = await this.redis.hgetall(`search_activities:daily:${today}`)
+      // Call the search activities API directly
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+      console.log(' Fetching search activities from:', `${API_BASE_URL}/api/analytics/search-activities`)
+      const response = await fetch(`${API_BASE_URL}/api/analytics/search-activities`)
+      console.log(' Search activities response status:', response.status)
+      const data = await response.json()
+      console.log(' Search activities data received:', data)
       
-      // Convert to the format expected by the dashboard
-      const result = {}
-      for (const [query, count] of Object.entries(searchActivities)) {
-        result[query] = { resultsCount: parseInt(count) }
+      if (data.success) {
+        // The API already returns data in the correct format
+        console.log(' Search activities data success, returning:', data.data)
+        return data.data
       }
       
-      return result
+      console.log(' Search activities API returned success: false')
+      return {}
     } catch (error) {
-      console.error('Error getting search activities data:', error)
-      return this.getMockSearchActivitiesData()
+      console.error(' Error getting search activities data:', error)
+      return {}
     }
   }
 
@@ -228,7 +255,7 @@ class RedisAnalyticsService {
         country: country
       })
 
-      console.log(`🌍 Tracked user country: ${country}`)
+      console.log(` Tracked user country: ${country}`)
     } catch (error) {
       console.error('Error tracking user country:', error)
     }
@@ -238,23 +265,29 @@ class RedisAnalyticsService {
    * Get user countries data for Insights dashboard
    */
   async getUserCountriesData() {
-    if (!this.isConnected) return this.getMockUserCountriesData()
+    console.log(' getUserCountriesData called, isConnected:', this.isConnected)
+    if (!this.isConnected) return {}
 
-    const month = this.getMonthString()
-    
     try {
-      const countries = await this.redis.hgetall(`user_countries:monthly:${month}`)
+      // Call the user countries API directly
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+      console.log(' Fetching from:', `${API_BASE_URL}/api/analytics/user-countries`)
+      const response = await fetch(`${API_BASE_URL}/api/analytics/user-countries`)
+      console.log(' Response status:', response.status)
+      const data = await response.json()
+      console.log(' Response data:', data)
       
-      // Convert string values to numbers
-      const result = {}
-      for (const [country, count] of Object.entries(countries)) {
-        result[country] = parseInt(count)
+      if (data.success) {
+        // The API already returns data in the correct format
+        console.log(' Returning data.data:', data.data)
+        return data.data
       }
       
-      return result
+      console.log(' API returned success: false')
+      return {}
     } catch (error) {
       console.error('Error getting user countries data:', error)
-      return this.getMockUserCountriesData()
+      return {}
     }
   }
 
@@ -266,23 +299,26 @@ class RedisAnalyticsService {
   async trackPageActivity(page, activity, userCountry = 'Unknown') {
     if (!this.isConnected) return
 
-    const today = this.getTodayString()
-
     try {
-      // Store activity in a list for recent activities
-      const activityData = {
-        visit_page: page,
-        activity: activity,
-        user_profile: { country: userCountry },
-        timestamp: new Date().toISOString()
+      // Call the page activity tracking API directly
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+      const response = await fetch(`${API_BASE_URL}/api/analytics/track/page-activity`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          page: page,
+          activity: activity,
+          user_country: userCountry
+        })
+      })
+
+      if (response.ok) {
+        console.log(` Tracked page activity: ${page} - ${activity}`)
+      } else {
+        console.error('Failed to track page activity')
       }
-
-      await this.redis.lpush(`page_activities:daily:${today}`, JSON.stringify(activityData))
-      
-      // Keep only last 100 activities
-      await this.redis.ltrim(`page_activities:daily:${today}`, 0, 99)
-
-      console.log(`📋 Tracked page activity: ${page} - ${activity}`)
     } catch (error) {
       console.error('Error tracking page activity:', error)
     }
@@ -292,18 +328,23 @@ class RedisAnalyticsService {
    * Get page activities data for Insights dashboard
    */
   async getPageActivitiesData() {
-    if (!this.isConnected) return this.getMockPageActivitiesData()
+    if (!this.isConnected) return []
 
-    const today = this.getTodayString()
-    
     try {
-      const activities = await this.redis.lrange(`page_activities:daily:${today}`, 0, -1)
+      // Call the page activities API directly
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+      const response = await fetch(`${API_BASE_URL}/api/analytics/page-activities`)
+      const data = await response.json()
       
-      // Parse JSON strings and return as array
-      return activities.map(activity => JSON.parse(activity))
+      if (data.success) {
+        // The API already returns data in the correct format
+        return data.data
+      }
+      
+      return []
     } catch (error) {
       console.error('Error getting page activities data:', error)
-      return this.getMockPageActivitiesData()
+      return []
     }
   }
 
@@ -318,100 +359,7 @@ class RedisAnalyticsService {
     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}` // YYYY-MM
   }
 
-  // ==================== MOCK DATA FOR DEVELOPMENT ====================
-
-  getMockPageViewsData() {
-    return {
-      Home: 45,
-      Library: 32,
-      Insights: 5
-    }
-  }
-
-  getMockSearchActivitiesData() {
-    return {
-      'inception': { resultsCount: 5 },
-      'blade runner': { resultsCount: 3 },
-      'gone girl': { resultsCount: 2 },
-      'hereditary': { resultsCount: 1 },
-      'matrix': { resultsCount: 4 },
-      'interstellar': { resultsCount: 3 },
-      'avatar': { resultsCount: 2 },
-      'titanic': { resultsCount: 1 },
-      'joker': { resultsCount: 3 },
-      'parasite': { resultsCount: 2 }
-    }
-  }
-
-  getMockUserCountriesData() {
-    return {
-      'United States': 25,
-      'Canada': 15,
-      'United Kingdom': 12,
-      'Germany': 8,
-      'Australia': 6,
-      'France': 4,
-      'Japan': 3,
-      'Brazil': 2,
-      'India': 1,
-      'Spain': 3,
-      'Italy': 2,
-      'Netherlands': 2,
-      'Sweden': 1,
-      'Norway': 1,
-      'Denmark': 1,
-      'Finland': 1,
-      'Poland': 1,
-      'Czech Republic': 1,
-      'Hungary': 1,
-      'Portugal': 1
-    }
-  }
-
-  getMockPageActivitiesData() {
-    return [
-      {
-        visit_page: 'Home',
-        activity: 'page_view',
-        user_profile: { country: 'United States' }
-      },
-      {
-        visit_page: 'Library',
-        activity: 'sorting',
-        user_profile: { country: 'Canada' }
-      },
-      {
-        visit_page: 'Insights',
-        activity: 'click_navigation',
-        user_profile: { country: 'United Kingdom' }
-      },
-      {
-        visit_page: 'Home',
-        activity: 'search',
-        user_profile: { country: 'Germany' }
-      },
-      {
-        visit_page: 'Library',
-        activity: 'filter',
-        user_profile: { country: 'Australia' }
-      },
-      {
-        visit_page: 'Insights',
-        activity: 'chart_interaction',
-        user_profile: { country: 'France' }
-      },
-      {
-        visit_page: 'Home',
-        activity: 'movie_click',
-        user_profile: { country: 'Japan' }
-      },
-      {
-        visit_page: 'Library',
-        activity: 'sort_by_year',
-        user_profile: { country: 'Brazil' }
-      }
-    ]
-  }
+  // ==================== FALLBACK DATA (NO MOCK DATA) ====================
 
   // ==================== HEALTH CHECK ====================
 

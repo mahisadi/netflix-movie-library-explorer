@@ -18,42 +18,107 @@ class RedisAnalyticsService:
         self.redis = redis_service.get_analytics_db()
         logger.info("Redis Analytics Service initialized")
     
-    def track_page_view(self, page: str, user_country: str = 'Unknown') -> bool:
-        """Track page view with country information."""
+    def track_page_view(self, page: str, user_country: str = 'Unknown', user_info: dict = None) -> bool:
+        """Track page view with enhanced user context and 30-day TTL."""
         try:
             today = self.get_today_string()
             month = self.get_month_string()
             
-            # Increment daily page views
+            # Extract user info if provided
+            if user_info:
+                unique_record_id = user_info.get('uniqueRecordId', f"unknown:{time.time()}")
+                user_email = user_info.get('email', 'unknown@example.com')
+                user_name = user_info.get('fullName', 'Unknown User')
+                city = user_info.get('city', 'Unknown')
+                timezone = user_info.get('timezone', 'Unknown')
+                nationality = user_info.get('nationality', 'Unknown')
+            else:
+                unique_record_id = f"unknown:{time.time()}"
+                user_email = 'unknown@example.com'
+                user_name = 'Unknown User'
+                city = 'Unknown'
+                timezone = 'Unknown'
+                nationality = 'Unknown'
+            
+            # Increment daily page views (this is what get_page_views_data reads)
             self.redis.hincrby(f"page_views:daily:{today}", page, 1)
             
             # Increment monthly country distribution
             self.redis.hincrby(f"user_countries:monthly:{month}", user_country, 1)
             
+            # Store detailed user context with 30-day TTL
+            user_context_key = f"user_context:{user_email}:{today}"
+            self.redis.hset(user_context_key, mapping={
+                "unique_record_id": unique_record_id,
+                "user_email": user_email,
+                "user_name": user_name,
+                "country": user_country,
+                "city": city,
+                "timezone": timezone,
+                "nationality": nationality,
+                "last_seen": time.time(),
+                "last_page": page
+            })
+            self.redis.expire(user_context_key, 30 * 24 * 60 * 60)  # 30 days TTL
+            
+            # Store page view record with unique identifier and 30-day TTL
+            page_view_key = f"page_view_record:{unique_record_id}:{today}"
+            self.redis.hset(page_view_key, mapping={
+                "page": page,
+                "user_email": user_email,
+                "user_name": user_name,
+                "country": user_country,
+                "city": city,
+                "timezone": timezone,
+                "timestamp": time.time(),
+                "unique_record_id": unique_record_id
+            })
+            self.redis.expire(page_view_key, 30 * 24 * 60 * 60)  # 30 days TTL
+            
             # Add to time series for real-time analytics (if RedisTimeSeries is available)
             try:
                 self.redis.execute_command("TS.ADD", "user_activity:page_views", "*", 1, 
-                                         "LABELS", "page", page, "country", user_country)
+                                         "LABELS", "page", page, "country", user_country, "user_email", user_email)
             except:
                 # Fallback to regular Redis operations if RedisTimeSeries is not available
                 self.redis.lpush(f"user_activity:page_views:{today}", 
                                json.dumps({
                                    "page": page,
                                    "country": user_country,
+                                   "user_email": user_email,
+                                   "unique_record_id": unique_record_id,
                                    "timestamp": time.time()
                                }))
+                # Set TTL for the list
+                self.redis.expire(f"user_activity:page_views:{today}", 30 * 24 * 60 * 60)
             
-            logger.debug(f"📊 Tracked page view: {page} from {user_country}")
+            logger.debug(f"📊 Tracked page view: {page} from {user_country} (User: {user_name}, Email: {user_email})")
             return True
             
         except Exception as e:
             logger.error(f"Error tracking page view: {e}")
             return False
     
-    def track_search_query(self, query: str, results_count: int, user_country: str = 'Unknown') -> bool:
-        """Track search query with results count."""
+    def track_search_query(self, query: str, results_count: int, user_country: str = 'Unknown', user_info: dict = None) -> bool:
+        """Track search query with enhanced user context and 30-day TTL."""
         try:
             today = self.get_today_string()
+            
+            # Extract user info if provided
+            if user_info:
+                unique_record_id = user_info.get('uniqueRecordId', f"unknown:{time.time()}")
+                user_email = user_info.get('email', 'unknown@example.com')
+                user_name = user_info.get('fullName', 'Unknown User')
+                city = user_info.get('city', 'Unknown')
+                timezone = user_info.get('timezone', 'Unknown')
+                nationality = user_info.get('nationality', 'Unknown')
+            else:
+                unique_record_id = f"unknown:{time.time()}"
+                user_email = 'unknown@example.com'
+                user_name = 'Unknown User'
+                city = 'Unknown'
+                timezone = 'Unknown'
+                nationality = 'Unknown'
             
             # Increment search frequency
             self.redis.hincrby(f"search_activities:daily:{today}", query, 1)
@@ -61,10 +126,26 @@ class RedisAnalyticsService:
             # Add to search rankings (sorted set)
             self.redis.zadd(f"search_rankings:daily:{today}", {query: results_count})
             
+            # Store detailed search record with unique identifier and 30-day TTL
+            search_record_key = f"search_record:{unique_record_id}:{today}"
+            self.redis.hset(search_record_key, mapping={
+                "query": query,
+                "results_count": results_count,
+                "user_email": user_email,
+                "user_name": user_name,
+                "country": user_country,
+                "city": city,
+                "timezone": timezone,
+                "nationality": nationality,
+                "timestamp": time.time(),
+                "unique_record_id": unique_record_id
+            })
+            self.redis.expire(search_record_key, 30 * 24 * 60 * 60)  # 30 days TTL
+            
             # Add to time series
             try:
                 self.redis.execute_command("TS.ADD", "user_activity:search_queries", "*", 1,
-                                         "LABELS", "query", query, "results", str(results_count))
+                                         "LABELS", "query", query, "results", str(results_count), "user_email", user_email)
             except:
                 # Fallback to regular Redis operations
                 self.redis.lpush(f"user_activity:search_queries:{today}", 
@@ -72,10 +153,14 @@ class RedisAnalyticsService:
                                    "query": query,
                                    "results": results_count,
                                    "country": user_country,
+                                   "user_email": user_email,
+                                   "unique_record_id": unique_record_id,
                                    "timestamp": time.time()
                                }))
+                # Set TTL for the list
+                self.redis.expire(f"user_activity:search_queries:{today}", 30 * 24 * 60 * 60)
             
-            logger.debug(f"🔍 Tracked search: '{query}' with {results_count} results")
+            logger.debug(f"🔍 Tracked search: '{query}' with {results_count} results (User: {user_name}, Email: {user_email})")
             return True
             
         except Exception as e:
@@ -112,16 +197,40 @@ class RedisAnalyticsService:
             logger.error(f"Error tracking user country: {e}")
             return False
     
-    def track_page_activity(self, page: str, activity: str, user_country: str = 'Unknown') -> bool:
-        """Track page activity (clicks, interactions, etc.)."""
+    def track_page_activity(self, page: str, activity: str, user_country: str = 'Unknown', user_info: dict = None) -> bool:
+        """Track page activity with enhanced user context and 30-day TTL."""
         try:
             today = self.get_today_string()
             
-            # Store activity in a list for recent activities
+            # Extract user info if provided
+            if user_info:
+                unique_record_id = user_info.get('uniqueRecordId', f"unknown:{time.time()}")
+                user_email = user_info.get('email', 'unknown@example.com')
+                user_name = user_info.get('fullName', 'Unknown User')
+                city = user_info.get('city', 'Unknown')
+                timezone = user_info.get('timezone', 'Unknown')
+                nationality = user_info.get('nationality', 'Unknown')
+            else:
+                unique_record_id = f"unknown:{time.time()}"
+                user_email = 'unknown@example.com'
+                user_name = 'Unknown User'
+                city = 'Unknown'
+                timezone = 'Unknown'
+                nationality = 'Unknown'
+            
+            # Store activity in a list for recent activities with enhanced data
             activity_data = {
                 "visit_page": page,
                 "activity": activity,
-                "user_profile": {"country": user_country},
+                "user_profile": {
+                    "country": user_country,
+                    "city": city,
+                    "timezone": timezone,
+                    "nationality": nationality
+                },
+                "user_email": user_email,
+                "user_name": user_name,
+                "unique_record_id": unique_record_id,
                 "timestamp": time.time()
             }
             
@@ -130,7 +239,26 @@ class RedisAnalyticsService:
             # Keep only last 100 activities
             self.redis.ltrim(f"page_activities:daily:{today}", 0, 99)
             
-            logger.debug(f"📋 Tracked page activity: {page} - {activity}")
+            # Set TTL for the list
+            self.redis.expire(f"page_activities:daily:{today}", 30 * 24 * 60 * 60)
+            
+            # Store detailed activity record with unique identifier and 30-day TTL
+            activity_record_key = f"activity_record:{unique_record_id}:{today}"
+            self.redis.hset(activity_record_key, mapping={
+                "page": page,
+                "activity": activity,
+                "user_email": user_email,
+                "user_name": user_name,
+                "country": user_country,
+                "city": city,
+                "timezone": timezone,
+                "nationality": nationality,
+                "timestamp": time.time(),
+                "unique_record_id": unique_record_id
+            })
+            self.redis.expire(activity_record_key, 30 * 24 * 60 * 60)  # 30 days TTL
+            
+            logger.debug(f"📋 Tracked page activity: {page} - {activity} (User: {user_name}, Email: {user_email})")
             return True
             
         except Exception as e:
@@ -156,11 +284,27 @@ class RedisAnalyticsService:
         """Get search activities data for Insights dashboard."""
         try:
             today = self.get_today_string()
-            search_activities = self.redis.hgetall(f"search_activities:daily:{today}")
+            
+            # Get all search record keys for today
+            search_record_keys = self.redis.keys(f"search_record:*:{today}")
             
             result = {}
-            for query, count in search_activities.items():
-                result[query] = {"resultsCount": int(count)}
+            query_results = {}  # Store query -> results_count mapping
+            
+            # Process each search record to get actual results count
+            for key in search_record_keys:
+                search_data = self.redis.hgetall(key)
+                if search_data:
+                    query = search_data.get('query', '').decode('utf-8') if isinstance(search_data.get('query', ''), bytes) else search_data.get('query', '')
+                    results_count = int(search_data.get('results_count', 0))
+                    
+                    if query:
+                        # Store the results count for this query
+                        query_results[query] = results_count
+            
+            # Convert to the expected format
+            for query, results_count in query_results.items():
+                result[query] = {"resultsCount": results_count}
             
             return result
         except Exception as e:
@@ -236,6 +380,72 @@ class RedisAnalyticsService:
             logger.error(f"Error getting analytics summary: {e}")
             return {}
     
+    def get_user_specific_metrics(self, user_email: str, days: int = 7) -> Dict[str, Any]:
+        """Get user-specific metrics for the last N days."""
+        try:
+            user_metrics = {
+                "user_email": user_email,
+                "page_views": [],
+                "search_queries": [],
+                "page_activities": [],
+                "summary": {
+                    "total_page_views": 0,
+                    "total_searches": 0,
+                    "total_activities": 0,
+                    "unique_pages": set(),
+                    "unique_queries": set(),
+                    "countries": set()
+                }
+            }
+            
+            # Get data for the last N days
+            for i in range(days):
+                date = time.strftime("%Y-%m-%d", time.localtime(time.time() - (i * 24 * 60 * 60)))
+                
+                # Get page view records for this user
+                page_view_pattern = f"page_view_record:*:{date}"
+                page_view_keys = self.redis.keys(page_view_pattern)
+                for key in page_view_keys:
+                    record = self.redis.hgetall(key)
+                    if record.get('user_email') == user_email:
+                        user_metrics["page_views"].append(record)
+                        user_metrics["summary"]["total_page_views"] += 1
+                        user_metrics["summary"]["unique_pages"].add(record.get('page', ''))
+                        user_metrics["summary"]["countries"].add(record.get('country', ''))
+                
+                # Get search records for this user
+                search_pattern = f"search_record:*:{date}"
+                search_keys = self.redis.keys(search_pattern)
+                for key in search_keys:
+                    record = self.redis.hgetall(key)
+                    if record.get('user_email') == user_email:
+                        user_metrics["search_queries"].append(record)
+                        user_metrics["summary"]["total_searches"] += 1
+                        user_metrics["summary"]["unique_queries"].add(record.get('query', ''))
+                        user_metrics["summary"]["countries"].add(record.get('country', ''))
+                
+                # Get activity records for this user
+                activity_pattern = f"activity_record:*:{date}"
+                activity_keys = self.redis.keys(activity_pattern)
+                for key in activity_keys:
+                    record = self.redis.hgetall(key)
+                    if record.get('user_email') == user_email:
+                        user_metrics["page_activities"].append(record)
+                        user_metrics["summary"]["total_activities"] += 1
+                        user_metrics["summary"]["countries"].add(record.get('country', ''))
+            
+            # Convert sets to lists for JSON serialization
+            user_metrics["summary"]["unique_pages"] = list(user_metrics["summary"]["unique_pages"])
+            user_metrics["summary"]["unique_queries"] = list(user_metrics["summary"]["unique_queries"])
+            user_metrics["summary"]["countries"] = list(user_metrics["summary"]["countries"])
+            
+            logger.debug(f"Retrieved user-specific metrics for {user_email}: {user_metrics['summary']}")
+            return user_metrics
+            
+        except Exception as e:
+            logger.error(f"Error getting user-specific metrics: {e}")
+            return {"error": str(e)}
+    
     def cleanup_old_data(self, days: int = 30) -> bool:
         """Clean up old analytics data."""
         try:
@@ -252,6 +462,12 @@ class RedisAnalyticsService:
                 self.redis.delete(f"page_activities:daily:{old_date}")
                 self.redis.delete(f"user_activity:page_views:{old_date}")
                 self.redis.delete(f"user_activity:search_queries:{old_date}")
+                
+                # Delete old user-specific records
+                self.redis.delete(f"user_context:*:{old_date}")
+                self.redis.delete(f"page_view_record:*:{old_date}")
+                self.redis.delete(f"search_record:*:{old_date}")
+                self.redis.delete(f"activity_record:*:{old_date}")
             
             logger.info(f"Cleaned up analytics data older than {days} days")
             return True

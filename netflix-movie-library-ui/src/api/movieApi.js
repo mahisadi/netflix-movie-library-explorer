@@ -154,9 +154,10 @@ const GET_SEARCH_STATS_QUERY = gql`
 `
 
 const GET_DASHBOARD_STATS_QUERY = gql`
-  query GetDashboardStats {
-    getDashboardStats {
+  query GetDashboardStats($page: Int, $pageSize: Int, $sortField: String, $sortDirection: String) {
+    getDashboardStats(page: $page, pageSize: $pageSize, sortField: $sortField, sortDirection: $sortDirection) {
       totalMovies
+      totalGenres
       averageRating
       topGenre
       latestYear
@@ -168,7 +169,10 @@ const GET_DASHBOARD_STATS_QUERY = gql`
         year
         count
         topGenres
-        topMovies
+        topMovies {
+          title
+          rating
+        }
         averageRating
       }
       topRatedMovies {
@@ -177,6 +181,14 @@ const GET_DASHBOARD_STATS_QUERY = gql`
         genre
         rating
         director
+      }
+      yearlyPagination {
+        page
+        pageSize
+        totalPages
+        totalCount
+        hasNext
+        hasPrevious
       }
     }
   }
@@ -264,9 +276,9 @@ export const getSearchSuggestions = async (query, limit = 5) => {
   }
 }
 
-export const getDashboardStats = async () => {
+export const getDashboardStats = async (page = 1, pageSize = 10, sortField = 'year', sortDirection = 'asc') => {
   try {
-    const data = await request(API_URL, GET_DASHBOARD_STATS_QUERY)
+    const data = await request(API_URL, GET_DASHBOARD_STATS_QUERY, { page, pageSize, sortField, sortDirection })
     return data.getDashboardStats
   } catch (error) {
     console.error('Get dashboard stats error:', error)

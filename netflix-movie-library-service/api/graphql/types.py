@@ -65,13 +65,21 @@ class Movie:
 
 
 @type
+class MovieWithRating:
+    """Movie with rating information."""
+    
+    title: str = field(description="Movie title")
+    rating: float = field(description="IMDB rating")
+
+
+@type
 class YearlyStats:
     """Yearly movie statistics."""
     
     year: int = field(description="Year")
     count: int = field(description="Number of movies in this year")
     top_genres: List[str] = field(description="Top genres for this year")
-    top_movies: List[str] = field(description="Top movies for this year")
+    top_movies: List[MovieWithRating] = field(description="Top movies for this year with ratings")
     average_rating: float = field(description="Average rating for this year")
 
 
@@ -95,16 +103,30 @@ class GenreStats:
 
 
 @type
+class PaginationInfo:
+    """Pagination information."""
+    
+    page: int = field(description="Current page number")
+    page_size: int = field(description="Number of items per page")
+    total_pages: int = field(description="Total number of pages")
+    total_count: int = field(description="Total number of items")
+    has_next: bool = field(description="Whether there are more pages")
+    has_previous: bool = field(description="Whether there are previous pages")
+
+
+@type
 class DashboardStats:
     """Dashboard statistics."""
     
     total_movies: int = field(description="Total number of movies")
+    total_genres: int = field(description="Total number of unique genres")
     average_rating: float = field(description="Overall average rating")
     top_genre: str = field(description="Most popular genre")
     latest_year: int = field(description="Latest movie year")
     top_5_genres: List[GenreStats] = field(description="Top 5 genres by count")
     yearly_stats: List[YearlyStats] = field(description="Statistics by year")
     top_rated_movies: List[TopRatedMovie] = field(description="Top-rated movies sorted by rating")
+    yearly_pagination: PaginationInfo = field(description="Pagination info for yearly stats")
 
 
 @type
@@ -251,7 +273,7 @@ class AdvancedSearchInput:
     # Pagination
     page: int = field(description="Page number (1-based)", default=1)
     page_size: int = field(description="Number of results per page", default=20)
-    max_page_size: int = field(description="Maximum allowed page size", default=100)
+    max_page_size: int = field(description="Maximum allowed page size", default=1000)
     
     # Sorting
     sort_field: Optional[str] = field(description="Field to sort by", default="relevance")
@@ -312,20 +334,50 @@ class SortDirection(str, Enum):
 class MovieInput:
     """Input type for creating/updating movies."""
     
+    # Core movie information
     title: str = field(description="Movie title")
-    year: int = field(description="Release year")
-    genre: str = field(description="Primary genre")
-    subgenre: str = field(description="Sub-genre")
-    director: str = field(description="Movie director")
-    stars: str = field(description="Main actors/actresses (comma-separated)")
-    writer: str = field(description="Screenplay writer")
-    content: str = field(description="Full text content")
     moviePlot: str = field(description="Movie plot summary", default="")
-    awards: str = field(description="Awards received (comma-separated)", default="")
+    content: str = field(description="Full text content for search", default="")
+    
+    # People and credits
+    director: str = field(description="Movie director", default="")
+    writer: str = field(description="Screenplay writer", default="")
+    stars: str = field(description="Main actors/actresses (comma-separated)", default="")
+    
+    # Ratings and popularity
     imdbRating: float = field(description="IMDB rating (0.0 to 10.0)", default=0.0)
+    popu: int = field(description="Popularity score", default=0)
+    
+    # Categorization
+    genre: str = field(description="Primary genre", default="")
+    subgenre: str = field(description="Sub-genre", default="")
     language: str = field(description="Primary language", default="English")
-    country: str = field(description="Country of origin", default="")
     productionHouse: str = field(description="Production company", default="")
+    source: str = field(description="Data source", default="manual")
+    
+    # Location and awards
+    country: str = field(description="Country of origin", default="")
+    awards: str = field(description="Awards received (comma-separated)", default="")
+    
+    # Temporal information
+    year: int = field(description="Release year", default=2024)
+    modifiedTime: str = field(description="Last modification time", default="")
+    
+    # File metadata
+    folderPath: str = field(description="Folder path in source system", default="")
+    fileName: str = field(description="Original file name", default="")
+    url: str = field(description="URL to view the file", default="")
+    
+    # System fields
+    contentType: str = field(description="Content type", default="movies")
+    
+    # Access control fields
+    limitedTo: str = field(description="Limited access scope", default="")
+    restrictedTo: str = field(description="Restricted access scope", default="")
+    
+    # Timestamp fields
+    createdAt: str = field(description="Record creation timestamp", default="")
+    updatedAt: str = field(description="Record last update timestamp", default="")
 
 
 @type

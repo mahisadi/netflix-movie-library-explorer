@@ -44,64 +44,163 @@ class EnhancedMetricsService {
     })
   }
 
-  // Get user info from Pinia store with new schema
+  // Get user info from Pinia store using store helper methods
   getUserInfo() {
     let userStore = null
     let userProfile = null
-    let email = 'unknown@example.com'
-    let firstName = 'Unknown'
-    let lastName = 'User'
-    let country = 'United States'
-    let city = 'Unknown'
-    let hiredate = new Date().toISOString()
-    let gender = 'unknown'
-    let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    let email = null
+    let firstName = null
+    let lastName = null
+    let country = null
+    let city = null
+    let state = null
+    let timezone = null
+    let timezoneOffset = null
+    let nationality = null
+    let registeredDate = null
+    let accountAge = null
+    let gender = null
+    let profilePicture = null
     
     try {
       userStore = useUserStore()
       userProfile = userStore.user
       
-      console.log('🔍 Pinia User Data:', userProfile)
+      console.log('Pinia User Data (Full):', userProfile)
       
       if (userProfile) {
-        // Extract user profile data
-        firstName = userProfile.name?.first || 'Unknown'
-        lastName = userProfile.name?.last || 'User'
-        country = userProfile.location?.country || 'United States'
-        city = userProfile.location?.city || 'Unknown'
-        gender = userProfile.gender || 'unknown'
-        email = userProfile.email || 'unknown@example.com'
-        hiredate = userProfile.registered?.date || new Date().toISOString()
-        timezone = userProfile.location?.timezone?.description || Intl.DateTimeFormat().resolvedOptions().timeZone
+        // Use Pinia store helper methods for consistent data extraction
+        const fullName = userStore.getUserFullName()
+        const initials = userStore.getUserInitials()
+        const location = userStore.getUserLocation()
+        
+        // Extract individual components (no fallback values)
+        firstName = userProfile.name?.first
+        lastName = userProfile.name?.last
+        country = userProfile.location?.country
+        city = userProfile.location?.city
+        state = userProfile.location?.state
+        timezone = userProfile.location?.timezone?.description
+        timezoneOffset = userProfile.location?.timezone?.offset
+        nationality = userProfile.nat
+        gender = userProfile.gender
+        email = userProfile.email
+        registeredDate = userProfile.registered?.date
+        accountAge = userProfile.registered?.age
+        profilePicture = userProfile.picture?.medium
+        
+        // Ensure country is always a full name, not a code
+        country = this.normalizeCountryName(country)
+        
+        console.log('Successfully extracted user data using Pinia store methods:', {
+          fullName,
+          initials,
+          location,
+          hasUserProfile: !!userProfile
+        })
+      } else {
+        console.log('No user profile found in Pinia store')
       }
       
-      console.log('👤 Extracted User Info:', {
+      console.log('Enhanced User Info:', {
         firstName,
         lastName,
         country,
         city,
+        state,
+        timezone,
+        timezoneOffset,
+        nationality,
         gender,
         email,
-        hiredate,
-        timezone,
+        registeredDate,
+        accountAge,
+        profilePicture,
         hasUserProfile: !!userProfile
       })
       
     } catch (error) {
-      console.warn('Pinia store not available, using fallback data:', error)
+      console.warn('Pinia store not available:', error)
     }
     
+    // Generate unique record ID combining UUID and email
+    const recordId = this.generateUUID()
+    const uniqueRecordId = `${recordId}:${email}`
+    
     return {
-      recordid: this.generateUUID(),
+      // Unique identifiers
+      recordid: recordId,
+      uniqueRecordId: uniqueRecordId,
       email: email,
+      
+      // Basic user info (using Pinia store methods when available)
+      firstName: firstName,
+      lastName: lastName,
+      fullName: userStore ? userStore.getUserFullName() : `${firstName} ${lastName}`.trim(),
+      initials: userStore ? userStore.getUserInitials() : `${firstName[0]}${lastName[0]}`.toUpperCase(),
+      location: userStore ? userStore.getUserLocation() : `${city}, ${country}`,
+      
+      // Location info
+      country: country,
+      city: city,
+      state: state,
+      timezone: timezone,
+      timezoneOffset: timezoneOffset,
+      nationality: nationality,
+      
+      // Contact info
+      email: email,
+      
+      // Registration info
+      registeredDate: registeredDate,
+      accountAge: accountAge,
+      
+      // Additional context
+      gender: gender,
+      profilePicture: profilePicture,
+      
+      // Enhanced user context for analytics
+      userContext: {
+        // Pinia store methods
+        fullName: userStore ? userStore.getUserFullName() : `${firstName} ${lastName}`.trim(),
+        initials: userStore ? userStore.getUserInitials() : `${firstName[0]}${lastName[0]}`.toUpperCase(),
+        location: userStore ? userStore.getUserLocation() : `${city}, ${country}`,
+        
+        // Detailed user info
+        firstName: firstName,
+        lastName: lastName,
+        country: country,
+        city: city,
+        state: state,
+        timezone: timezone,
+        timezoneOffset: timezoneOffset,
+        nationality: nationality,
+        gender: gender,
+        email: email,
+        registeredDate: registeredDate,
+        accountAge: accountAge,
+        profilePicture: profilePicture,
+        
+        // Store reference
+        hasUserStore: !!userStore,
+        hasUserProfile: !!userProfile
+      },
+      
+      // Legacy format for backward compatibility
       userProfile: {
         first_name: firstName,
         last_name: lastName,
         country: country,
         city: city,
-        hiredate: hiredate,
+        state: state,
+        timezone: timezone,
+        timezone_offset: timezoneOffset,
+        nationality: nationality,
         gender: gender,
-        timezone: timezone
+        email: email,
+        registered_date: registeredDate,
+        account_age: accountAge,
+        profile_picture: profilePicture
       }
     }
   }
@@ -133,7 +232,26 @@ class EnhancedMetricsService {
     return countryMap[code] || code
   }
 
-  // Enhanced tracking with Pinia context
+  // Normalize country name to ensure it's always a full name, not a code
+  normalizeCountryName(country) {
+    if (!country) return null
+    
+    // If it's already a full name, return as is
+    const fullNames = [
+      'United States', 'United Kingdom', 'Canada', 'Australia', 'Germany', 'France',
+      'Spain', 'Italy', 'Japan', 'South Korea', 'China', 'India', 'Brazil', 'Mexico',
+      'Russia', 'Netherlands', 'Sweden', 'Norway', 'Denmark', 'Finland', 'New Zealand'
+    ]
+    
+    if (fullNames.includes(country)) {
+      return country
+    }
+    
+    // If it's a country code, convert to full name
+    return this.getCountryNameFromCode(country)
+  }
+
+  // Enhanced tracking with Pinia context and UUID + email combination
   async trackUserAction(action, metadata = {}) {
     try {
       const userInfo = this.getUserInfo()
@@ -142,30 +260,35 @@ class EnhancedMetricsService {
       const visitPage = this.getPageName(currentUrl)
       
       const payload = {
-        recordid: userInfo.recordid,
-        email: userInfo.email,
-        timestamp: new Date().toISOString(),
-        visit_page: visitPage,
-        current_url: currentUrl,
-        previous_url: previousUrl,
+        // Basic tracking data - only page, activity, and country
+        page: visitPage,
         activity: action,
-        user_profile: userInfo.userProfile,
-        metadata: metadata
+        user_country: userInfo.country,
+        
+        // Metadata
+        metadata: {
+          timestamp: new Date().toISOString(),
+          current_url: currentUrl,
+          previous_url: previousUrl,
+          session_id: this.sessionId,
+          ...metadata
+        }
       }
 
       console.log('🎯 UI → Service: Tracking User Action', {
         action,
         metadata,
         userInfo: {
-          userId: userInfo.userId,
+          uniqueRecordId: userInfo.uniqueRecordId,
+          email: userInfo.email,
           country: userInfo.country,
-          sessionId: userInfo.sessionId
+          sessionId: this.sessionId
         },
         payload
       })
 
       // Send to backend
-      this.sendToBackend('/metrics/track-action', payload)
+      this.sendToBackend('/api/analytics/track/page-activity', payload)
       
       // Store locally
       this.storeLocalMetric('user_action', payload)
@@ -175,7 +298,7 @@ class EnhancedMetricsService {
     }
   }
 
-  // Search tracking with search store context
+  // Search tracking with enhanced user context and UUID + email combination
   async trackSearch(query, resultsCount, filters = {}, searchType = 'text') {
     try {
       const userInfo = this.getUserInfo()
@@ -184,40 +307,36 @@ class EnhancedMetricsService {
       const visitPage = this.getPageName(currentUrl)
       
       const payload = {
-        recordid: userInfo.recordid,
-        email: userInfo.email,
-        timestamp: new Date().toISOString(),
-        visit_page: visitPage,
-        current_url: currentUrl,
-        previous_url: previousUrl,
-        activity: 'searching',
-        search_data: {
-          search_term: query,
-          results_found: resultsCount
-        },
-        user_profile: userInfo.userProfile,
+        // Search data - simplified to only essential info
+        query: query,
+        results_count: resultsCount,
+        search_type: searchType,
+        filters: filters,
+        country: userInfo.country,
+        
+        // Metadata
         metadata: {
-          search_type: searchType,
-          filters: filters,
+          timestamp: new Date().toISOString(),
+          visit_page: visitPage,
+          current_url: currentUrl,
+          previous_url: previousUrl,
+          activity: 'searching',
+          session_id: this.sessionId,
           has_filters: Object.keys(filters).length > 0,
           filter_count: Object.keys(filters).length
         }
       }
 
-      console.log('🔍 UI → Service: Tracking Search', {
+      console.log('UI → Service: Tracking Search', {
         query,
         resultsCount,
         searchType,
         filters,
-        userInfo: {
-          userId: userInfo.userId,
-          country: userInfo.country,
-          sessionId: userInfo.sessionId
-        },
+        country: userInfo.country,
         payload
       })
 
-      this.sendToBackend('/metrics/track-search', payload)
+      this.sendToBackend('/api/analytics/track/search', payload)
       this.storeLocalMetric('search_query', payload)
 
     } catch (error) {
@@ -232,9 +351,6 @@ class EnhancedMetricsService {
       
       const payload = {
         operation, // 'create', 'edit', 'delete', 'view', 'sort', 'filter'
-        user_id: userInfo.userId,
-        user_name: userInfo.userName,
-        session_id: userInfo.sessionId,
         country: userInfo.country,
         movie_data: {
           movie_id: movieData.id,
@@ -249,19 +365,15 @@ class EnhancedMetricsService {
         }
       }
 
-      console.log('🎬 UI → Service: Tracking Library Operation', {
+      console.log('UI → Service: Tracking Library Operation', {
         operation,
         movieData,
         metadata,
-        userInfo: {
-          userId: userInfo.userId,
-          country: userInfo.country,
-          sessionId: userInfo.sessionId
-        },
+        country: userInfo.country,
         payload
       })
 
-      this.sendToBackend('/metrics/track-library-operation', payload)
+      this.sendToBackend('/api/analytics/track/page-activity', payload)
       this.storeLocalMetric('library_operation', payload)
 
     } catch (error) {
@@ -278,8 +390,6 @@ class EnhancedMetricsService {
         sort_field: sortField,
         sort_direction: sortDirection,
         context, // 'library', 'home', 'insights'
-        user_id: userInfo.userId,
-        session_id: userInfo.sessionId,
         country: userInfo.country,
         metadata: {
           timestamp: new Date().toISOString(),
@@ -287,19 +397,15 @@ class EnhancedMetricsService {
         }
       }
 
-      console.log('📊 UI → Service: Tracking Sorting', {
+      console.log('UI → Service: Tracking Sorting', {
         sortField,
         sortDirection,
         context,
-        userInfo: {
-          userId: userInfo.userId,
-          country: userInfo.country,
-          sessionId: userInfo.sessionId
-        },
+        country: userInfo.country,
         payload
       })
 
-      this.sendToBackend('/metrics/track-sorting', payload)
+      this.sendToBackend('/api/analytics/track/page-activity', payload)
       this.storeLocalMetric('sorting', payload)
 
     } catch (error) {
@@ -316,8 +422,6 @@ class EnhancedMetricsService {
         filter_type: filterType,
         filter_value: filterValue,
         action, // 'apply', 'remove', 'clear_all'
-        user_id: userInfo.userId,
-        session_id: userInfo.sessionId,
         country: userInfo.country,
         metadata: {
           timestamp: new Date().toISOString(),
@@ -325,19 +429,15 @@ class EnhancedMetricsService {
         }
       }
 
-      console.log('🔍 UI → Service: Tracking Filter', {
+      console.log('UI → Service: Tracking Filter', {
         filterType,
         filterValue,
         action,
-        userInfo: {
-          userId: userInfo.userId,
-          country: userInfo.country,
-          sessionId: userInfo.sessionId
-        },
+        country: userInfo.country,
         payload
       })
 
-      this.sendToBackend('/metrics/track-filter', payload)
+      this.sendToBackend('/api/analytics/track/page-activity', payload)
       this.storeLocalMetric('filter', payload)
 
     } catch (error) {
@@ -345,40 +445,35 @@ class EnhancedMetricsService {
     }
   }
 
-  // Page view tracking with enhanced context
+  // Simplified page view tracking - only country data
   async trackPageView(page, metadata = {}) {
     try {
+      console.log('trackPageView called:', { page, metadata })
       const userInfo = this.getUserInfo()
+      console.log('User info retrieved:', userInfo)
       
       const payload = {
-        page,
-        user_id: userInfo.userId,
-        user_name: userInfo.userName,
-        session_id: userInfo.sessionId,
+        // Basic tracking data - only page and country
+        page: page,
         country: userInfo.country,
-        city: userInfo.city,
-        timezone: userInfo.timezone,
+        
+        // Minimal metadata
         metadata: {
           ...metadata,
           timestamp: new Date().toISOString(),
           url: window.location.href,
           referrer: document.referrer,
-          user_profile: userInfo.userProfile
+          session_id: this.sessionId
         }
       }
 
-      console.log('📄 UI → Service: Tracking Page View', {
+      console.log('UI → Service: Tracking Page View (Simplified)', {
         page,
-        metadata,
-        userInfo: {
-          userId: userInfo.userId,
-          country: userInfo.country,
-          sessionId: userInfo.sessionId
-        },
-        payload
+        country: userInfo.country
       })
 
-      this.sendToBackend('/metrics/track-page-view', payload)
+      console.log('Sending page view to backend:', payload)
+      this.sendToBackend('/api/analytics/track/page-view', payload)
       this.storeLocalMetric('page_view', payload)
 
     } catch (error) {
@@ -389,7 +484,7 @@ class EnhancedMetricsService {
   // Send to backend (fire and forget)
   async sendToBackend(endpoint, payload) {
     try {
-      console.log('🚀 UI → API: Sending to Backend', {
+      console.log('UI → API: Sending to Backend', {
         endpoint: `${this.apiBaseUrl}${endpoint}`,
         payload,
         timestamp: new Date().toISOString()
@@ -404,7 +499,7 @@ class EnhancedMetricsService {
       })
 
       if (response.ok) {
-        console.log('✅ API Response: Success', {
+        console.log('API Response: Success', {
           endpoint,
           status: response.status,
           statusText: response.statusText
@@ -417,7 +512,7 @@ class EnhancedMetricsService {
         })
       }
     } catch (error) {
-      console.error('❌ API Error: Failed to send metrics to backend', {
+      console.error(' API Error: Failed to send metrics to backend', {
         endpoint,
         error: error.message,
         payload
@@ -446,7 +541,7 @@ class EnhancedMetricsService {
   // Get metrics data for charts
   async getMetricsData(days = 7) {
     try {
-      const response = await fetch(`${this.apiBaseUrl}/metrics/user/${this.userId}?days=${days}`)
+      const response = await fetch(`${this.apiBaseUrl}/api/analytics/summary`)
       if (response.ok) {
         return await response.json()
       }
@@ -459,7 +554,7 @@ class EnhancedMetricsService {
   // Get global metrics for insights
   async getGlobalMetrics(days = 7) {
     try {
-      const response = await fetch(`${this.apiBaseUrl}/metrics/global?days=${days}`)
+      const response = await fetch(`${this.apiBaseUrl}/api/analytics/summary`)
       if (response.ok) {
         return await response.json()
       }
@@ -746,7 +841,7 @@ class EnhancedMetricsService {
       })
     })
 
-    console.log('📊 Enhanced metrics tracking initialized')
+    console.log('Enhanced metrics tracking initialized')
   }
 
 
@@ -761,13 +856,19 @@ class EnhancedMetricsService {
   }
 
   getPageName(path) {
+    // Extract just the pathname if a full URL is passed
+    const pathname = path.startsWith('http') ? new URL(path).pathname : path
+    
     const pageMap = {
       '/': 'Home',
       '/home': 'Home',
-      '/home/library': 'Library',
-      '/home/insights': 'Insights'
+      '/app/library': 'Library',
+      '/app/insights': 'Insights'
     }
-    return pageMap[path] || 'Unknown'
+    
+    const pageName = pageMap[pathname] || null
+    console.log('Page Name Detection:', { path, pathname, pageName })
+    return pageName
   }
 }
 

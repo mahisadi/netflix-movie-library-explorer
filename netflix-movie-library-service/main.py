@@ -23,7 +23,6 @@ from api.graphql.schema import create_graphql_app
 from api.services.search_service import SearchService
 from api.services.redis_service import redis_service
 from api.services.redis_analytics_service import redis_analytics_service
-from api.services.redis_operations_service import redis_operations_service
 from api.routes.metrics import router as metrics_router
 from api.routes.movies import router as movies_router
 # Redis configuration - using default values
@@ -154,13 +153,24 @@ async def get_analytics_summary():
         logger.error(f"Error getting analytics summary: {e}")
         return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
 
+@app.get("/api/analytics/user/{user_email}")
+async def get_user_metrics(user_email: str, days: int = 7):
+    """Get user-specific metrics for the last N days."""
+    try:
+        data = redis_analytics_service.get_user_specific_metrics(user_email, days)
+        return {"success": True, "data": data}
+    except Exception as e:
+        logger.error(f"Error getting user metrics: {e}")
+        return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
+
 @app.post("/api/analytics/track/page-view")
 async def track_page_view(data: dict):
-    """Track a page view."""
+    """Track a page view with enhanced user context."""
     try:
         page = data.get("page", "")
         country = data.get("country", "Unknown")
-        success = redis_analytics_service.track_page_view(page, country)
+        user_info = data.get("user_info", {})
+        success = redis_analytics_service.track_page_view(page, country, user_info)
         return {"success": success}
     except Exception as e:
         logger.error(f"Error tracking page view: {e}")
@@ -168,96 +178,32 @@ async def track_page_view(data: dict):
 
 @app.post("/api/analytics/track/search")
 async def track_search_query(data: dict):
-    """Track a search query."""
+    """Track a search query with enhanced user context."""
     try:
         query = data.get("query", "")
         results_count = data.get("results_count", 0)
         country = data.get("country", "Unknown")
-        success = redis_analytics_service.track_search_query(query, results_count, country)
+        user_info = data.get("user_info", {})
+        success = redis_analytics_service.track_search_query(query, results_count, country, user_info)
         return {"success": success}
     except Exception as e:
         logger.error(f"Error tracking search query: {e}")
         return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
 
-# Operations endpoints
-@app.get("/api/operations/system-metrics")
-async def get_system_metrics():
-    """Get system metrics for operations dashboard."""
+@app.post("/api/analytics/track/page-activity")
+async def track_page_activity(data: dict):
+    """Track a page activity with enhanced user context."""
     try:
-        data = redis_operations_service.get_system_metrics()
-        return {"success": True, "data": data}
-    except Exception as e:
-        logger.error(f"Error getting system metrics: {e}")
-        return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
-
-@app.get("/api/operations/performance-metrics")
-async def get_performance_metrics():
-    """Get performance metrics for operations dashboard."""
-    try:
-        data = redis_operations_service.get_performance_metrics()
-        return {"success": True, "data": data}
-    except Exception as e:
-        logger.error(f"Error getting performance metrics: {e}")
-        return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
-
-@app.get("/api/operations/alerts")
-async def get_alerts():
-    """Get system alerts."""
-    try:
-        data = redis_operations_service.get_alerts()
-        return {"success": True, "data": data}
-    except Exception as e:
-        logger.error(f"Error getting alerts: {e}")
-        return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
-
-@app.get("/api/operations/redis-info")
-async def get_redis_info():
-    """Get Redis information."""
-    try:
-        data = redis_operations_service.get_redis_info()
-        return {"success": True, "data": data}
-    except Exception as e:
-        logger.error(f"Error getting Redis info: {e}")
-        return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
-
-@app.get("/api/operations/configuration")
-async def get_operations_configuration():
-    """Get operations configuration."""
-    try:
-        data = redis_operations_service.get_configuration()
-        return {"success": True, "data": data}
-    except Exception as e:
-        logger.error(f"Error getting configuration: {e}")
-        return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
-
-@app.post("/api/operations/configuration")
-async def update_operations_configuration(data: dict):
-    """Update operations configuration."""
-    try:
-        success = redis_operations_service.update_configuration(data)
+        page = data.get("page", "")
+        activity = data.get("activity", "")
+        user_country = data.get("user_country", "Unknown")
+        user_info = data.get("user_info", {})
+        success = redis_analytics_service.track_page_activity(page, activity, user_country, user_info)
         return {"success": success}
     except Exception as e:
-        logger.error(f"Error updating configuration: {e}")
+        logger.error(f"Error tracking page activity: {e}")
         return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
 
-@app.post("/api/operations/collect-metrics")
-async def collect_metrics():
-    """Manually trigger metrics collection."""
-    try:
-        # Collect system metrics
-        system_success = redis_operations_service.collect_system_metrics()
-        
-        # Check for alerts
-        alerts = redis_operations_service.check_alerts()
-        
-        return {
-            "success": True,
-            "system_metrics_collected": system_success,
-            "alerts_found": len(alerts)
-        }
-    except Exception as e:
-        logger.error(f"Error collecting metrics: {e}")
-        return JSONResponse(status_code=500, content={"success": False, "error": str(e)})
 
 # API info endpoint
 @app.get("/")

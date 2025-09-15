@@ -27,19 +27,19 @@
             <span class="nav-text">Home</span>
           </router-link>
         <router-link 
-          to="/home/library" 
+          to="/app/library" 
           class="nav-link" 
-          :class="{ active: $route.path === '/home/library' }"
-          @click="handleNavClick('Library', '/home/library')"
+          :class="{ active: $route.path === '/app/library' }"
+          @click="handleNavClick('Library', '/app/library')"
         >
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Library</span>
         </router-link>
         <router-link 
-          to="/home/insights" 
+          to="/app/insights" 
           class="nav-link" 
-          :class="{ active: $route.path === '/home/insights' }"
-          @click="handleNavClick('Insights', '/home/insights')"
+          :class="{ active: $route.path === '/app/insights' }"
+          @click="handleNavClick('Insights', '/app/insights')"
         >
           <span class="nav-icon">📊</span>
           <span class="nav-text">Insights</span>
@@ -69,7 +69,7 @@ import { enhancedMetricsService } from '../services/enhancedMetricsService.js'
 const userStore = useUserStore()
 
 const handleNavClick = (pageName, pagePath) => {
-  console.log('🖱️ Navigation Click:', { pageName, pagePath })
+  console.log(' Navigation Click:', { pageName, pagePath })
   
   // Track navigation click
   enhancedMetricsService.trackUserAction('navigation_click', {

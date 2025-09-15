@@ -244,7 +244,7 @@ class MetricsService {
       })
     })
 
-    console.log('📊 Metrics tracking initialized')
+    console.log(' Metrics tracking initialized')
   }
 }
 
