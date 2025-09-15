@@ -7,3 +7,7 @@ data layer (RedisSearch)
 
 # Tech Stack
 * FastAPI + GraphQL
+
+
+
+# local run python -m uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
